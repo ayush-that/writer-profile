@@ -3,7 +3,8 @@ from __future__ import annotations
 import re
 import statistics
 from collections import Counter
-from dataclasses import dataclass, field
+
+from pydantic import BaseModel, Field
 
 from writer_profile.corpus.models import Post
 
@@ -16,24 +17,23 @@ _MENTION_RE = re.compile(r"(?<!\w)@\w+")
 _SENTENCE_SPLIT_RE = re.compile(r"(?<=[.!?])\s+")
 
 
-@dataclass
-class VoiceStats:
+class VoiceStats(BaseModel):
     post_count: int
     avg_words_per_sentence: float
     sentence_length_p25_p50_p75: tuple[float, float, float]
     length_chars_p25_p50_p75: tuple[float, float, float]
-    emoji_rate: float                    # fraction of posts containing >=1 emoji
-    hashtag_rate: float                  # fraction of posts containing >=1 hashtag
+    emoji_rate: float
+    hashtag_rate: float
     avg_hashtags_per_post: float
     url_rate: float
     question_rate: float
     mention_rate: float
-    line_break_rate: float               # fraction of posts with >=1 blank line
-    top_openers: list[str] = field(default_factory=list)    # first ~6 words, top 10
-    top_closers: list[str] = field(default_factory=list)    # last ~6 words, top 10
-    top_bigrams: list[tuple[str, int]] = field(default_factory=list)
-    top_trigrams: list[tuple[str, int]] = field(default_factory=list)
-    thread_rate: float = 0.0             # fraction of posts that look like thread starters
+    line_break_rate: float
+    top_openers: list[str] = Field(default_factory=list)
+    top_closers: list[str] = Field(default_factory=list)
+    top_bigrams: list[tuple[str, int]] = Field(default_factory=list)
+    top_trigrams: list[tuple[str, int]] = Field(default_factory=list)
+    thread_rate: float = 0.0
 
 
 def _percentiles(xs: list[float]) -> tuple[float, float, float]:
