@@ -11,6 +11,7 @@ def _hit(text: str) -> ExemplarHit:
     return ExemplarHit(
         post=Post(
             id="x",
+            author="ali",
             platform=Platform.TWITTER,
             text=text,
             created_at=datetime(2025, 1, 1, tzinfo=UTC),

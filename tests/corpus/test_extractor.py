@@ -9,6 +9,7 @@ from writer_profile.llm import StubLLMClient
 def _mk_post(text: str) -> Post:
     return Post(
         id="x",
+        author="ali",
         platform=Platform.TWITTER,
         text=text,
         created_at=datetime(2025, 1, 1, tzinfo=UTC),

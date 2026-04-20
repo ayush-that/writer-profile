@@ -14,9 +14,9 @@ def test_load_posts_jsonl_reads_fixture(fixtures_dir):
 def test_load_posts_jsonl_skips_blank_lines(tmp_path):
     f = tmp_path / "p.jsonl"
     f.write_text(
-        '{"id":"a","platform":"twitter","text":"hi","created_at":"2025-01-01T00:00:00Z"}\n'
+        '{"id":"a","author":"ali","platform":"twitter","text":"hi","created_at":"2025-01-01T00:00:00Z"}\n'
         "\n"
-        '{"id":"b","platform":"twitter","text":"ho","created_at":"2025-01-02T00:00:00Z"}\n'
+        '{"id":"b","author":"ali","platform":"twitter","text":"ho","created_at":"2025-01-02T00:00:00Z"}\n'
     )
     posts = load_posts_jsonl(f)
     assert [p.id for p in posts] == ["a", "b"]

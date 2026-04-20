@@ -19,6 +19,7 @@ def _ann(pid: str, text: str) -> AnnotatedPost:
     return AnnotatedPost(
         post=Post(
             id=pid,
+            author="ali",
             platform=Platform.TWITTER,
             text=text,
             created_at=datetime(2025, 1, 1, tzinfo=UTC),

@@ -13,6 +13,7 @@ def sample_jsonl(tmp_path):
     p = tmp_path / "posts.jsonl"
     post = Post(
         id="p1",
+        author="ali",
         platform=Platform.TWITTER,
         text="ai evaluation is the new bottleneck",
         created_at=datetime(2025, 1, 1, tzinfo=UTC),

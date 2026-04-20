@@ -23,6 +23,7 @@ def test_ingest_file_populates_store_with_extracted_metadata(tmp_path, embedder)
     src = tmp_path / "posts.jsonl"
     p1 = Post(
         id="p1",
+        author="ali",
         platform=Platform.TWITTER,
         text="ai evaluation is the new bottleneck",
         created_at=datetime(2025, 1, 1, tzinfo=UTC),

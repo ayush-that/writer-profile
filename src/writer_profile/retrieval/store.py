@@ -32,6 +32,7 @@ class ExemplarStore:
         vectors = self._embedder.embed(docs).tolist()
         metadatas = [
             {
+                "author": i.post.author,
                 "platform": i.post.platform.value,
                 "tone": i.metadata.tone.value,
                 "length_bucket": i.metadata.length_bucket,
@@ -48,13 +49,17 @@ class ExemplarStore:
         *,
         text: str,
         platform: Platform,
+        author: str | None = None,
         k: int = 5,
         tone: str | None = None,
     ) -> list[ExemplarHit]:
         vec = self._embedder.embed_single(text).tolist()
-        where: dict[str, object] = {"platform": platform.value}
+        clauses: list[dict[str, object]] = [{"platform": platform.value}]
+        if author:
+            clauses.append({"author": author})
         if tone:
-            where = {"$and": [{"platform": platform.value}, {"tone": tone}]}
+            clauses.append({"tone": tone})
+        where = clauses[0] if len(clauses) == 1 else {"$and": clauses}
         result = self._col.query(query_embeddings=[vec], n_results=k, where=where)
         hits: list[ExemplarHit] = []
         for meta, dist in zip(result["metadatas"][0], result["distances"][0], strict=True):

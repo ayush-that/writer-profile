@@ -26,6 +26,7 @@ LengthBucket = Literal["short", "medium", "long"]
 
 class Post(BaseModel):
     id: str
+    author: str = Field(min_length=1)
     platform: Platform
     text: str = Field(min_length=1)
     created_at: datetime
