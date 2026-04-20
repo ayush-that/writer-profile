@@ -1,0 +1,40 @@
+{"id": "h001", "platform": "twitter", "pattern_type": "hot_take", "template": "Unpopular opinion: {claim}."}
+{"id": "h002", "platform": "twitter", "pattern_type": "hot_take", "template": "{claim}. And I'll die on this hill."}
+{"id": "h003", "platform": "twitter", "pattern_type": "contrarian", "template": "Everyone says {consensus}. They're wrong."}
+{"id": "h004", "platform": "twitter", "pattern_type": "contrarian", "template": "{conventional_wisdom} is a myth. Here's why:"}
+{"id": "h005", "platform": "twitter", "pattern_type": "data_point", "template": "{number} says {claim}."}
+{"id": "h006", "platform": "twitter", "pattern_type": "data_point", "template": "We ran the numbers. {surprising_finding}."}
+{"id": "h007", "platform": "twitter", "pattern_type": "personal_story", "template": "{year} ago I {action}. Today {outcome}."}
+{"id": "h008", "platform": "twitter", "pattern_type": "personal_story", "template": "A lesson I learned the hard way: {lesson}."}
+{"id": "h009", "platform": "twitter", "pattern_type": "thread_opener", "template": "{topic}. A thread 🧵"}
+{"id": "h010", "platform": "twitter", "pattern_type": "thread_opener", "template": "How we {achievement} in {timeframe}. 1/"}
+{"id": "h011", "platform": "twitter", "pattern_type": "question", "template": "Why does {observation}? Asking for a friend."}
+{"id": "h012", "platform": "twitter", "pattern_type": "question", "template": "Genuine question: {question}"}
+{"id": "h013", "platform": "twitter", "pattern_type": "observation", "template": "{observation}. That's it. That's the tweet."}
+{"id": "h014", "platform": "twitter", "pattern_type": "observation", "template": "Funny how {observation}."}
+{"id": "h015", "platform": "twitter", "pattern_type": "announcement", "template": "Shipping {thing} today."}
+{"id": "h016", "platform": "twitter", "pattern_type": "announcement", "template": "Today we're launching {thing}. Here's the idea:"}
+{"id": "h017", "platform": "twitter", "pattern_type": "reframing", "template": "{thing} isn't about {common_framing}. It's about {real_framing}."}
+{"id": "h018", "platform": "twitter", "pattern_type": "reframing", "template": "Stop thinking of {X} as {Y}. Start thinking of it as {Z}."}
+{"id": "h019", "platform": "twitter", "pattern_type": "list", "template": "{number} things I wish I knew about {topic}:"}
+{"id": "h020", "platform": "twitter", "pattern_type": "list", "template": "Top {number} mistakes people make with {topic}:"}
+{"id": "h021", "platform": "linkedin", "pattern_type": "personal_story", "template": "{timeframe} ago, I {setback}.\n\nToday, {outcome}.\n\nHere's what I learned."}
+{"id": "h022", "platform": "linkedin", "pattern_type": "personal_story", "template": "I used to believe {old_belief}.\n\nThen {event} happened.\n\nEverything changed."}
+{"id": "h023", "platform": "linkedin", "pattern_type": "lesson", "template": "The hardest lesson of my career: {lesson}."}
+{"id": "h024", "platform": "linkedin", "pattern_type": "lesson", "template": "Here's what {year} years of {experience} taught me: {lesson}"}
+{"id": "h025", "platform": "linkedin", "pattern_type": "contrarian", "template": "Everyone is talking about {trend}.\n\nFew are talking about {counter_trend}."}
+{"id": "h026", "platform": "linkedin", "pattern_type": "contrarian", "template": "Hot take: {claim}.\n\nHere's why I think so."}
+{"id": "h027", "platform": "linkedin", "pattern_type": "announcement", "template": "Big news: {announcement}."}
+{"id": "h028", "platform": "linkedin", "pattern_type": "announcement", "template": "I'm thrilled to share: {announcement}."}
+{"id": "h029", "platform": "linkedin", "pattern_type": "gratitude", "template": "A huge thank you to {people}."}
+{"id": "h030", "platform": "linkedin", "pattern_type": "gratitude", "template": "Grateful for {people_or_event}."}
+{"id": "h031", "platform": "linkedin", "pattern_type": "data_point", "template": "{statistic}.\n\nLet that sink in."}
+{"id": "h032", "platform": "linkedin", "pattern_type": "data_point", "template": "By the numbers: {stats}."}
+{"id": "h033", "platform": "linkedin", "pattern_type": "question_open", "template": "What if {provocative_question}?"}
+{"id": "h034", "platform": "linkedin", "pattern_type": "question_open", "template": "Why is {observation} so common?\n\nI think it's because {explanation}."}
+{"id": "h035", "platform": "linkedin", "pattern_type": "industry_commentary", "template": "The {industry} industry has a problem.\n\n{problem_statement}"}
+{"id": "h036", "platform": "linkedin", "pattern_type": "industry_commentary", "template": "{industry} is at an inflection point.\n\nHere's what I'm seeing:"}
+{"id": "h037", "platform": "linkedin", "pattern_type": "reflection", "template": "On {anniversary}: {reflection}."}
+{"id": "h038", "platform": "linkedin", "pattern_type": "reflection", "template": "Spent the weekend thinking about {topic}.\n\nHere's what I came away with:"}
+{"id": "h039", "platform": "linkedin", "pattern_type": "framework", "template": "My {adjective} framework for {problem}:\n\n1. {step1}\n2. {step2}\n3. {step3}"}
+{"id": "h040", "platform": "linkedin", "pattern_type": "framework", "template": "{N} questions I ask every time I {activity}:"}
