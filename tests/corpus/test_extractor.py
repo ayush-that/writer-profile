@@ -1,5 +1,5 @@
 import json
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 from writer_profile.corpus.extractor import extract_metadata
 from writer_profile.corpus.models import Platform, Post, Tone
@@ -11,7 +11,7 @@ def _mk_post(text: str) -> Post:
         id="x",
         platform=Platform.TWITTER,
         text=text,
-        created_at=datetime(2025, 1, 1, tzinfo=timezone.utc),
+        created_at=datetime(2025, 1, 1, tzinfo=UTC),
     )
 
 

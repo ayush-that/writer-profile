@@ -1,5 +1,5 @@
 import json
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 import pytest
 
@@ -25,7 +25,7 @@ def test_ingest_file_populates_store_with_extracted_metadata(tmp_path, embedder)
         id="p1",
         platform=Platform.TWITTER,
         text="ai evaluation is the new bottleneck",
-        created_at=datetime(2025, 1, 1, tzinfo=timezone.utc),
+        created_at=datetime(2025, 1, 1, tzinfo=UTC),
     )
     src.write_text(_post_to_line(p1))
 

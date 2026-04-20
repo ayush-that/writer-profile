@@ -31,9 +31,7 @@ def _critique(
     llm: LLMClient,
     model: str,
 ) -> str:
-    system, user = build_critic_prompt(
-        draft=draft, platform=platform, constraint=constraint
-    )
+    system, user = build_critic_prompt(draft=draft, platform=platform, constraint=constraint)
     return llm.complete(
         model=model,
         system=system,

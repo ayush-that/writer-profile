@@ -62,9 +62,7 @@ def build_refine_prompt(
     validator_issues: list[str],
 ) -> tuple[str, str]:
     validator_block = (
-        "\n".join(f"- {i}" for i in validator_issues)
-        if validator_issues
-        else "(validator passed)"
+        "\n".join(f"- {i}" for i in validator_issues) if validator_issues else "(validator passed)"
     )
     system = (
         f"You revise a {platform.value} post based on explicit feedback. "

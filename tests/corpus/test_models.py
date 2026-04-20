@@ -1,4 +1,4 @@
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 import pytest
 from pydantic import ValidationError
@@ -11,7 +11,7 @@ def test_post_requires_text_and_platform():
         id="t1",
         platform=Platform.TWITTER,
         text="hello world",
-        created_at=datetime(2025, 1, 1, tzinfo=timezone.utc),
+        created_at=datetime(2025, 1, 1, tzinfo=UTC),
     )
     assert post.text == "hello world"
     assert post.platform is Platform.TWITTER
@@ -23,7 +23,7 @@ def test_post_rejects_empty_text():
             id="t1",
             platform=Platform.TWITTER,
             text="",
-            created_at=datetime(2025, 1, 1, tzinfo=timezone.utc),
+            created_at=datetime(2025, 1, 1, tzinfo=UTC),
         )
 
 

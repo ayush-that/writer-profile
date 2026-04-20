@@ -13,11 +13,11 @@ class ValidationResult:
         return self.ok_
 
     @classmethod
-    def ok(cls) -> "ValidationResult":
+    def ok(cls) -> ValidationResult:
         return cls(ok_=True)
 
     @classmethod
-    def fail(cls, issues: list[str]) -> "ValidationResult":
+    def fail(cls, issues: list[str]) -> ValidationResult:
         return cls(ok_=False, issues=tuple(issues))
 
 

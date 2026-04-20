@@ -1,4 +1,4 @@
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 from writer_profile.corpus.models import Platform, Post, PostMetadata, Tone
 from writer_profile.generation.generator import generate_draft
@@ -13,7 +13,7 @@ def _hit(text: str) -> ExemplarHit:
             id="x",
             platform=Platform.TWITTER,
             text=text,
-            created_at=datetime(2025, 1, 1, tzinfo=timezone.utc),
+            created_at=datetime(2025, 1, 1, tzinfo=UTC),
         ),
         metadata=PostMetadata(
             topics=["ai"], tone=Tone.OBSERVATIONAL, length_bucket="short", language="en"

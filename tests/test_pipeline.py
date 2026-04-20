@@ -1,4 +1,4 @@
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 import pytest
 
@@ -21,7 +21,7 @@ def _ann(pid: str, text: str) -> AnnotatedPost:
             id=pid,
             platform=Platform.TWITTER,
             text=text,
-            created_at=datetime(2025, 1, 1, tzinfo=timezone.utc),
+            created_at=datetime(2025, 1, 1, tzinfo=UTC),
         ),
         metadata=PostMetadata(
             topics=["ai"], tone=Tone.OBSERVATIONAL, length_bucket="short", language="en"

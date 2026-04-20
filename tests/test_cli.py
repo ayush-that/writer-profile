@@ -1,5 +1,5 @@
 import json
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 import pytest
 from typer.testing import CliRunner
@@ -15,7 +15,7 @@ def sample_jsonl(tmp_path):
         id="p1",
         platform=Platform.TWITTER,
         text="ai evaluation is the new bottleneck",
-        created_at=datetime(2025, 1, 1, tzinfo=timezone.utc),
+        created_at=datetime(2025, 1, 1, tzinfo=UTC),
     )
     p.write_text(post.model_dump_json())
     return p
