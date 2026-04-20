@@ -43,3 +43,17 @@ class PostMetadata(BaseModel):
 class AnnotatedPost(BaseModel):
     post: Post
     metadata: PostMetadata
+
+
+class Idea(BaseModel):
+    topic: str = Field(min_length=1)
+    angle: str = ""
+    constraints: list[str] = Field(default_factory=list)
+
+    def render(self) -> str:
+        parts = [f"TOPIC: {self.topic}"]
+        if self.angle:
+            parts.append(f"ANGLE: {self.angle}")
+        if self.constraints:
+            parts.append("MUST INCLUDE:\n" + "\n".join(f"- {c}" for c in self.constraints))
+        return "\n\n".join(parts)
