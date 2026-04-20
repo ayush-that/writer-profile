@@ -81,3 +81,42 @@ def test_refine_caps_at_max_iterations():
     )
     assert result.iterations == 2
     assert result.final_draft == "new draft 1"
+
+
+def test_refine_short_circuits_on_ok_with_punctuation():
+    from writer_profile.corpus.models import Platform
+    from writer_profile.generation.refine import refine
+    from writer_profile.llm import StubLLMClient
+    from writer_profile.platforms.twitter import TwitterConstraint
+
+    initial = "the bottleneck in ai moved from generation to evaluation"
+    llm = StubLLMClient(responses=["OK."])
+    result = refine(
+        draft=initial,
+        platform=Platform.TWITTER,
+        constraint=TwitterConstraint(require_lowercase=True, allow_hashtags=False),
+        llm=llm,
+        model="claude-sonnet-4-6",
+        max_iterations=3,
+    )
+    assert result.iterations == 1
+    assert len(llm.calls) == 1
+
+
+def test_refine_short_circuits_on_lowercase_ok():
+    from writer_profile.corpus.models import Platform
+    from writer_profile.generation.refine import refine
+    from writer_profile.llm import StubLLMClient
+    from writer_profile.platforms.twitter import TwitterConstraint
+
+    initial = "the bottleneck in ai moved from generation to evaluation"
+    llm = StubLLMClient(responses=["ok, looks strong to me"])
+    result = refine(
+        draft=initial,
+        platform=Platform.TWITTER,
+        constraint=TwitterConstraint(require_lowercase=True, allow_hashtags=False),
+        llm=llm,
+        model="claude-sonnet-4-6",
+        max_iterations=3,
+    )
+    assert result.iterations == 1

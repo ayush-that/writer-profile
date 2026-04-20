@@ -3,10 +3,18 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 
 from writer_profile.corpus.models import Platform
-from writer_profile.generation.generator import _unwrap
+from writer_profile.generation.generator import unwrap
 from writer_profile.generation.prompts import build_critic_prompt, build_refine_prompt
 from writer_profile.llm import LLMClient, LLMMessage
 from writer_profile.platforms.base import Constraint
+
+
+def _is_ok(feedback: str) -> bool:
+    stripped = feedback.strip().lstrip("-* ").strip()
+    if not stripped:
+        return False
+    first_token = stripped.split()[0].strip(".,!:;").upper()
+    return first_token == "OK"
 
 
 @dataclass
@@ -65,7 +73,7 @@ def _rewrite(
         max_tokens=1024,
         temperature=0.6,
     )
-    return _unwrap(raw)
+    return unwrap(raw)
 
 
 def refine(
@@ -106,7 +114,7 @@ def refine(
                 )
             )
 
-            if bool(validator) and critic_feedback.strip().upper() == "OK":
+            if bool(validator) and _is_ok(critic_feedback):
                 break
 
             last_feedback = critic_feedback

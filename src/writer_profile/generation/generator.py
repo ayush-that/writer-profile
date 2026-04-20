@@ -7,7 +7,7 @@ from writer_profile.platforms.base import Constraint
 from writer_profile.retrieval.store import ExemplarHit
 
 
-def _unwrap(raw: str) -> str:
+def unwrap(raw: str) -> str:
     text = raw.strip()
     if len(text) >= 2 and text[0] in {'"', "'"} and text[-1] == text[0]:
         text = text[1:-1].strip()
@@ -34,4 +34,4 @@ def generate_draft(
         max_tokens=1024,
         temperature=temperature,
     )
-    return _unwrap(raw)
+    return unwrap(raw)
