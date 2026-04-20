@@ -102,3 +102,35 @@ class GenerationPipeline:
             validation_ok=bool(final),
             validation_issues=list(final.issues),
         )
+
+    def revoice(
+        self,
+        *,
+        author: str,
+        platform: Platform,
+        edited_draft: str,
+    ) -> PostDraft:
+        from writer_profile.generation.revoice import revoice as revoice_fn
+
+        profile = self._profile(author, platform)
+        constraint = constraint_for(profile)
+
+        out = revoice_fn(
+            profile=profile,
+            edited_draft=edited_draft,
+            constraint=constraint,
+            llm=self._llm,
+            model=self._writing_model,
+        )
+
+        final = constraint.validate(out)
+        return PostDraft(
+            text=out,
+            author=author,
+            platform=platform,
+            idea=Idea(topic="(revoice)", angle=""),
+            exemplars_used=[],
+            refine_history=[],
+            validation_ok=bool(final),
+            validation_issues=list(final.issues),
+        )

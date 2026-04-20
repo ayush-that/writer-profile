@@ -113,3 +113,24 @@ def test_pipeline_missing_profile_raises(tmp_path, embedder):
             author="nobody", platform=Platform.TWITTER,
             idea=Idea(topic="x"),
         )
+
+
+def test_pipeline_revoice_preserves_paragraph_count(tmp_path, embedder):
+    store = ExemplarStore(path=str(tmp_path / "c3"), embedder=embedder, collection="rev")
+    profiles = VoiceProfileStore(root=tmp_path / "profiles")
+    profiles.save(_profile())
+    hooks = HookLibrary.load(Path("data/hooks.jsonl"))
+
+    llm = StubLLMClient(responses=[
+        "refined para one\n\nrefined para two\n\nrefined para three",
+    ])
+    pipe = GenerationPipeline(
+        store=store, profiles=profiles, hooks=hooks, llm=llm,
+        writing_model="claude-sonnet-4-6",
+    )
+
+    edited = "rough para one\n\nrough para two\n\nrough para three"
+    out = pipe.revoice(author="ali", platform=Platform.TWITTER, edited_draft=edited)
+
+    assert out.text.count("\n\n") == edited.count("\n\n")
+    assert out.author == "ali"
