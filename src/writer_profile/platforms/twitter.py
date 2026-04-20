@@ -12,9 +12,10 @@ _HASHTAG_RE = re.compile(r"(?<!\w)#\w+")
 @dataclass
 class TwitterConstraint:
     max_chars: int = 280
-    allow_hashtags: bool = False
-    require_lowercase: bool = True
-    max_urls: int = 1
+    allow_hashtags: bool = True
+    require_lowercase: bool = False
+    max_hashtags: int = 3
+    max_urls: int = 2
     name: str = "twitter"
 
     def validate(self, text: str) -> ValidationResult:
@@ -23,8 +24,11 @@ class TwitterConstraint:
         if len(text) > self.max_chars:
             issues.append(f"exceeds {self.max_chars}-char limit by {len(text) - self.max_chars}")
 
-        if not self.allow_hashtags and _HASHTAG_RE.search(text):
-            issues.append("hashtag found; hashtags are forbidden for this author")
+        hashtag_count = len(_HASHTAG_RE.findall(text))
+        if not self.allow_hashtags and hashtag_count:
+            issues.append("hashtags not allowed for this author's voice")
+        elif hashtag_count > self.max_hashtags:
+            issues.append(f"{hashtag_count} hashtags; max is {self.max_hashtags}")
 
         if self.require_lowercase:
             letters = [c for c in text if c.isalpha()]
@@ -42,8 +46,8 @@ class TwitterConstraint:
         if self.require_lowercase:
             rules.append("- all lowercase (no capital letters)")
         if not self.allow_hashtags:
-            rules.append("- absolutely no hashtags")
+            rules.append("- no hashtags")
+        else:
+            rules.append(f"- at most {self.max_hashtags} hashtag(s)")
         rules.append(f"- at most {self.max_urls} url(s)")
-        rules.append("- headline first, then a couple of short sentences if needed")
-        rules.append("- simple english, no slop, no emojis")
         return "\n".join(rules)

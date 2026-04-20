@@ -15,14 +15,14 @@ def test_rejects_over_280_chars():
 
 
 def test_rejects_hashtags():
-    c = TwitterConstraint()
+    c = TwitterConstraint(allow_hashtags=False)
     r = c.validate("this has #ai which is not allowed")
     assert bool(r) is False
     assert any("hashtag" in i.lower() for i in r.issues)
 
 
 def test_rejects_uppercase():
-    c = TwitterConstraint()
+    c = TwitterConstraint(require_lowercase=True)
     r = c.validate("This Has Uppercase Letters")
     assert bool(r) is False
     assert any("lowercase" in i.lower() for i in r.issues)
@@ -34,3 +34,21 @@ def test_allows_urls_up_to_limit():
     bad = c.validate("two links https://a.example/1 and https://b.example/2")
     assert bool(ok) is True
     assert bool(bad) is False
+
+
+def test_twitter_default_allows_hashtags_and_case_and_emoji():
+    from writer_profile.platforms.twitter import TwitterConstraint
+
+    c = TwitterConstraint()
+    r = c.validate("Excited to announce 🎉 #databricks is acquiring Tabular")
+    assert bool(r), r.issues
+
+
+def test_twitter_describe_rules_no_hardcoded_style():
+    from writer_profile.platforms.twitter import TwitterConstraint
+
+    rules = TwitterConstraint().describe_rules()
+    lowered = rules.lower()
+    assert "lowercase" not in lowered
+    assert "no slop" not in lowered
+    assert "no emojis" not in lowered
