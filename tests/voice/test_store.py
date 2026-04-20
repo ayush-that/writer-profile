@@ -1,8 +1,14 @@
 from pathlib import Path
 
+import pytest
+
 from writer_profile.corpus.models import Platform
 from writer_profile.voice.profile import (
-    LexicalProfile, RhetoricalProfile, StructuralProfile, TonalProfile, VoiceProfile,
+    LexicalProfile,
+    RhetoricalProfile,
+    StructuralProfile,
+    TonalProfile,
+    VoiceProfile,
 )
 from writer_profile.voice.stats import VoiceStats
 from writer_profile.voice.store import VoiceProfileStore
@@ -44,7 +50,6 @@ def test_store_save_and_load_roundtrip(tmp_path: Path):
 
 
 def test_store_missing_profile_raises(tmp_path: Path):
-    import pytest
     store = VoiceProfileStore(root=tmp_path)
     with pytest.raises(FileNotFoundError):
         store.load(author="nobody", platform=Platform.TWITTER)
@@ -57,4 +62,8 @@ def test_store_list_profiles(tmp_path: Path):
     store.save(_profile("matei", Platform.TWITTER))
 
     entries = sorted(store.list_profiles())
-    assert entries == [("ali", Platform.LINKEDIN), ("ali", Platform.TWITTER), ("matei", Platform.TWITTER)]
+    assert entries == [
+        ("ali", Platform.LINKEDIN),
+        ("ali", Platform.TWITTER),
+        ("matei", Platform.TWITTER),
+    ]
