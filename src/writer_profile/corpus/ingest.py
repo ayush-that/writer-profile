@@ -15,8 +15,11 @@ def ingest_file(
     store: ExemplarStore,
     llm: LLMClient,
     classifier_model: str,
+    author: str | None = None,
 ) -> int:
     posts = load_posts_jsonl(path)
+    if author:
+        posts = [p.model_copy(update={"author": author}) for p in posts]
     annotated: list[AnnotatedPost] = []
     for post in posts:
         meta = extract_metadata(post, llm=llm, model=classifier_model)
