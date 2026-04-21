@@ -33,7 +33,7 @@ Return ONLY a JSON object with these exact top-level keys:
 - tonal: {{warmth: "warm"|"neutral"|"distant", humor: "none"|"dry"|"playful"|"sharp", conviction: "low"|"medium"|"high", disclosure: "rare"|"occasional"|"moderate"|"frequent", vulnerability: "rare"|"occasional"|"moderate"|"frequent"}}
 - examples: [str]  (3-5 verbatim posts that most exemplify the voice)
 
-No prose. No explanation. Just the JSON."""
+No prose. No explanation. Just the JSON."""  # noqa: E501
 
 
 def _strip_fence(raw: str) -> str:

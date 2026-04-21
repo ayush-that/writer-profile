@@ -67,9 +67,7 @@ class GenerationPipeline:
             author=author,
             k=self._retrieval_k,
         )
-        hook_suggestions = self._hooks.suggest(
-            platform=platform, k=self._hook_k, seed=hook_seed
-        )
+        hook_suggestions = self._hooks.suggest(platform=platform, k=self._hook_k, seed=hook_seed)
 
         initial = generate_draft(
             profile=profile,

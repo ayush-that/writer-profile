@@ -52,7 +52,9 @@ def ingest(
     store = ExemplarStore(path=settings.chroma_path, embedder=embedder)
     llm = AnthropicClient(api_key=settings.anthropic_api_key)
     count = ingest_file(
-        path=path, store=store, llm=llm,
+        path=path,
+        store=store,
+        llm=llm,
         classifier_model=settings.classifier_model,
         author=author,
     )
@@ -63,15 +65,13 @@ def ingest(
 def profile_build(
     author: str = typer.Option(..., help="Canonical author id"),
     platform: Platform = typer.Option(..., case_sensitive=False),
-    source: Path = typer.Option(..., exists=True, readable=True,
-                                help="JSONL of posts for this author+platform"),
+    source: Path = typer.Option(
+        ..., exists=True, readable=True, help="JSONL of posts for this author+platform"
+    ),
 ) -> None:
     """Build a VoiceProfile from a JSONL of posts."""
     settings = Settings()
-    posts = [
-        p for p in load_posts_jsonl(source)
-        if p.platform is platform and p.author == author
-    ]
+    posts = [p for p in load_posts_jsonl(source) if p.platform is platform and p.author == author]
     if not posts:
         typer.echo(
             f"error: no posts matched author={author} platform={platform.value}",
@@ -81,8 +81,11 @@ def profile_build(
 
     llm = AnthropicClient(api_key=settings.anthropic_api_key)
     profile = build_voice_profile(
-        author=author, platform=platform, posts=posts,
-        llm=llm, model=settings.writing_model,
+        author=author,
+        platform=platform,
+        posts=posts,
+        llm=llm,
+        model=settings.writing_model,
     )
     store = VoiceProfileStore(root=settings.profiles_path)
     path = store.save(profile)
@@ -118,7 +121,9 @@ def generate(
     topic: str = typer.Option(..., help="Topic / subject of the post"),
     angle: str = typer.Option("", help="Narrative direction / angle"),
     virality: float = typer.Option(
-        0.15, min=0.0, max=1.0,
+        0.15,
+        min=0.0,
+        max=1.0,
         help="Strength of virality hook injection (0-1)",
     ),
     dry_run: bool = typer.Option(False, "--dry-run", help="Skip LLM calls, echo config."),
@@ -127,16 +132,25 @@ def generate(
     settings = Settings()
 
     if dry_run:
-        typer.echo(json.dumps({
-            "author": author, "platform": platform.value,
-            "topic": topic, "angle": angle, "virality": virality,
-            "writing_model": settings.writing_model, "dry_run": True,
-        }))
+        typer.echo(
+            json.dumps(
+                {
+                    "author": author,
+                    "platform": platform.value,
+                    "topic": topic,
+                    "angle": angle,
+                    "virality": virality,
+                    "writing_model": settings.writing_model,
+                    "dry_run": True,
+                }
+            )
+        )
         raise typer.Exit(0)
 
     pipe = _pipeline(settings)
     draft = pipe.generate(
-        author=author, platform=platform,
+        author=author,
+        platform=platform,
         idea=Idea(topic=topic, angle=angle),
         virality_strength=virality,
     )
@@ -149,8 +163,9 @@ def generate(
 def revoice(
     author: str = typer.Option(...),
     platform: Platform = typer.Option(..., case_sensitive=False),
-    draft_file: Path = typer.Option(..., exists=True, readable=True,
-                                    help="Plain text file containing the edited draft"),
+    draft_file: Path = typer.Option(
+        ..., exists=True, readable=True, help="Plain text file containing the edited draft"
+    ),
 ) -> None:
     """Re-voice an edited draft."""
     settings = Settings()
@@ -175,13 +190,13 @@ def samples(
     results: list[tuple[str, str]] = []
     for idea in ARCHETYPE_IDEAS:
         d = pipe.generate(
-            author=author, platform=platform, idea=idea,
+            author=author,
+            platform=platform,
+            idea=idea,
             virality_strength=virality,
         )
         results.append((idea.topic, d.text))
-    path = write_samples_sheet(
-        root=out_dir, author=author, platform=platform, samples=results
-    )
+    path = write_samples_sheet(root=out_dir, author=author, platform=platform, samples=results)
     typer.echo(f"wrote rubric sheet: {path}")
 
 
@@ -189,18 +204,18 @@ def samples(
 def evaluate(
     author: str = typer.Option(...),
     platform: Platform = typer.Option(..., case_sensitive=False),
-    candidates_file: Path = typer.Option(..., exists=True, readable=True,
-                                         help="JSONL with {candidate: str} per line"),
-    references_file: Path = typer.Option(..., exists=True, readable=True,
-                                         help="JSONL of real Posts by the author"),
+    candidates_file: Path = typer.Option(
+        ..., exists=True, readable=True, help="JSONL with {candidate: str} per line"
+    ),
+    references_file: Path = typer.Option(
+        ..., exists=True, readable=True, help="JSONL of real Posts by the author"
+    ),
     out_file: Path = typer.Option(Path("./eval/scores.jsonl")),
 ) -> None:
     """Run LLM-as-judge over candidate posts against reference corpus."""
     settings = Settings()
     references = load_posts_jsonl(references_file)
-    references = [
-        p for p in references if p.author == author and p.platform is platform
-    ][:20]
+    references = [p for p in references if p.author == author and p.platform is platform][:20]
     if not references:
         typer.echo("error: no reference posts matched author+platform", err=True)
         raise typer.Exit(2)
@@ -219,17 +234,26 @@ def evaluate(
                 continue
             cand = json.loads(line)["candidate"]
             score = score_post(
-                author=author, platform=platform, candidate=cand,
-                references=references, llm=llm, model=settings.judge_model,
+                author=author,
+                platform=platform,
+                candidate=cand,
+                references=references,
+                llm=llm,
+                model=settings.judge_model,
             )
-            fout.write(json.dumps({
-                "candidate": cand,
-                "voice_fidelity": score.voice_fidelity,
-                "voice_reasoning": score.voice_reasoning,
-                "naturalness": score.naturalness,
-                "naturalness_reasoning": score.naturalness_reasoning,
-                "ai_tics": score.ai_tics,
-            }) + "\n")
+            fout.write(
+                json.dumps(
+                    {
+                        "candidate": cand,
+                        "voice_fidelity": score.voice_fidelity,
+                        "voice_reasoning": score.voice_reasoning,
+                        "naturalness": score.naturalness,
+                        "naturalness_reasoning": score.naturalness_reasoning,
+                        "ai_tics": score.ai_tics,
+                    }
+                )
+                + "\n"
+            )
     typer.echo(f"wrote scores: {out_file}")
 
 

@@ -8,9 +8,7 @@ from pydantic import BaseModel, Field
 
 from writer_profile.corpus.models import Post
 
-_EMOJI_RE = re.compile(
-    r"[\U0001F300-\U0001FAFF\U00002600-\U000027BF\U0001F900-\U0001F9FF]"
-)
+_EMOJI_RE = re.compile(r"[\U0001F300-\U0001FAFF\U00002600-\U000027BF\U0001F900-\U0001F9FF]")
 _HASHTAG_RE = re.compile(r"(?<!\w)#\w+")
 _URL_RE = re.compile(r"https?://\S+")
 _MENTION_RE = re.compile(r"(?<!\w)@\w+")
@@ -40,21 +38,21 @@ def _percentiles(xs: list[float]) -> tuple[float, float, float]:
     if not xs:
         return (0.0, 0.0, 0.0)
     xs_sorted = sorted(xs)
-    q = statistics.quantiles(xs_sorted, n=4) if len(xs_sorted) >= 4 else [
-        xs_sorted[0],
-        xs_sorted[len(xs_sorted) // 2],
-        xs_sorted[-1],
-    ]
+    q = (
+        statistics.quantiles(xs_sorted, n=4)
+        if len(xs_sorted) >= 4
+        else [
+            xs_sorted[0],
+            xs_sorted[len(xs_sorted) // 2],
+            xs_sorted[-1],
+        ]
+    )
     return (float(q[0]), float(q[1]), float(q[2]))
 
 
 def _sentence_word_counts(text: str) -> list[int]:
     parts = [p.strip() for p in _SENTENCE_SPLIT_RE.split(text) if p.strip()]
-    counts = [
-        len(p.split())
-        for p in parts
-        if any(ch.isalpha() for ch in p)
-    ]
+    counts = [len(p.split()) for p in parts if any(ch.isalpha() for ch in p)]
     return counts or [len(text.split())]
 
 

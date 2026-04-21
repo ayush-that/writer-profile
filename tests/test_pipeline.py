@@ -28,36 +28,67 @@ def embedder() -> Embedder:
 def _ann(pid: str, text: str, author: str = "ali") -> AnnotatedPost:
     return AnnotatedPost(
         post=Post(
-            id=pid, author=author, platform=Platform.TWITTER,
-            text=text, created_at=datetime(2025, 1, 1, tzinfo=UTC),
+            id=pid,
+            author=author,
+            platform=Platform.TWITTER,
+            text=text,
+            created_at=datetime(2025, 1, 1, tzinfo=UTC),
         ),
         metadata=PostMetadata(
-            topics=["ai"], tone=Tone.OBSERVATIONAL, length_bucket="short", language="en",
+            topics=["ai"],
+            tone=Tone.OBSERVATIONAL,
+            length_bucket="short",
+            language="en",
         ),
     )
 
 
 def _profile(author: str = "ali", platform: Platform = Platform.TWITTER) -> VoiceProfile:
     return VoiceProfile(
-        author=author, platform=platform,
+        author=author,
+        platform=platform,
         stats=VoiceStats(
-            post_count=10, avg_words_per_sentence=10.0,
+            post_count=10,
+            avg_words_per_sentence=10.0,
             sentence_length_p25_p50_p75=(5.0, 9.0, 14.0),
             length_chars_p25_p50_p75=(70.0, 150.0, 220.0),
-            emoji_rate=0.0, hashtag_rate=0.0, avg_hashtags_per_post=0.0,
-            url_rate=0.1, question_rate=0.1, mention_rate=0.2,
-            line_break_rate=0.0, top_openers=[], top_closers=[],
-            top_bigrams=[], top_trigrams=[], thread_rate=0.0,
+            emoji_rate=0.0,
+            hashtag_rate=0.0,
+            avg_hashtags_per_post=0.0,
+            url_rate=0.1,
+            question_rate=0.1,
+            mention_rate=0.2,
+            line_break_rate=0.0,
+            top_openers=[],
+            top_closers=[],
+            top_bigrams=[],
+            top_trigrams=[],
+            thread_rate=0.0,
         ),
-        lexical=LexicalProfile(recurring_phrases=[], word_preferences={},
-                               jargon_level="low", notes=""),
-        structural=StructuralProfile(typical_opener_patterns=[], typical_closer_patterns=[],
-                                     paragraph_shape="", list_usage="", question_usage=""),
-        rhetorical=RhetoricalProfile(uses_analogies=False, uses_personal_anecdotes=False,
-                                     uses_data_points=False, attribution_style="",
-                                     name_drop_rate="rare"),
-        tonal=TonalProfile(warmth="neutral", humor="none", conviction="medium",
-                           disclosure="rare", vulnerability="rare"),
+        lexical=LexicalProfile(
+            recurring_phrases=[], word_preferences={}, jargon_level="low", notes=""
+        ),
+        structural=StructuralProfile(
+            typical_opener_patterns=[],
+            typical_closer_patterns=[],
+            paragraph_shape="",
+            list_usage="",
+            question_usage="",
+        ),
+        rhetorical=RhetoricalProfile(
+            uses_analogies=False,
+            uses_personal_anecdotes=False,
+            uses_data_points=False,
+            attribution_style="",
+            name_drop_rate="rare",
+        ),
+        tonal=TonalProfile(
+            warmth="neutral",
+            humor="none",
+            conviction="medium",
+            disclosure="rare",
+            vulnerability="rare",
+        ),
         examples=["open source wins"],
     )
 
@@ -105,12 +136,16 @@ def test_pipeline_missing_profile_raises(tmp_path, embedder):
     hooks = HookLibrary.load(Path("data/hooks.jsonl"))
     llm = StubLLMClient(responses=[])
     pipe = GenerationPipeline(
-        store=store, profiles=profiles, hooks=hooks, llm=llm,
+        store=store,
+        profiles=profiles,
+        hooks=hooks,
+        llm=llm,
         writing_model="claude-sonnet-4-6",
     )
     with pytest.raises(FileNotFoundError):
         pipe.generate(
-            author="nobody", platform=Platform.TWITTER,
+            author="nobody",
+            platform=Platform.TWITTER,
             idea=Idea(topic="x"),
         )
 
@@ -121,11 +156,16 @@ def test_pipeline_revoice_preserves_paragraph_count(tmp_path, embedder):
     profiles.save(_profile())
     hooks = HookLibrary.load(Path("data/hooks.jsonl"))
 
-    llm = StubLLMClient(responses=[
-        "refined para one\n\nrefined para two\n\nrefined para three",
-    ])
+    llm = StubLLMClient(
+        responses=[
+            "refined para one\n\nrefined para two\n\nrefined para three",
+        ]
+    )
     pipe = GenerationPipeline(
-        store=store, profiles=profiles, hooks=hooks, llm=llm,
+        store=store,
+        profiles=profiles,
+        hooks=hooks,
+        llm=llm,
         writing_model="claude-sonnet-4-6",
     )
 

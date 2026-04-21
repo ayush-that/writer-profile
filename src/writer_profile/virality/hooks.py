@@ -74,9 +74,7 @@ class HookLibrary:
         if virality_strength <= 0.0:
             return "(Ignore structural suggestions. Write entirely in the author's natural style.)"
 
-        bullet_list = "\n".join(
-            f"- [{h.pattern_type}] {h.template}" for h in hooks
-        )
+        bullet_list = "\n".join(f"- [{h.pattern_type}] {h.template}" for h in hooks)
 
         if virality_strength < 0.3:
             tone = (

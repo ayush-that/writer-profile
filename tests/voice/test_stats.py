@@ -1,4 +1,4 @@
-from datetime import datetime, UTC
+from datetime import UTC, datetime
 
 from writer_profile.corpus.models import Platform, Post
 from writer_profile.voice.stats import compute_stats
@@ -6,8 +6,11 @@ from writer_profile.voice.stats import compute_stats
 
 def _p(pid: str, text: str) -> Post:
     return Post(
-        id=pid, author="ali", platform=Platform.TWITTER,
-        text=text, created_at=datetime(2025, 1, 1, tzinfo=UTC),
+        id=pid,
+        author="ali",
+        platform=Platform.TWITTER,
+        text=text,
+        created_at=datetime(2025, 1, 1, tzinfo=UTC),
     )
 
 
@@ -31,6 +34,7 @@ def test_compute_stats_basic_shape():
 
 def test_compute_stats_empty_corpus_errors():
     import pytest
+
     with pytest.raises(ValueError):
         compute_stats([])
 

@@ -12,7 +12,9 @@ from writer_profile.corpus.models import Platform, Post
 def sample_jsonl(tmp_path):
     p = tmp_path / "posts.jsonl"
     post = Post(
-        id="p1", author="ali", platform=Platform.TWITTER,
+        id="p1",
+        author="ali",
+        platform=Platform.TWITTER,
         text="ai evaluation is the new bottleneck",
         created_at=datetime(2025, 1, 1, tzinfo=UTC),
     )
@@ -38,14 +40,21 @@ def test_cli_generate_dry_run(tmp_path, sample_jsonl, monkeypatch):
     monkeypatch.setenv("WRITER_PROFILE_PROFILES_PATH", str(tmp_path / "profiles"))
 
     runner = CliRunner()
-    result = runner.invoke(app, [
-        "generate",
-        "--author", "ali",
-        "--platform", "twitter",
-        "--topic", "ai evaluation",
-        "--angle", "generation is easy, eval is hard",
-        "--dry-run",
-    ])
+    result = runner.invoke(
+        app,
+        [
+            "generate",
+            "--author",
+            "ali",
+            "--platform",
+            "twitter",
+            "--topic",
+            "ai evaluation",
+            "--angle",
+            "generation is easy, eval is hard",
+            "--dry-run",
+        ],
+    )
     assert result.exit_code == 0
     payload = json.loads(result.stdout)
     assert payload["author"] == "ali"

@@ -1,4 +1,3 @@
-import json
 from pathlib import Path
 
 from writer_profile.corpus.models import Platform

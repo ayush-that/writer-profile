@@ -71,20 +71,27 @@ def test_store_filters_by_author(tmp_path, embedder):
     def ann(pid: str, author: str, text: str) -> AnnotatedPost:
         return AnnotatedPost(
             post=Post(
-                id=pid, author=author, platform=Platform.TWITTER,
-                text=text, created_at=datetime(2025, 1, 1, tzinfo=UTC),
+                id=pid,
+                author=author,
+                platform=Platform.TWITTER,
+                text=text,
+                created_at=datetime(2025, 1, 1, tzinfo=UTC),
             ),
             metadata=PostMetadata(
-                topics=["ai"], tone=Tone.OBSERVATIONAL,
-                length_bucket="short", language="en",
+                topics=["ai"],
+                tone=Tone.OBSERVATIONAL,
+                length_bucket="short",
+                language="en",
             ),
         )
 
     store = ExemplarStore(path=str(tmp_path / "c"), embedder=embedder, collection="author_filter")
-    store.add_many([
-        ann("a1", "ali", "iceberg is the future of open data"),
-        ann("m1", "matei", "spark 4 is shipping vectorized execution"),
-    ])
+    store.add_many(
+        [
+            ann("a1", "ali", "iceberg is the future of open data"),
+            ann("m1", "matei", "spark 4 is shipping vectorized execution"),
+        ]
+    )
 
     hits = store.query(text="open data formats", platform=Platform.TWITTER, author="ali", k=5)
     assert len(hits) == 1
