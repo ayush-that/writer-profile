@@ -120,3 +120,30 @@ def test_refine_short_circuits_on_lowercase_ok():
         max_iterations=3,
     )
     assert result.iterations == 1
+
+
+def test_refine_multi_returns_result():
+    from writer_profile.corpus.models import Platform
+    from writer_profile.generation.refine import MultiRefineResult, refine_multi
+    from writer_profile.llm import StubLLMClient
+    from writer_profile.platforms.twitter import TwitterConstraint
+
+    llm = StubLLMClient(
+        responses=[
+            "OK",  # voice_fidelity critic
+            "OK",  # engagement critic
+            "OK",  # platform_native critic
+        ]
+    )
+    result = refine_multi(
+        draft="Test draft here",
+        platform=Platform.TWITTER,
+        constraint=TwitterConstraint(),
+        author="ali",
+        llm=llm,
+        model="test",
+        max_iterations=2,
+    )
+    assert isinstance(result, MultiRefineResult)
+    assert result.final_draft == "Test draft here"  # All OK, no rewrite needed
+    assert result.all_critics_ok is True
