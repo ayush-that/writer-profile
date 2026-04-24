@@ -12,6 +12,7 @@ from writer_profile.llm import LLMClient, LLMMessage
 class JudgeError(Exception):
     """Raised when judge scoring fails."""
 
+
 _FENCE_RE = re.compile(r"```(?:json)?\s*(\{.*\})\s*```", re.DOTALL)
 
 

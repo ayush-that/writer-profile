@@ -10,6 +10,7 @@ from writer_profile.llm import LLMClient, LLMMessage
 class ExtractionError(Exception):
     """Raised when metadata extraction fails."""
 
+
 _EXTRACT_SYSTEM = """You classify a single social post into structured metadata.
 
 Return ONLY a JSON object with these exact keys:

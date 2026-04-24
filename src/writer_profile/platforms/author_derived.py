@@ -13,7 +13,7 @@ def constraint_for(profile: VoiceProfile) -> Constraint:
     if profile.platform is Platform.TWITTER:
         allow_hashtags = profile.stats.hashtag_rate >= HASHTAG_TOLERANCE_THRESHOLD
         avg_tags = profile.stats.avg_hashtags_per_post
-        max_hashtags = max(1, int(round(avg_tags * 2))) if allow_hashtags else 0
+        max_hashtags = max(1, round(avg_tags * 2)) if allow_hashtags else 0
         return TwitterConstraint(
             max_chars=280,
             allow_hashtags=allow_hashtags,

@@ -113,7 +113,7 @@ def test_critic_prompt_includes_draft_and_rules():
 
 
 def test_refine_prompt_includes_feedback_and_validator_issues():
-    sys_, user = build_refine_prompt(
+    _, user = build_refine_prompt(
         draft="some draft",
         platform=Platform.TWITTER,
         constraint=TwitterConstraint(),

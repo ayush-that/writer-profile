@@ -5,10 +5,6 @@ import re
 
 from writer_profile.corpus.models import Platform, Post
 from writer_profile.llm import LLMClient, LLMMessage
-
-
-class VoiceExtractionError(Exception):
-    """Raised when voice profile extraction fails."""
 from writer_profile.voice.profile import (
     LexicalProfile,
     RhetoricalProfile,
@@ -17,6 +13,11 @@ from writer_profile.voice.profile import (
     VoiceProfile,
 )
 from writer_profile.voice.stats import compute_stats
+
+
+class VoiceExtractionError(Exception):
+    """Raised when voice profile extraction fails."""
+
 
 _FENCE_RE = re.compile(r"```(?:json)?\s*(\{.*\})\s*```", re.DOTALL)
 
@@ -78,7 +79,9 @@ def build_voice_profile(
     try:
         data = json.loads(_strip_fence(raw))
     except json.JSONDecodeError as e:
-        raise VoiceExtractionError(f"Failed to parse LLM response as JSON: {e}. Raw: {raw[:200]}") from e
+        raise VoiceExtractionError(
+            f"Failed to parse LLM response as JSON: {e}. Raw: {raw[:200]}"
+        ) from e
 
     return VoiceProfile(
         author=author,
