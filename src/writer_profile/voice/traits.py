@@ -10,7 +10,9 @@ class TraitVector(BaseModel):
     humor: float = Field(default=0.5, ge=0.0, le=1.0, description="serious (0) to playful (1)")
     formality: float = Field(default=0.5, ge=0.0, le=1.0, description="casual (0) to formal (1)")
     energy: float = Field(default=0.5, ge=0.0, le=1.0, description="calm (0) to energetic (1)")
-    conviction: float = Field(default=0.5, ge=0.0, le=1.0, description="tentative (0) to assertive (1)")
+    conviction: float = Field(
+        default=0.5, ge=0.0, le=1.0, description="tentative (0) to assertive (1)"
+    )
     disclosure: float = Field(default=0.5, ge=0.0, le=1.0, description="guarded (0) to open (1)")
 
     def blend(self, other: TraitVector, alpha: float = 0.5) -> TraitVector:

@@ -48,9 +48,14 @@ class StyleFingerprint:
 
     def deviation_from(self, other: StyleFingerprint) -> float:
         diffs = []
-        diffs.append(abs(self.avg_word_length - other.avg_word_length) / max(self.avg_word_length, 1))
+        diffs.append(
+            abs(self.avg_word_length - other.avg_word_length) / max(self.avg_word_length, 1)
+        )
         diffs.append(abs(self.vocabulary_richness - other.vocabulary_richness))
-        diffs.append(abs(self.avg_sentence_length - other.avg_sentence_length) / max(self.avg_sentence_length, 1))
+        diffs.append(
+            abs(self.avg_sentence_length - other.avg_sentence_length)
+            / max(self.avg_sentence_length, 1)
+        )
 
         all_puncts = set(self.punctuation_rates.keys()) | set(other.punctuation_rates.keys())
         if all_puncts:
@@ -80,8 +85,7 @@ def compute_fingerprint(posts: list[Post]) -> StyleFingerprint:
     trigram_counts = Counter(trigrams)
     total_trigrams = len(trigrams) or 1
     char_trigram_top10 = [
-        (tg, count / total_trigrams)
-        for tg, count in trigram_counts.most_common(10)
+        (tg, count / total_trigrams) for tg, count in trigram_counts.most_common(10)
     ]
 
     sentences = re.split(r"[.!?]+", all_text)

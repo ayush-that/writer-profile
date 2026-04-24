@@ -1,15 +1,27 @@
-from datetime import datetime
+from datetime import UTC, datetime
 
 from writer_profile.corpus.models import Platform, Post
 from writer_profile.voice.fingerprint import StyleFingerprint, compute_fingerprint
 
-_DT = datetime(2024, 1, 1)
+_DT = datetime(2024, 1, 1, tzinfo=UTC)
 
 
 def _posts() -> list[Post]:
     return [
-        Post(id="1", text="Hello world! This is a test.", platform=Platform.TWITTER, created_at=_DT, author="ali"),
-        Post(id="2", text="Another post here. Testing more.", platform=Platform.TWITTER, created_at=_DT, author="ali"),
+        Post(
+            id="1",
+            text="Hello world! This is a test.",
+            platform=Platform.TWITTER,
+            created_at=_DT,
+            author="ali",
+        ),
+        Post(
+            id="2",
+            text="Another post here. Testing more.",
+            platform=Platform.TWITTER,
+            created_at=_DT,
+            author="ali",
+        ),
         Post(id="3", text="Short one.", platform=Platform.TWITTER, created_at=_DT, author="ali"),
     ]
 
@@ -26,6 +38,7 @@ def test_compute_fingerprint_returns_style_fingerprint():
 
 def test_compute_fingerprint_empty_raises():
     import pytest
+
     with pytest.raises(ValueError, match="empty"):
         compute_fingerprint([])
 

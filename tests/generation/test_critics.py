@@ -1,4 +1,3 @@
-from writer_profile.corpus.models import Platform
 from writer_profile.generation.critics import (
     CRITICS,
     CriticFeedback,

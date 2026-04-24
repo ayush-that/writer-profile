@@ -109,12 +109,22 @@ def test_query_empty_collection_returns_empty_list(tmp_path: Path):
 
 def test_query_diverse_spans_tones(tmp_path: Path, embedder):
     store = ExemplarStore(path=str(tmp_path / "diverse"), embedder=embedder, collection="diverse")
-    store.add_many([
-        _ann("t1", Platform.TWITTER, "first observational post about ai", Tone.OBSERVATIONAL, ["ai"]),
-        _ann("t2", Platform.TWITTER, "second observational about ai", Tone.OBSERVATIONAL, ["ai"]),
-        _ann("t3", Platform.TWITTER, "story about building ai", Tone.STORY, ["ai"]),
-        _ann("t4", Platform.TWITTER, "contrarian take on ai", Tone.CONTRARIAN, ["ai"]),
-    ])
+    store.add_many(
+        [
+            _ann(
+                "t1",
+                Platform.TWITTER,
+                "first observational post about ai",
+                Tone.OBSERVATIONAL,
+                ["ai"],
+            ),
+            _ann(
+                "t2", Platform.TWITTER, "second observational about ai", Tone.OBSERVATIONAL, ["ai"]
+            ),
+            _ann("t3", Platform.TWITTER, "story about building ai", Tone.STORY, ["ai"]),
+            _ann("t4", Platform.TWITTER, "contrarian take on ai", Tone.CONTRARIAN, ["ai"]),
+        ]
+    )
 
     hits = store.query_diverse(
         text="artificial intelligence",

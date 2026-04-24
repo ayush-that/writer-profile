@@ -1,4 +1,5 @@
 import pytest
+
 from writer_profile.voice.traits import TraitVector
 
 

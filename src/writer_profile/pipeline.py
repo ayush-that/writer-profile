@@ -4,7 +4,7 @@ from dataclasses import dataclass, field
 
 from writer_profile.corpus.models import Idea, Platform
 from writer_profile.generation.generator import generate_draft
-from writer_profile.generation.refine import RefineStep, refine, refine_multi, MultiRefineResult
+from writer_profile.generation.refine import RefineStep, refine, refine_multi
 from writer_profile.llm import LLMClient
 from writer_profile.platforms.author_derived import constraint_for
 from writer_profile.retrieval.store import ExemplarHit, ExemplarStore
