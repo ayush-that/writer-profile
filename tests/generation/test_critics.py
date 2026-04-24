@@ -1,6 +1,10 @@
+import pytest
+
 from writer_profile.generation.critics import (
     CRITICS,
     CriticFeedback,
+    _is_ok,
+    parse_critic_response,
     synthesize_feedback,
 )
 
@@ -32,3 +36,36 @@ def test_synthesize_feedback_all_ok():
     ]
     combined = synthesize_feedback(feedbacks)
     assert combined == "OK"
+
+
+@pytest.mark.parametrize(
+    "feedback,expected",
+    [
+        ("OK", True),
+        ("OK.", True),
+        ("ok", True),
+        ("Ok, looks good", True),
+        ("- OK, no issues", True),
+        ("* OK", True),
+        ("", False),
+        ("Not OK", False),
+        ("The hook is weak", False),
+        ("   ", False),
+    ],
+)
+def test_is_ok_detection(feedback: str, expected: bool):
+    assert _is_ok(feedback) == expected
+
+
+def test_parse_critic_response_ok():
+    result = parse_critic_response("voice_fidelity", "OK")
+    assert result.name == "voice_fidelity"
+    assert result.feedback == "OK"
+    assert result.is_ok is True
+
+
+def test_parse_critic_response_not_ok():
+    result = parse_critic_response("engagement", "- Hook is weak\n- Add CTA")
+    assert result.name == "engagement"
+    assert "Hook is weak" in result.feedback
+    assert result.is_ok is False

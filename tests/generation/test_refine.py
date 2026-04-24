@@ -1,5 +1,5 @@
 from writer_profile.corpus.models import Platform
-from writer_profile.generation.refine import refine
+from writer_profile.generation.refine import MultiRefineResult, refine, refine_multi
 from writer_profile.llm import StubLLMClient
 from writer_profile.platforms.twitter import TwitterConstraint
 
@@ -84,11 +84,6 @@ def test_refine_caps_at_max_iterations():
 
 
 def test_refine_short_circuits_on_ok_with_punctuation():
-    from writer_profile.corpus.models import Platform
-    from writer_profile.generation.refine import refine
-    from writer_profile.llm import StubLLMClient
-    from writer_profile.platforms.twitter import TwitterConstraint
-
     initial = "the bottleneck in ai moved from generation to evaluation"
     llm = StubLLMClient(responses=["OK."])
     result = refine(
@@ -104,11 +99,6 @@ def test_refine_short_circuits_on_ok_with_punctuation():
 
 
 def test_refine_short_circuits_on_lowercase_ok():
-    from writer_profile.corpus.models import Platform
-    from writer_profile.generation.refine import refine
-    from writer_profile.llm import StubLLMClient
-    from writer_profile.platforms.twitter import TwitterConstraint
-
     initial = "the bottleneck in ai moved from generation to evaluation"
     llm = StubLLMClient(responses=["ok, looks strong to me"])
     result = refine(
@@ -123,18 +113,7 @@ def test_refine_short_circuits_on_lowercase_ok():
 
 
 def test_refine_multi_returns_result():
-    from writer_profile.corpus.models import Platform
-    from writer_profile.generation.refine import MultiRefineResult, refine_multi
-    from writer_profile.llm import StubLLMClient
-    from writer_profile.platforms.twitter import TwitterConstraint
-
-    llm = StubLLMClient(
-        responses=[
-            "OK",  # voice_fidelity critic
-            "OK",  # engagement critic
-            "OK",  # platform_native critic
-        ]
-    )
+    llm = StubLLMClient(responses=["OK", "OK", "OK"])
     result = refine_multi(
         draft="Test draft here",
         platform=Platform.TWITTER,
@@ -145,5 +124,5 @@ def test_refine_multi_returns_result():
         max_iterations=2,
     )
     assert isinstance(result, MultiRefineResult)
-    assert result.final_draft == "Test draft here"  # All OK, no rewrite needed
+    assert result.final_draft == "Test draft here"
     assert result.all_critics_ok is True

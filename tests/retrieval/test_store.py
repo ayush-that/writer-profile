@@ -64,11 +64,6 @@ def test_store_roundtrip_with_platform_filter(tmp_path, embedder):
 
 
 def test_store_filters_by_author(tmp_path, embedder):
-    from datetime import UTC, datetime
-
-    from writer_profile.corpus.models import AnnotatedPost, Platform, Post, PostMetadata, Tone
-    from writer_profile.retrieval.store import ExemplarStore
-
     def ann(pid: str, author: str, text: str) -> AnnotatedPost:
         return AnnotatedPost(
             post=Post(
@@ -102,7 +97,6 @@ def test_store_filters_by_author(tmp_path, embedder):
 def test_query_empty_collection_returns_empty_list(tmp_path: Path):
     embedder = Embedder(model_name="sentence-transformers/all-MiniLM-L6-v2")
     store = ExemplarStore(path=str(tmp_path), embedder=embedder)
-    # Query without adding anything
     hits = store.query(text="hello world", platform=Platform.TWITTER, author="nobody", k=5)
     assert hits == []
 
@@ -133,9 +127,8 @@ def test_query_diverse_spans_tones(tmp_path: Path, embedder):
         k=3,
     )
     assert len(hits) == 3
-    # Should span different tones if available
     tones = {h.metadata.tone for h in hits}
-    assert len(tones) >= 2  # At least 2 different tones
+    assert len(tones) >= 2
 
 
 def test_store_persists_across_instances(tmp_path, embedder):

@@ -85,13 +85,10 @@ class ExemplarStore:
         author: str | None = None,
         k: int = 5,
     ) -> list[ExemplarHit]:
-        """Query with diversity sampling across tones and length buckets."""
-        # Over-retrieve
         candidates = self.query(text=text, platform=platform, author=author, k=k * 3)
         if len(candidates) <= k:
             return candidates
 
-        # Group by tone
         by_tone: dict[str, list[ExemplarHit]] = {}
         for hit in candidates:
             tone = hit.metadata.tone
@@ -99,7 +96,6 @@ class ExemplarStore:
                 by_tone[tone] = []
             by_tone[tone].append(hit)
 
-        # Round-robin sample from each tone
         diverse: list[ExemplarHit] = []
         tone_keys = list(by_tone.keys())
         idx = 0
@@ -108,7 +104,6 @@ class ExemplarStore:
             if by_tone[tone]:
                 diverse.append(by_tone[tone].pop(0))
             idx += 1
-            # Remove empty tone groups
             tone_keys = [t for t in tone_keys if by_tone[t]]
             if not tone_keys:
                 break

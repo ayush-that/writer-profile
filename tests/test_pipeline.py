@@ -141,13 +141,12 @@ def test_pipeline_multi_critic_and_diverse(tmp_path, embedder):
 
     hooks = HookLibrary.load(Path("data/hooks.jsonl"))
 
-    # generate_draft (1) + 3 critics all-OK (3) = 4 calls
     llm = StubLLMClient(
         responses=[
             "the bottleneck in ai agents moved from generation to evaluation",
-            "OK",  # voice_fidelity critic
-            "OK",  # engagement critic
-            "OK",  # platform_native critic
+            "OK",
+            "OK",
+            "OK",
         ]
     )
     pipe = GenerationPipeline(

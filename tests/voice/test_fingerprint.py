@@ -1,5 +1,7 @@
 from datetime import UTC, datetime
 
+import pytest
+
 from writer_profile.corpus.models import Platform, Post
 from writer_profile.voice.fingerprint import StyleFingerprint, compute_fingerprint
 
@@ -37,8 +39,6 @@ def test_compute_fingerprint_returns_style_fingerprint():
 
 
 def test_compute_fingerprint_empty_raises():
-    import pytest
-
     with pytest.raises(ValueError, match="empty"):
         compute_fingerprint([])
 

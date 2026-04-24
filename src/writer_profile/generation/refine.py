@@ -3,18 +3,17 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 
 from writer_profile.corpus.models import Platform
+from writer_profile.generation.critics import (
+    CRITICS,
+    CriticFeedback,
+    _is_ok,
+    parse_critic_response,
+    synthesize_feedback,
+)
 from writer_profile.generation.generator import unwrap
 from writer_profile.generation.prompts import build_critic_prompt, build_refine_prompt
 from writer_profile.llm import LLMClient, LLMMessage
 from writer_profile.platforms.base import Constraint
-
-
-def _is_ok(feedback: str) -> bool:
-    stripped = feedback.strip().lstrip("-* ").strip()
-    if not stripped:
-        return False
-    first_token = stripped.split()[0].strip(".,!:;").upper()
-    return first_token == "OK"
 
 
 @dataclass
@@ -136,14 +135,6 @@ def refine(
     return RefineResult(final_draft=current, iterations=iterations, history=history)
 
 
-from writer_profile.generation.critics import (  # noqa: E402
-    CRITICS,
-    CriticFeedback,
-    parse_critic_response,
-    synthesize_feedback,
-)
-
-
 @dataclass
 class MultiRefineStep:
     draft: str
@@ -230,7 +221,6 @@ def refine_multi(
                 history=history,
             )
 
-        # Rewrite based on synthesized feedback
         current = _rewrite(
             draft=current,
             platform=platform,

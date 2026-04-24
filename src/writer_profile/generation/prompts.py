@@ -26,8 +26,8 @@ def _format_profile(profile: VoiceProfile) -> str:
     rhet = profile.rhetorical
     tone = profile.tonal
 
-    return (
-        f"AUTHOR: {profile.author} on {profile.platform.value}\n\n"
+    parts = [
+        f"AUTHOR: {profile.author} on {profile.platform.value}\n",
         "STATISTICAL FINGERPRINT:\n"
         f"- sentence length: avg {s.avg_words_per_sentence:.1f} words "
         f"(p25/p50/p75 = {s.sentence_length_p25_p50_p75[0]:.0f}/"
@@ -42,29 +42,51 @@ def _format_profile(profile: VoiceProfile) -> str:
         f"- asks questions: {s.question_rate * 100:.0f}% of posts\n"
         f"- mentions others: {s.mention_rate * 100:.0f}% of posts\n"
         f"- typical openers (lowercased): {', '.join(s.top_openers[:5])}\n"
-        f"- typical closers (lowercased): {', '.join(s.top_closers[:5])}\n\n"
-        "LEXICAL:\n"
-        f"- recurring phrases: {', '.join(lex.recurring_phrases[:8])}\n"
-        f"- jargon level: {lex.jargon_level}\n"
-        f"- notes: {lex.notes}\n\n"
-        "STRUCTURAL:\n"
-        f"- openers: {', '.join(struct.typical_opener_patterns)}\n"
-        f"- closers: {', '.join(struct.typical_closer_patterns)}\n"
-        f"- paragraph shape: {struct.paragraph_shape}\n"
-        f"- list usage: {struct.list_usage}\n"
-        f"- question usage: {struct.question_usage}\n\n"
-        "RHETORICAL:\n"
-        f"- analogies: {rhet.uses_analogies}, anecdotes: {rhet.uses_personal_anecdotes}, "
-        f"data points: {rhet.uses_data_points}\n"
-        f"- attribution: {rhet.attribution_style}\n"
-        f"- name drops: {rhet.name_drop_rate}\n\n"
-        "TONAL:\n"
-        f"- warmth: {tone.warmth} / humor: {tone.humor} / "
-        f"conviction: {tone.conviction} / disclosure: {tone.disclosure} / "
-        f"vulnerability: {tone.vulnerability}\n\n"
-        "CANONICAL EXAMPLES (most representative of this voice):\n"
-        + "\n\n".join(f"- {e}" for e in profile.examples[:5])
+        f"- typical closers (lowercased): {', '.join(s.top_closers[:5])}\n",
+    ]
+
+    if profile.fingerprint:
+        fp = profile.fingerprint
+        top_trigrams = ", ".join(f'"{t}"' for t in fp.char_trigram_top10[:5])
+        parts.append(
+            "STYLOMETRIC FINGERPRINT:\n"
+            f"- avg word length: {fp.avg_word_length:.1f} chars\n"
+            f"- vocabulary richness: {fp.vocabulary_richness:.2f}\n"
+            f"- sentence length variance: {fp.sentence_length_variance:.1f}\n"
+            f"- signature char trigrams: {top_trigrams}\n"
+        )
+
+    trait_desc = profile.traits.to_prompt_description()
+    if trait_desc:
+        parts.append(f"VOICE PERSONALITY: {trait_desc}\n")
+
+    parts.extend(
+        [
+            "LEXICAL:\n"
+            f"- recurring phrases: {', '.join(lex.recurring_phrases[:8])}\n"
+            f"- jargon level: {lex.jargon_level}\n"
+            f"- notes: {lex.notes}\n",
+            "STRUCTURAL:\n"
+            f"- openers: {', '.join(struct.typical_opener_patterns)}\n"
+            f"- closers: {', '.join(struct.typical_closer_patterns)}\n"
+            f"- paragraph shape: {struct.paragraph_shape}\n"
+            f"- list usage: {struct.list_usage}\n"
+            f"- question usage: {struct.question_usage}\n",
+            "RHETORICAL:\n"
+            f"- analogies: {rhet.uses_analogies}, anecdotes: {rhet.uses_personal_anecdotes}, "
+            f"data points: {rhet.uses_data_points}\n"
+            f"- attribution: {rhet.attribution_style}\n"
+            f"- name drops: {rhet.name_drop_rate}\n",
+            "TONAL:\n"
+            f"- warmth: {tone.warmth} / humor: {tone.humor} / "
+            f"conviction: {tone.conviction} / disclosure: {tone.disclosure} / "
+            f"vulnerability: {tone.vulnerability}\n",
+            "CANONICAL EXAMPLES (most representative of this voice):\n"
+            + "\n\n".join(f"- {e}" for e in profile.examples[:5]),
+        ]
     )
+
+    return "\n".join(parts)
 
 
 def build_generator_prompt(

@@ -60,6 +60,5 @@ class VoiceProfile(BaseModel):
     rhetorical: RhetoricalProfile
     tonal: TonalProfile
     examples: list[str]
-    # V2 additions
     fingerprint: StyleFingerprint | None = Field(default=None)
     traits: TraitVector = Field(default_factory=TraitVector)
