@@ -79,6 +79,15 @@ def test_store_missing_profile_raises(tmp_path: Path):
         store.load(author="nobody", platform=Platform.TWITTER)
 
 
+def test_store_rejects_invalid_author_names(tmp_path: Path):
+    store = VoiceProfileStore(root=tmp_path)
+
+    invalid_names = ["../etc/passwd", "foo\x00bar", "a/b/c", "..\\windows"]
+    for name in invalid_names:
+        with pytest.raises(ValueError, match="Invalid author name"):
+            store.save(_profile(name, Platform.TWITTER))
+
+
 def test_store_list_profiles(tmp_path: Path):
     store = VoiceProfileStore(root=tmp_path)
     store.save(_profile("ali", Platform.TWITTER))
