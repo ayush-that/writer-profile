@@ -107,6 +107,27 @@ def test_query_empty_collection_returns_empty_list(tmp_path: Path):
     assert hits == []
 
 
+def test_query_diverse_spans_tones(tmp_path: Path, embedder):
+    store = ExemplarStore(path=str(tmp_path / "diverse"), embedder=embedder, collection="diverse")
+    store.add_many([
+        _ann("t1", Platform.TWITTER, "first observational post about ai", Tone.OBSERVATIONAL, ["ai"]),
+        _ann("t2", Platform.TWITTER, "second observational about ai", Tone.OBSERVATIONAL, ["ai"]),
+        _ann("t3", Platform.TWITTER, "story about building ai", Tone.STORY, ["ai"]),
+        _ann("t4", Platform.TWITTER, "contrarian take on ai", Tone.CONTRARIAN, ["ai"]),
+    ])
+
+    hits = store.query_diverse(
+        text="artificial intelligence",
+        platform=Platform.TWITTER,
+        author="ali",
+        k=3,
+    )
+    assert len(hits) == 3
+    # Should span different tones if available
+    tones = {h.metadata.tone for h in hits}
+    assert len(tones) >= 2  # At least 2 different tones
+
+
 def test_store_persists_across_instances(tmp_path, embedder):
     path = str(tmp_path / "chroma")
     s1 = ExemplarStore(path=path, embedder=embedder, collection="persist")
