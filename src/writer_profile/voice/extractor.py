@@ -5,6 +5,10 @@ import re
 
 from writer_profile.corpus.models import Platform, Post
 from writer_profile.llm import LLMClient, LLMMessage
+
+
+class VoiceExtractionError(Exception):
+    """Raised when voice profile extraction fails."""
 from writer_profile.voice.profile import (
     LexicalProfile,
     RhetoricalProfile,
@@ -33,7 +37,7 @@ Return ONLY a JSON object with these exact top-level keys:
 - tonal: {{warmth: "warm"|"neutral"|"distant", humor: "none"|"dry"|"playful"|"sharp", conviction: "low"|"medium"|"high", disclosure: "rare"|"occasional"|"moderate"|"frequent", vulnerability: "rare"|"occasional"|"moderate"|"frequent"}}
 - examples: [str]  (3-5 verbatim posts that most exemplify the voice)
 
-No prose. No explanation. Just the JSON."""  # noqa: E501
+No prose. No explanation. Just the JSON."""
 
 
 def _strip_fence(raw: str) -> str:
@@ -71,7 +75,10 @@ def build_voice_profile(
         max_tokens=2048,
         temperature=0.1,
     )
-    data = json.loads(_strip_fence(raw))
+    try:
+        data = json.loads(_strip_fence(raw))
+    except json.JSONDecodeError as e:
+        raise VoiceExtractionError(f"Failed to parse LLM response as JSON: {e}. Raw: {raw[:200]}") from e
 
     return VoiceProfile(
         author=author,

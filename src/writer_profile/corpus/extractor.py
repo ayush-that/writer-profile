@@ -6,6 +6,10 @@ import re
 from writer_profile.corpus.models import Post, PostMetadata
 from writer_profile.llm import LLMClient, LLMMessage
 
+
+class ExtractionError(Exception):
+    """Raised when metadata extraction fails."""
+
 _EXTRACT_SYSTEM = """You classify a single social post into structured metadata.
 
 Return ONLY a JSON object with these exact keys:
@@ -36,5 +40,8 @@ def extract_metadata(post: Post, *, llm: LLMClient, model: str) -> PostMetadata:
         max_tokens=256,
         temperature=0.0,
     )
-    data = json.loads(_strip_json_fence(raw))
+    try:
+        data = json.loads(_strip_json_fence(raw))
+    except json.JSONDecodeError as e:
+        raise ExtractionError(f"Failed to parse LLM response as JSON: {e}. Raw: {raw[:200]}") from e
     return PostMetadata.model_validate(data)

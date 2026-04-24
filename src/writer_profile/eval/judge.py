@@ -8,6 +8,10 @@ from pydantic import BaseModel
 from writer_profile.corpus.models import Platform, Post
 from writer_profile.llm import LLMClient, LLMMessage
 
+
+class JudgeError(Exception):
+    """Raised when judge scoring fails."""
+
 _FENCE_RE = re.compile(r"```(?:json)?\s*(\{.*\})\s*```", re.DOTALL)
 
 
@@ -43,7 +47,7 @@ REFERENCE POSTS (author's real {platform} output):
 Return ONLY a JSON object:
 {{"voice_fidelity": int, "voice_reasoning": str, "naturalness": int, "naturalness_reasoning": str, "ai_tics": [str]}}
 
-No prose. No explanation. Just the JSON."""  # noqa: E501
+No prose. No explanation. Just the JSON."""
 
 
 def score_post(
@@ -65,5 +69,8 @@ def score_post(
         max_tokens=512,
         temperature=0.0,
     )
-    data = json.loads(_strip_fence(raw))
+    try:
+        data = json.loads(_strip_fence(raw))
+    except json.JSONDecodeError as e:
+        raise JudgeError(f"Failed to parse LLM response as JSON: {e}. Raw: {raw[:200]}") from e
     return JudgeScore.model_validate(data)
