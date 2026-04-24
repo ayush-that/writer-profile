@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from pydantic import Field
+from pydantic import Field, SecretStr
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -11,7 +11,7 @@ class Settings(BaseSettings):
         extra="ignore",
     )
 
-    anthropic_api_key: str = Field(alias="ANTHROPIC_API_KEY")
+    anthropic_api_key: SecretStr = Field(alias="ANTHROPIC_API_KEY")
     chroma_path: str = ".chroma"
     profiles_path: str = "./profiles"
     hooks_path: str = "./data/hooks.jsonl"

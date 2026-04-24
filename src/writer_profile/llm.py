@@ -4,6 +4,7 @@ from dataclasses import dataclass, field
 from typing import Literal, Protocol
 
 import anthropic
+from pydantic import SecretStr
 
 
 @dataclass(frozen=True)
@@ -32,8 +33,9 @@ class LLMClient(Protocol):
 
 
 class AnthropicClient:
-    def __init__(self, api_key: str) -> None:
-        self._client = anthropic.Anthropic(api_key=api_key)
+    def __init__(self, api_key: str | SecretStr) -> None:
+        key = api_key.get_secret_value() if hasattr(api_key, "get_secret_value") else api_key
+        self._client = anthropic.Anthropic(api_key=key)
 
     def complete(
         self,
