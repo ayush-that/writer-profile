@@ -1,4 +1,5 @@
 from datetime import UTC, datetime
+from pathlib import Path
 
 import pytest
 
@@ -96,6 +97,14 @@ def test_store_filters_by_author(tmp_path, embedder):
     hits = store.query(text="open data formats", platform=Platform.TWITTER, author="ali", k=5)
     assert len(hits) == 1
     assert hits[0].post.author == "ali"
+
+
+def test_query_empty_collection_returns_empty_list(tmp_path: Path):
+    embedder = Embedder(model_name="sentence-transformers/all-MiniLM-L6-v2")
+    store = ExemplarStore(path=str(tmp_path), embedder=embedder)
+    # Query without adding anything
+    hits = store.query(text="hello world", platform=Platform.TWITTER, author="nobody", k=5)
+    assert hits == []
 
 
 def test_store_persists_across_instances(tmp_path, embedder):

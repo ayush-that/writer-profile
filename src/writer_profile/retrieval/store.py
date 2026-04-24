@@ -62,7 +62,11 @@ class ExemplarStore:
         where = clauses[0] if len(clauses) == 1 else {"$and": clauses}
         result = self._col.query(query_embeddings=[vec], n_results=k, where=where)
         hits: list[ExemplarHit] = []
-        for meta, dist in zip(result["metadatas"][0], result["distances"][0], strict=True):
+        metadatas = result.get("metadatas", [[]])
+        distances = result.get("distances", [[]])
+        if not metadatas or not metadatas[0]:
+            return hits
+        for meta, dist in zip(metadatas[0], distances[0], strict=True):
             post = Post.model_validate_json(meta["post_json"])
             pm = PostMetadata(
                 topics=json.loads(meta["topics_json"]),
