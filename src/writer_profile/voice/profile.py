@@ -2,10 +2,12 @@ from __future__ import annotations
 
 from typing import Literal
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, Field
 
 from writer_profile.corpus.models import Platform
+from writer_profile.voice.fingerprint import StyleFingerprint
 from writer_profile.voice.stats import VoiceStats
+from writer_profile.voice.traits import TraitVector
 
 JargonLevel = Literal["low", "medium", "high"]
 Intensity = Literal["rare", "occasional", "moderate", "frequent"]
@@ -58,3 +60,6 @@ class VoiceProfile(BaseModel):
     rhetorical: RhetoricalProfile
     tonal: TonalProfile
     examples: list[str]
+    # V2 additions
+    fingerprint: StyleFingerprint | None = Field(default=None)
+    traits: TraitVector = Field(default_factory=TraitVector)
