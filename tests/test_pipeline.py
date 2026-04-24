@@ -116,6 +116,8 @@ def test_pipeline_end_to_end_with_stub(tmp_path, embedder):
         writing_model="claude-sonnet-4-6",
         retrieval_k=3,
         refine_max_iterations=2,
+        use_multi_critic=False,
+        use_diverse_sampling=False,
     )
     out = pipe.generate(
         author="ali",
@@ -127,6 +129,47 @@ def test_pipeline_end_to_end_with_stub(tmp_path, embedder):
     assert out.author == "ali"
     assert "evaluation" in out.text
     assert out.validation_ok is True
+    assert len(out.exemplars_used) == 1
+
+
+def test_pipeline_multi_critic_and_diverse(tmp_path, embedder):
+    store = ExemplarStore(path=str(tmp_path / "c4"), embedder=embedder, collection="pipe4")
+    store.add_many([_ann("b", "ai evaluation is the new bottleneck")])
+
+    profiles = VoiceProfileStore(root=tmp_path / "profiles")
+    profiles.save(_profile())
+
+    hooks = HookLibrary.load(Path("data/hooks.jsonl"))
+
+    # generate_draft (1) + 3 critics all-OK (3) = 4 calls
+    llm = StubLLMClient(
+        responses=[
+            "the bottleneck in ai agents moved from generation to evaluation",
+            "OK",  # voice_fidelity critic
+            "OK",  # engagement critic
+            "OK",  # platform_native critic
+        ]
+    )
+    pipe = GenerationPipeline(
+        store=store,
+        profiles=profiles,
+        hooks=hooks,
+        llm=llm,
+        writing_model="claude-sonnet-4-6",
+        retrieval_k=3,
+        refine_max_iterations=2,
+        use_multi_critic=True,
+        use_diverse_sampling=True,
+    )
+    out = pipe.generate(
+        author="ali",
+        platform=Platform.TWITTER,
+        idea=Idea(topic="ai evaluation bottlenecks", angle="generation is easy, eval is hard"),
+    )
+    assert isinstance(out, PostDraft)
+    assert out.platform is Platform.TWITTER
+    assert out.author == "ali"
+    assert "evaluation" in out.text
     assert len(out.exemplars_used) == 1
 
 

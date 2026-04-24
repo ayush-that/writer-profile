@@ -4,7 +4,7 @@ from dataclasses import dataclass, field
 
 from writer_profile.corpus.models import Idea, Platform
 from writer_profile.generation.generator import generate_draft
-from writer_profile.generation.refine import RefineStep, refine
+from writer_profile.generation.refine import RefineStep, refine, refine_multi, MultiRefineResult
 from writer_profile.llm import LLMClient
 from writer_profile.platforms.author_derived import constraint_for
 from writer_profile.retrieval.store import ExemplarHit, ExemplarStore
@@ -37,6 +37,8 @@ class GenerationPipeline:
         retrieval_k: int = 5,
         refine_max_iterations: int = 2,
         hook_suggestion_k: int = 5,
+        use_multi_critic: bool = True,
+        use_diverse_sampling: bool = True,
     ) -> None:
         self._store = store
         self._profiles = profiles
@@ -46,6 +48,8 @@ class GenerationPipeline:
         self._retrieval_k = retrieval_k
         self._refine_max_iterations = refine_max_iterations
         self._hook_k = hook_suggestion_k
+        self._use_multi_critic = use_multi_critic
+        self._use_diverse_sampling = use_diverse_sampling
 
     def _profile(self, author: str, platform: Platform) -> VoiceProfile:
         return self._profiles.load(author=author, platform=platform)
@@ -61,12 +65,20 @@ class GenerationPipeline:
     ) -> PostDraft:
         profile = self._profile(author, platform)
         constraint = constraint_for(profile)
-        exemplars = self._store.query(
-            text=f"{idea.topic}\n{idea.angle}".strip(),
-            platform=platform,
-            author=author,
-            k=self._retrieval_k,
-        )
+        if self._use_diverse_sampling:
+            exemplars = self._store.query_diverse(
+                text=f"{idea.topic}\n{idea.angle}".strip(),
+                platform=platform,
+                author=author,
+                k=self._retrieval_k,
+            )
+        else:
+            exemplars = self._store.query(
+                text=f"{idea.topic}\n{idea.angle}".strip(),
+                platform=platform,
+                author=author,
+                k=self._retrieval_k,
+            )
         hook_suggestions = self._hooks.suggest(platform=platform, k=self._hook_k, seed=hook_seed)
 
         initial = generate_draft(
@@ -80,14 +92,34 @@ class GenerationPipeline:
             virality_strength=virality_strength,
         )
 
-        refined = refine(
-            draft=initial,
-            platform=platform,
-            constraint=constraint,
-            llm=self._llm,
-            model=self._writing_model,
-            max_iterations=self._refine_max_iterations,
-        )
+        if self._use_multi_critic:
+            refined = refine_multi(
+                draft=initial,
+                platform=platform,
+                constraint=constraint,
+                author=author,
+                llm=self._llm,
+                model=self._writing_model,
+                max_iterations=self._refine_max_iterations,
+            )
+            refine_history = [
+                RefineStep(
+                    draft=s.draft,
+                    critic_feedback=s.synthesized_feedback,
+                    validator_issues=s.validator_issues,
+                )
+                for s in refined.history
+            ]
+        else:
+            refined = refine(
+                draft=initial,
+                platform=platform,
+                constraint=constraint,
+                llm=self._llm,
+                model=self._writing_model,
+                max_iterations=self._refine_max_iterations,
+            )
+            refine_history = refined.history
 
         final = constraint.validate(refined.final_draft)
         return PostDraft(
@@ -96,7 +128,7 @@ class GenerationPipeline:
             platform=platform,
             idea=idea,
             exemplars_used=exemplars,
-            refine_history=refined.history,
+            refine_history=refine_history,
             validation_ok=bool(final),
             validation_issues=list(final.issues),
         )

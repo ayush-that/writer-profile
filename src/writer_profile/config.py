@@ -22,3 +22,5 @@ class Settings(BaseSettings):
     refine_max_iterations: int = 2
     retrieval_k: int = 5
     hook_suggestion_k: int = 5
+    use_multi_critic: bool = True
+    use_diverse_sampling: bool = True
