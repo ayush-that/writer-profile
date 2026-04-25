@@ -16,6 +16,7 @@ from writer_profile.retrieval.embedder import Embedder
 from writer_profile.retrieval.store import ExemplarStore
 from writer_profile.virality.hooks import HookLibrary
 from writer_profile.voice.extractor import build_voice_profile
+from writer_profile.scraper import ExaScraper, ScrapedPost
 from writer_profile.voice.store import VoiceProfileStore
 
 app = typer.Typer(help="CEO Voice Agent — style-aware post generator for X and LinkedIn.")
@@ -263,6 +264,80 @@ def evaluate(
                 + "\n"
             )
     typer.echo(f"wrote scores: {out_file}")
+
+
+def _write_posts(posts: list[ScrapedPost], path: Path) -> None:
+    with path.open("w", encoding="utf-8") as f:
+        for p in posts:
+            f.write(
+                json.dumps(
+                    {
+                        "id": p.id,
+                        "author": p.author,
+                        "platform": p.platform,
+                        "text": p.text,
+                        "created_at": p.created_at.isoformat(),
+                    }
+                )
+                + "\n"
+            )
+
+
+@app.command()
+def scrape(
+    author_name: str = typer.Argument(..., help="Full name (e.g. 'Ali Ghodsi')"),
+    linkedin_handle: str = typer.Option(..., help="LinkedIn handle (e.g. 'alighodsi')"),
+    output_dir: Path = typer.Option(Path("./data"), help="Output directory for JSONL files"),
+    max_linkedin: int = typer.Option(50, min=1, max=100, help="Max LinkedIn posts"),
+    max_news: int = typer.Option(30, min=1, max=100, help="Max news articles"),
+    dry_run: bool = typer.Option(False, "--dry-run", help="Show config without scraping"),
+) -> None:
+    """Scrape LinkedIn posts and news for a CEO via Exa API."""
+    settings = Settings()
+    author_id = author_name.lower().replace(" ", "_")
+
+    if dry_run:
+        typer.echo(
+            json.dumps(
+                {
+                    "author_name": author_name,
+                    "author_id": author_id,
+                    "linkedin_handle": linkedin_handle,
+                    "output_dir": str(output_dir),
+                    "max_linkedin": max_linkedin,
+                    "max_news": max_news,
+                    "dry_run": True,
+                }
+            )
+        )
+        raise typer.Exit(0)
+
+    output_dir.mkdir(parents=True, exist_ok=True)
+    scraper = ExaScraper(api_key=settings.exa_api_key.get_secret_value())
+
+    # Scrape LinkedIn
+    typer.echo(f"Scraping LinkedIn posts for @{linkedin_handle}...")
+    linkedin_posts = scraper.scrape_linkedin_posts(
+        handle=linkedin_handle,
+        author=author_id,
+        max_results=max_linkedin,
+    )
+    linkedin_path = output_dir / f"{author_id}_linkedin.jsonl"
+    _write_posts(linkedin_posts, linkedin_path)
+    typer.echo(f"  {len(linkedin_posts)} posts → {linkedin_path}")
+
+    # Scrape news
+    typer.echo(f"Scraping news about {author_name}...")
+    news_posts = scraper.scrape_news(
+        name=author_name,
+        author=author_id,
+        max_results=max_news,
+    )
+    news_path = output_dir / f"{author_id}_news.jsonl"
+    _write_posts(news_posts, news_path)
+    typer.echo(f"  {len(news_posts)} articles → {news_path}")
+
+    typer.echo(f"\nDone! Ingest with: writer ingest {output_dir}/{author_id}_*.jsonl --author {author_id}")
 
 
 if __name__ == "__main__":
