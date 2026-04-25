@@ -37,6 +37,7 @@ def test_cli_help_lists_commands():
 def test_cli_generate_dry_run(tmp_path, sample_jsonl, monkeypatch):
     monkeypatch.setenv("ANTHROPIC_API_KEY", "sk-test")
     monkeypatch.setenv("GEMINI_API_KEY", "gemini-test")
+    monkeypatch.setenv("EXA_API_KEY", "exa-test")
     monkeypatch.setenv("WRITER_PROFILE_CHROMA_PATH", str(tmp_path / "c"))
     monkeypatch.setenv("WRITER_PROFILE_PROFILES_PATH", str(tmp_path / "profiles"))
 
