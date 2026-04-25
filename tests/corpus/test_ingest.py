@@ -6,13 +6,13 @@ import pytest
 from writer_profile.corpus.ingest import ingest_file
 from writer_profile.corpus.models import Platform, Post
 from writer_profile.llm import StubLLMClient
-from writer_profile.retrieval.embedder import Embedder
+from writer_profile.retrieval.embedder import StubEmbedder
 from writer_profile.retrieval.store import ExemplarStore
 
 
 @pytest.fixture(scope="module")
-def embedder() -> Embedder:
-    return Embedder(model_name="sentence-transformers/all-MiniLM-L6-v2")
+def embedder() -> StubEmbedder:
+    return StubEmbedder(dimensions=768)
 
 
 def _post_to_line(p: Post) -> str:

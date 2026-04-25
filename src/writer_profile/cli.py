@@ -24,7 +24,11 @@ app.add_typer(profile_app, name="profile")
 
 
 def _pipeline(settings: Settings) -> GenerationPipeline:
-    embedder = Embedder(model_name=settings.embedding_model)
+    embedder = Embedder(
+        api_key=settings.gemini_api_key.get_secret_value(),
+        model=settings.embedding_model,
+        dimensions=settings.embedding_dimensions,
+    )
     store = ExemplarStore(path=settings.chroma_path, embedder=embedder)
     profiles = VoiceProfileStore(root=settings.profiles_path)
     hooks = HookLibrary.load(settings.hooks_path)
@@ -48,7 +52,11 @@ def ingest(
 ) -> None:
     """Ingest a JSONL corpus of past posts into the exemplar store."""
     settings = Settings()
-    embedder = Embedder(model_name=settings.embedding_model)
+    embedder = Embedder(
+        api_key=settings.gemini_api_key.get_secret_value(),
+        model=settings.embedding_model,
+        dimensions=settings.embedding_dimensions,
+    )
     store = ExemplarStore(path=settings.chroma_path, embedder=embedder)
     llm = AnthropicClient(api_key=settings.anthropic_api_key)
     count = ingest_file(

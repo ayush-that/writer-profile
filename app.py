@@ -15,7 +15,11 @@ from writer_profile.voice.store import VoiceProfileStore
 @st.cache_resource
 def get_pipeline() -> GenerationPipeline:
     settings = Settings()
-    embedder = Embedder(model_name=settings.embedding_model)
+    embedder = Embedder(
+        api_key=settings.gemini_api_key.get_secret_value(),
+        model=settings.embedding_model,
+        dimensions=settings.embedding_dimensions,
+    )
     store = ExemplarStore(path=settings.chroma_path, embedder=embedder)
     profiles = VoiceProfileStore(root=settings.profiles_path)
     hooks = HookLibrary.load(settings.hooks_path)

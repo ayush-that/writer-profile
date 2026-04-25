@@ -6,7 +6,7 @@ import pytest
 from writer_profile.corpus.models import AnnotatedPost, Idea, Platform, Post, PostMetadata, Tone
 from writer_profile.llm import StubLLMClient
 from writer_profile.pipeline import GenerationPipeline, PostDraft
-from writer_profile.retrieval.embedder import Embedder
+from writer_profile.retrieval.embedder import StubEmbedder
 from writer_profile.retrieval.store import ExemplarStore
 from writer_profile.virality.hooks import HookLibrary
 from writer_profile.voice.profile import (
@@ -21,8 +21,8 @@ from writer_profile.voice.store import VoiceProfileStore
 
 
 @pytest.fixture(scope="module")
-def embedder() -> Embedder:
-    return Embedder(model_name="sentence-transformers/all-MiniLM-L6-v2")
+def embedder() -> StubEmbedder:
+    return StubEmbedder(dimensions=768)
 
 
 def _ann(pid: str, text: str, author: str = "ali") -> AnnotatedPost:
