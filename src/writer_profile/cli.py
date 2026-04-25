@@ -14,9 +14,9 @@ from writer_profile.llm import AnthropicClient
 from writer_profile.pipeline import GenerationPipeline
 from writer_profile.retrieval.embedder import Embedder
 from writer_profile.retrieval.store import ExemplarStore
+from writer_profile.scraper import ExaScraper, ScrapedPost
 from writer_profile.virality.hooks import HookLibrary
 from writer_profile.voice.extractor import build_voice_profile
-from writer_profile.scraper import ExaScraper, ScrapedPost
 from writer_profile.voice.store import VoiceProfileStore
 
 app = typer.Typer(help="CEO Voice Agent — style-aware post generator for X and LinkedIn.")
@@ -337,7 +337,9 @@ def scrape(
     _write_posts(news_posts, news_path)
     typer.echo(f"  {len(news_posts)} articles → {news_path}")
 
-    typer.echo(f"\nDone! Ingest with: writer ingest {output_dir}/{author_id}_*.jsonl --author {author_id}")
+    typer.echo(
+        f"\nDone! Ingest with: writer ingest {output_dir}/{author_id}_*.jsonl --author {author_id}"
+    )
 
 
 if __name__ == "__main__":

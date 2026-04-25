@@ -1,8 +1,5 @@
 import json
-from pathlib import Path
-from unittest.mock import MagicMock, patch
 
-import pytest
 from typer.testing import CliRunner
 
 from writer_profile.cli import app
@@ -25,8 +22,10 @@ def test_scrape_dry_run(tmp_path, monkeypatch):
         [
             "scrape",
             "Ali Ghodsi",
-            "--linkedin-handle", "alighodsi",
-            "--output-dir", str(tmp_path),
+            "--linkedin-handle",
+            "alighodsi",
+            "--output-dir",
+            str(tmp_path),
             "--dry-run",
         ],
     )

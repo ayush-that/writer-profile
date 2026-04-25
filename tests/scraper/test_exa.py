@@ -1,10 +1,8 @@
-from datetime import UTC, datetime
 from unittest.mock import MagicMock, patch
 
 import pytest
 
 from writer_profile.scraper.exa import ExaScraper
-from writer_profile.scraper.models import ScrapedPost
 
 
 @pytest.fixture

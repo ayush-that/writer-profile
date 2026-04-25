@@ -5,7 +5,6 @@ from typing import Literal
 
 from pydantic import BaseModel, Field
 
-
 Platform = Literal["linkedin", "youtube", "news"]
 Source = Literal["exa", "youtube_transcript"]
 

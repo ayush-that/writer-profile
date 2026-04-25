@@ -3,7 +3,7 @@ from datetime import UTC, datetime
 import pytest
 from pydantic import ValidationError
 
-from writer_profile.scraper.models import ScrapedPost, ScrapeConfig
+from writer_profile.scraper.models import ScrapeConfig, ScrapedPost
 
 
 def test_scraped_post_creation():
