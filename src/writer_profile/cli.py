@@ -293,7 +293,16 @@ def scrape(
     dry_run: bool = typer.Option(False, "--dry-run", help="Show config without scraping"),
 ) -> None:
     """Scrape LinkedIn posts and news for a CEO via Exa API."""
-    settings = Settings()
+    import os
+
+    from dotenv import load_dotenv
+
+    load_dotenv()
+    exa_api_key = os.environ.get("EXA_API_KEY")
+    if not exa_api_key:
+        typer.echo("error: EXA_API_KEY not set in environment", err=True)
+        raise typer.Exit(1)
+
     author_id = author_name.lower().replace(" ", "_")
 
     if dry_run:
@@ -313,7 +322,7 @@ def scrape(
         raise typer.Exit(0)
 
     output_dir.mkdir(parents=True, exist_ok=True)
-    scraper = ExaScraper(api_key=settings.exa_api_key.get_secret_value())
+    scraper = ExaScraper(api_key=exa_api_key)
 
     # Scrape LinkedIn
     typer.echo(f"Scraping LinkedIn posts for @{linkedin_handle}...")
