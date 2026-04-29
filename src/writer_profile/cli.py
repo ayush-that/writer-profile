@@ -324,7 +324,6 @@ def scrape(
     output_dir.mkdir(parents=True, exist_ok=True)
     scraper = ExaScraper(api_key=exa_api_key)
 
-    # Scrape LinkedIn
     typer.echo(f"Scraping LinkedIn posts for @{linkedin_handle}...")
     linkedin_posts = scraper.scrape_linkedin_posts(
         handle=linkedin_handle,
@@ -335,7 +334,6 @@ def scrape(
     _write_posts(linkedin_posts, linkedin_path)
     typer.echo(f"  {len(linkedin_posts)} posts → {linkedin_path}")
 
-    # Scrape news
     typer.echo(f"Scraping news about {author_name}...")
     news_posts = scraper.scrape_news(
         name=author_name,

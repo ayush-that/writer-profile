@@ -13,7 +13,6 @@ class Settings(BaseSettings):
 
     anthropic_api_key: SecretStr = Field(alias="ANTHROPIC_API_KEY")
     gemini_api_key: SecretStr = Field(alias="GEMINI_API_KEY")
-    exa_api_key: SecretStr = Field(alias="EXA_API_KEY")
     chroma_path: str = ".chroma"
     profiles_path: str = "./profiles"
     hooks_path: str = "./data/hooks.jsonl"
