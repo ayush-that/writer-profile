@@ -26,14 +26,7 @@ export function MobileNav() {
 
   return (
     <>
-      <header className="fixed left-0 right-0 top-0 z-40 flex h-16 items-center justify-between border-b border-border bg-sidebar px-4 lg:hidden">
-        <Link href="/" className="flex items-center gap-2.5">
-          <CadenceLogo className="h-8 w-8" />
-          <span className="text-base font-bold tracking-tight text-foreground">
-            Cadence
-          </span>
-        </Link>
-
+      <header className="fixed left-0 right-0 top-0 z-40 flex h-16 items-center gap-3 border-b border-border bg-sidebar px-4 lg:hidden">
         <button
           onClick={() => setOpen(!open)}
           className="flex h-10 w-10 items-center justify-center rounded-xl transition-colors hover:bg-muted"
@@ -45,6 +38,13 @@ export function MobileNav() {
             <List className="h-5 w-5" weight="bold" />
           )}
         </button>
+
+        <Link href="/" className="flex items-center gap-2.5">
+          <CadenceLogo className="h-8 w-8" />
+          <span className="text-base font-bold tracking-tight text-foreground">
+            Cadence
+          </span>
+        </Link>
       </header>
 
       {open && (
@@ -56,8 +56,8 @@ export function MobileNav() {
 
       <nav
         className={cn(
-          "fixed right-0 top-16 z-40 h-[calc(100vh-64px)] w-72 transform border-l border-border bg-sidebar p-5 transition-transform duration-300 ease-out lg:hidden",
-          open ? "translate-x-0" : "translate-x-full"
+          "fixed left-0 top-16 z-40 h-[calc(100vh-64px)] w-72 transform border-r border-border bg-sidebar p-5 transition-transform duration-300 ease-out lg:hidden",
+          open ? "translate-x-0" : "-translate-x-full"
         )}
       >
         <div className="space-y-1.5">

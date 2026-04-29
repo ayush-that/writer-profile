@@ -1,7 +1,11 @@
 from __future__ import annotations
 
+import json
+from pathlib import Path
+
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 
 from writer_profile.config import Settings
@@ -97,6 +101,16 @@ def list_profiles() -> ProfilesResponse:
     store = get_profiles()
     entries = store.list_profiles()
     return ProfilesResponse(profiles=[ProfileItem(author=a, platform=p.value) for a, p in entries])
+
+
+@app.get("/api/profiles/{author}/{platform}")
+def get_profile(author: str, platform: str) -> JSONResponse:
+    profile_path = Path("./data/profiles") / f"{author}__{platform}.json"
+    if not profile_path.exists():
+        raise HTTPException(404, f"Profile not found: {author}/{platform}")
+    with open(profile_path) as f:
+        data = json.load(f)
+    return JSONResponse(content=data)
 
 
 @app.post("/api/generate", response_model=GenerateResponse)
