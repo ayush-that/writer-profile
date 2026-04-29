@@ -1,0 +1,15 @@
+{
+  "name": "writer-profile",
+  "private": true,
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "api:dev": "cd packages/api && uv run uvicorn writer_api.main:app --reload --port 8000",
+    "web:dev": "cd packages/web && pnpm dev"
+  },
+  "devDependencies": {
+    "turbo": "^2.0.0"
+  },
+  "packageManager": "pnpm@9.0.0"
+}

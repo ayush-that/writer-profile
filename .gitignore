@@ -1,10 +1,33 @@
+# Python
 .venv/
 __pycache__/
 *.pyc
 .pytest_cache/
 .ruff_cache/
-.env
 dist/
 build/
 *.egg-info/
+
+# Node.js
+node_modules/
+.next/
+.turbo/
+*.tsbuildinfo
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Data
 .chroma/
+data/*.jsonl
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db

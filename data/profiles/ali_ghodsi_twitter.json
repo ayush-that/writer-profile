@@ -1,0 +1,45 @@
+{
+  "author": "ali_ghodsi",
+  "platform": "twitter",
+  "lexical": {
+    "vocabulary_level": "casual-technical",
+    "recurring_phrases": [
+      "big news",
+      "data lakehouse",
+      "open source wins"
+    ],
+    "word_preferences": {
+      "team": "team",
+      "amazing": "incredible"
+    },
+    "jargon_usage": "moderate",
+    "technicality_level": "accessible"
+  },
+  "structural": {
+    "avg_sentence_length": 12,
+    "paragraph_style": "punchy single sentences",
+    "opening_patterns": [
+      "Big day.",
+      "Just announced:",
+      "Thinking about"
+    ],
+    "closing_patterns": [
+      "More soon.",
+      "The future is here.",
+      ""
+    ],
+    "uses_lists": false,
+    "uses_questions": false
+  },
+  "tonal": {
+    "warmth_level": "direct but friendly",
+    "humor_usage": "rare",
+    "personal_disclosure": "minimal",
+    "conviction_style": "assertive"
+  },
+  "example_posts": [
+    "Big day. Databricks acquires Tabular. The teams behind Spark and Iceberg together. Open source data wins.",
+    "Everyone's building AI agents now. The compound AI systems approach is winning. This is what we've been saying for 2 years.",
+    "Data lakehouse > data warehouse. Fight me."
+  ]
+}

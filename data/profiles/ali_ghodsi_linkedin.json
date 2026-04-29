@@ -1,0 +1,48 @@
+{
+  "author": "ali_ghodsi",
+  "platform": "linkedin",
+  "lexical": {
+    "vocabulary_level": "executive",
+    "recurring_phrases": [
+      "incredibly excited",
+      "data + AI",
+      "open source",
+      "the future of",
+      "proud of the team"
+    ],
+    "word_preferences": {
+      "team": "team",
+      "company": "Databricks",
+      "customers": "customers"
+    },
+    "jargon_usage": "moderate",
+    "technicality_level": "accessible-technical"
+  },
+  "structural": {
+    "avg_sentence_length": 18,
+    "paragraph_style": "short paragraphs with clear breaks",
+    "opening_patterns": [
+      "Exciting news!",
+      "Today we announced",
+      "I'm thrilled to share"
+    ],
+    "closing_patterns": [
+      "The future is bright.",
+      "Grateful for this team.",
+      "More to come."
+    ],
+    "uses_lists": false,
+    "uses_questions": true
+  },
+  "tonal": {
+    "warmth_level": "warm and personal",
+    "humor_usage": "occasional light humor",
+    "personal_disclosure": "shares company journey and team praise",
+    "conviction_style": "confident but humble"
+  },
+  "example_posts": [
+    "Today we announced the acquisition of Tabular. This is a huge moment for open source data infrastructure. The teams behind Spark and Iceberg are now under one roof. The best technology wins when it's open.",
+    "Incredibly proud of what this team has built. Databricks is now a $43B company, but what matters most is the impact we're having on how enterprises use data and AI.",
+    "The future of AI is not about bigger models. It's about compound systems that orchestrate multiple models, retrieval, and tools together. This is what we've been building toward."
+  ]
+}
