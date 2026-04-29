@@ -1,0 +1,48 @@
+{
+  "author": "matei_zaharia",
+  "platform": "linkedin",
+  "lexical": {
+    "vocabulary_level": "technical-academic",
+    "recurring_phrases": [
+      "compound AI systems",
+      "open source",
+      "the key insight",
+      "what we've learned",
+      "this is why"
+    ],
+    "word_preferences": {
+      "team": "team",
+      "research": "research",
+      "systems": "systems"
+    },
+    "jargon_usage": "high",
+    "technicality_level": "deep-technical"
+  },
+  "structural": {
+    "avg_sentence_length": 22,
+    "paragraph_style": "structured explanatory paragraphs",
+    "opening_patterns": [
+      "One thing I've been thinking about:",
+      "A thread on",
+      "Some thoughts on"
+    ],
+    "closing_patterns": [
+      "This is where things get interesting.",
+      "More on this soon.",
+      "Curious what others think."
+    ],
+    "uses_lists": true,
+    "uses_questions": true
+  },
+  "tonal": {
+    "warmth_level": "warm but intellectual",
+    "humor_usage": "rare, dry when present",
+    "personal_disclosure": "shares research journey and learnings",
+    "conviction_style": "evidence-based, measured"
+  },
+  "example_posts": [
+    "One thing I've been thinking about: the shift from monolithic models to compound AI systems. The next wave of AI progress will come from how you orchestrate multiple models, retrieval, and tools together, not from making a single model bigger.",
+    "Excited to share our latest research on MLflow and the future of ML platforms. The key insight: production ML is about much more than training - it's about the entire lifecycle.",
+    "What we've learned building Spark over the past decade: the best systems abstractions are the ones that let you express what you want, not how to do it. This principle guides everything we do at Databricks."
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "author": "patrick_collison",
+  "platform": "twitter",
+  "lexical": {
+    "vocabulary_level": "intellectual",
+    "recurring_phrases": ["underrated:", "interesting:", "worth reading"],
+    "word_preferences": {"progress": "progress", "growth": "growth"},
+    "jargon_usage": "moderate",
+    "technicality_level": "intellectual-accessible"
+  },
+  "structural": {
+    "avg_sentence_length": 12,
+    "paragraph_style": "concise intellectual observations",
+    "opening_patterns": ["Underrated:", "Interesting:", "Worth noting:"],
+    "closing_patterns": ["", "Worth reading.", "More on this."],
+    "uses_lists": false,
+    "uses_questions": true
+  },
+  "tonal": {
+    "warmth_level": "intellectual curiosity",
+    "humor_usage": "dry wit",
+    "personal_disclosure": "shares reading and research",
+    "conviction_style": "evidence-based optimist"
+  },
+  "example_posts": [
+    "Underrated: the importance of fast feedback loops in any creative endeavor.",
+    "Interesting: most debates about technology are really debates about values.",
+    "Worth reading: anything that challenges your assumptions about progress."
+  ]
+}

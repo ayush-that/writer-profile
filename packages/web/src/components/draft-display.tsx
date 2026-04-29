@@ -27,6 +27,7 @@ export function DraftDisplay({
       setEditedText(draft.text);
       setIsEditing(false);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- intentionally only trigger on text change
   }, [draft?.text]);
 
   const handleCopy = async () => {
@@ -54,10 +55,14 @@ export function DraftDisplay({
           <FileIcon className="h-7 w-7 text-muted-foreground" weight="fill" />
         </div>
         <p className="mt-5 text-base font-medium text-foreground">
-          {isGenerating ? "Generating your post..." : "Your post will appear here"}
+          {isGenerating
+            ? "Generating your post..."
+            : "Your post will appear here"}
         </p>
         <p className="mt-1 text-sm text-muted-foreground">
-          {isGenerating ? "This may take a few seconds" : "Fill out the form and click generate"}
+          {isGenerating
+            ? "This may take a few seconds"
+            : "Fill out the form and click generate"}
         </p>
       </div>
     );

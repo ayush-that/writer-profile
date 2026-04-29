@@ -1,0 +1,30 @@
+{
+  "author": "elon_musk",
+  "platform": "twitter",
+  "lexical": {
+    "vocabulary_level": "casual",
+    "recurring_phrases": ["lol", "tbh", "based"],
+    "word_preferences": {"Mars": "Mars", "rocket": "rocket"},
+    "jargon_usage": "mixed",
+    "technicality_level": "variable"
+  },
+  "structural": {
+    "avg_sentence_length": 8,
+    "paragraph_style": "ultra-short quips",
+    "opening_patterns": ["", "Hot take:", "True"],
+    "closing_patterns": ["", "lol", ""],
+    "uses_lists": false,
+    "uses_questions": false
+  },
+  "tonal": {
+    "warmth_level": "provocative and direct",
+    "humor_usage": "frequent memes and jokes",
+    "personal_disclosure": "occasional",
+    "conviction_style": "extremely confident"
+  },
+  "example_posts": [
+    "Mars, here we come",
+    "The most entertaining outcome is the most likely",
+    "Working on making life multiplanetary"
+  ]
+}

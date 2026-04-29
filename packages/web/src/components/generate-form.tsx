@@ -71,9 +71,11 @@ export function GenerateForm({ onSubmit, isLoading }: GenerateFormProps) {
             ) : profiles.length === 0 ? (
               <option>No profiles available</option>
             ) : (
-              profiles.map((profile) => (
-                <option key={profile.author} value={profile.author}>
-                  {profile.author.replace(/_/g, " ")}
+              [...new Set(profiles.map((p) => p.author))].map((author) => (
+                <option key={author} value={author}>
+                  {author
+                    .replace(/_/g, " ")
+                    .replace(/\b\w/g, (c) => c.toUpperCase())}
                 </option>
               ))
             )}
@@ -117,14 +119,14 @@ export function GenerateForm({ onSubmit, isLoading }: GenerateFormProps) {
           value={topic}
           onChange={(e) => setTopic(e.target.value)}
           placeholder="What should the post be about?"
-          className="w-full rounded-xl border border-border bg-white px-4 py-3.5 text-sm font-medium text-foreground placeholder:font-normal placeholder:text-muted-foreground transition-all duration-200"
+          className="w-full rounded-xl border border-border bg-white px-4 py-3.5 text-sm font-medium text-foreground transition-all duration-200 placeholder:font-normal placeholder:text-muted-foreground"
         />
       </div>
 
       <div className="space-y-2">
         <label className="text-[10px] font-semibold uppercase tracking-[0.15em] text-muted-foreground">
           Angle{" "}
-          <span className="font-medium normal-case tracking-normal text-muted-foreground/70">
+          <span className="text-muted-foreground/70 font-medium normal-case tracking-normal">
             (optional)
           </span>
         </label>
@@ -133,7 +135,7 @@ export function GenerateForm({ onSubmit, isLoading }: GenerateFormProps) {
           onChange={(e) => setAngle(e.target.value)}
           placeholder="Specific perspective or hook"
           rows={2}
-          className="w-full resize-none rounded-xl border border-border bg-white px-4 py-3.5 text-sm font-medium text-foreground placeholder:font-normal placeholder:text-muted-foreground transition-all duration-200"
+          className="w-full resize-none rounded-xl border border-border bg-white px-4 py-3.5 text-sm font-medium text-foreground transition-all duration-200 placeholder:font-normal placeholder:text-muted-foreground"
         />
       </div>
 
@@ -142,7 +144,9 @@ export function GenerateForm({ onSubmit, isLoading }: GenerateFormProps) {
           <label className="text-[10px] font-semibold uppercase tracking-[0.15em] text-muted-foreground">
             Virality
           </label>
-          <span className="text-sm font-bold tabular-nums text-foreground">{virality}%</span>
+          <span className="text-sm font-bold tabular-nums text-foreground">
+            {virality}%
+          </span>
         </div>
         <input
           type="range"
@@ -162,7 +166,7 @@ export function GenerateForm({ onSubmit, isLoading }: GenerateFormProps) {
         disabled={isLoading || !author || !topic}
         className={cn(
           "btn-primary flex w-full items-center justify-center gap-2.5 rounded-2xl px-6 py-4 text-sm font-bold text-white",
-          "disabled:cursor-not-allowed disabled:opacity-50 disabled:transform-none disabled:shadow-none"
+          "disabled:transform-none disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none"
         )}
       >
         <SparkleIcon className="h-[18px] w-[18px]" weight="fill" />

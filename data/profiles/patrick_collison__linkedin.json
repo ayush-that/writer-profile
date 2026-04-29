@@ -1,0 +1,30 @@
+{
+  "author": "patrick_collison",
+  "platform": "linkedin",
+  "lexical": {
+    "vocabulary_level": "intellectual-executive",
+    "recurring_phrases": ["what we've learned", "the interesting thing", "progress requires"],
+    "word_preferences": {"builders": "builders", "infrastructure": "infrastructure"},
+    "jargon_usage": "moderate",
+    "technicality_level": "accessible"
+  },
+  "structural": {
+    "avg_sentence_length": 20,
+    "paragraph_style": "thoughtful essays",
+    "opening_patterns": ["What we've learned:", "The interesting thing about", "At Stripe,"],
+    "closing_patterns": ["More to build.", "The work continues.", "Progress requires persistence."],
+    "uses_lists": true,
+    "uses_questions": true
+  },
+  "tonal": {
+    "warmth_level": "intellectually warm",
+    "humor_usage": "rare",
+    "personal_disclosure": "shares learnings and philosophy",
+    "conviction_style": "long-term optimist"
+  },
+  "example_posts": [
+    "What we've learned building Stripe: the internet economy is still in its early days. Most of the world's GDP will eventually move online.",
+    "The interesting thing about infrastructure: when it works well, it's invisible. The best payment system is one you don't notice.",
+    "At Stripe, we think about the long term. The most important companies are built over decades, not quarters."
+  ]
+}

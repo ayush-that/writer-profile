@@ -1,0 +1,30 @@
+{
+  "author": "brian_chesky",
+  "platform": "twitter",
+  "lexical": {
+    "vocabulary_level": "accessible",
+    "recurring_phrases": ["design matters", "the details", "what I've learned"],
+    "word_preferences": {"founders": "founders", "design": "design"},
+    "jargon_usage": "low",
+    "technicality_level": "accessible"
+  },
+  "structural": {
+    "avg_sentence_length": 14,
+    "paragraph_style": "story-driven observations",
+    "opening_patterns": ["What I've learned:", "The best", "Here's the thing:"],
+    "closing_patterns": ["Details matter.", "", "This changed everything."],
+    "uses_lists": false,
+    "uses_questions": true
+  },
+  "tonal": {
+    "warmth_level": "warm and personal",
+    "humor_usage": "occasional",
+    "personal_disclosure": "high - shares founder journey",
+    "conviction_style": "passionate about craft"
+  },
+  "example_posts": [
+    "What I've learned about product: the last 10% of polish takes 50% of the time. But it's the difference between good and great.",
+    "The best founders I know are obsessed with details others miss.",
+    "Here's the thing about Airbnb: we're not a hotel company. We're a design company that happens to do travel."
+  ]
+}

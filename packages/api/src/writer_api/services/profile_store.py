@@ -1,5 +1,3 @@
-"""File-based voice profile storage service."""
-
 from __future__ import annotations
 
 import contextlib
@@ -11,10 +9,7 @@ from writer_api.models.voice import Platform, VoiceProfile
 
 
 class ProfileStore:
-    """File-based storage for voice profiles."""
-
     def __init__(self, profiles_path: str | None = None) -> None:
-        """Initialize the profile store."""
         path_str = profiles_path or settings.profiles_path
         if not Path(path_str).is_absolute():
             base = Path(__file__).parent.parent
@@ -24,7 +19,6 @@ class ProfileStore:
         self._path.mkdir(parents=True, exist_ok=True)
 
     def load(self, author: str, platform: Platform | str) -> VoiceProfile | None:
-        """Load a voice profile from storage."""
         plat_val = platform.value if isinstance(platform, Platform) else platform
         filename = f"{author}_{plat_val}.json"
         filepath = self._path / filename
@@ -40,17 +34,6 @@ class ProfileStore:
             return None
 
     def save(self, profile: dict) -> bool:
-        """Save a voice profile to storage.
-
-        Args:
-            profile: Profile data containing at least 'author' and 'platform' keys.
-
-        Returns:
-            True if saved successfully, False otherwise.
-
-        Raises:
-            ValueError: If profile is missing required keys.
-        """
         if "author" not in profile or "platform" not in profile:
             raise ValueError("Profile must contain 'author' and 'platform' keys")
 
@@ -67,15 +50,6 @@ class ProfileStore:
             return False
 
     def delete(self, author: str, platform: str) -> bool:
-        """Delete a voice profile from storage.
-
-        Args:
-            author: Author identifier.
-            platform: Platform identifier.
-
-        Returns:
-            True if deleted successfully, False otherwise.
-        """
         filename = f"{author}_{platform}.json"
         filepath = self._path / filename
 
@@ -89,7 +63,6 @@ class ProfileStore:
             return False
 
     def list_profiles(self) -> list[tuple[str, Platform]]:
-        """List all available profiles."""
         profiles: list[tuple[str, Platform]] = []
 
         for filepath in self._path.glob("*.json"):
@@ -103,15 +76,6 @@ class ProfileStore:
         return sorted(profiles)
 
     def exists(self, author: str, platform: str) -> bool:
-        """Check if a profile exists.
-
-        Args:
-            author: Author identifier.
-            platform: Platform identifier.
-
-        Returns:
-            True if the profile exists, False otherwise.
-        """
         filename = f"{author}_{platform}.json"
         filepath = self._path / filename
         return filepath.exists()

@@ -1,0 +1,46 @@
+{
+  "author": "matei_zaharia",
+  "platform": "twitter",
+  "lexical": {
+    "vocabulary_level": "technical",
+    "recurring_phrases": [
+      "hot take:",
+      "underrated:",
+      "the real question is"
+    ],
+    "word_preferences": {
+      "ML": "ML",
+      "AI": "AI",
+      "systems": "systems"
+    },
+    "jargon_usage": "high",
+    "technicality_level": "technical-accessible"
+  },
+  "structural": {
+    "avg_sentence_length": 14,
+    "paragraph_style": "concise technical observations",
+    "opening_patterns": [
+      "Hot take:",
+      "Underrated:",
+      "The real bottleneck in AI isn't"
+    ],
+    "closing_patterns": [
+      "",
+      "Thread below.",
+      "More thoughts on this soon."
+    ],
+    "uses_lists": false,
+    "uses_questions": true
+  },
+  "tonal": {
+    "warmth_level": "direct and intellectual",
+    "humor_usage": "occasional tech humor",
+    "personal_disclosure": "minimal, focuses on ideas",
+    "conviction_style": "confident, backed by experience"
+  },
+  "example_posts": [
+    "Hot take: compound AI systems will outperform monolithic models for most enterprise use cases within 2 years. The orchestration layer is the new moat.",
+    "Underrated: the importance of good data infrastructure for AI. Everyone focuses on models, but the data layer is where most projects fail.",
+    "The real bottleneck in AI isn't compute or models. It's the feedback loop between production and training. This is what MLOps should actually solve."
+  ]
+}

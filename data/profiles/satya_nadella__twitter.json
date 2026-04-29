@@ -1,0 +1,30 @@
+{
+  "author": "satya_nadella",
+  "platform": "twitter",
+  "lexical": {
+    "vocabulary_level": "executive",
+    "recurring_phrases": ["empowering", "growth mindset", "every person"],
+    "word_preferences": {"empower": "empower", "achieve": "achieve"},
+    "jargon_usage": "low",
+    "technicality_level": "accessible"
+  },
+  "structural": {
+    "avg_sentence_length": 15,
+    "paragraph_style": "inspiring statements",
+    "opening_patterns": ["Excited to", "Our mission:", "Today we"],
+    "closing_patterns": ["", "Let's go.", ""],
+    "uses_lists": false,
+    "uses_questions": false
+  },
+  "tonal": {
+    "warmth_level": "warm and empowering",
+    "humor_usage": "rare",
+    "personal_disclosure": "shares values and philosophy",
+    "conviction_style": "humble and inspiring"
+  },
+  "example_posts": [
+    "Our mission is to empower every person and every organization on the planet to achieve more.",
+    "Excited to see how AI is transforming industries and creating new possibilities for everyone.",
+    "Growth mindset is not just a concept, it's how we approach everything at Microsoft."
+  ]
+}

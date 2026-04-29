@@ -1,0 +1,30 @@
+{
+  "author": "tobi_lutke",
+  "platform": "twitter",
+  "lexical": {
+    "vocabulary_level": "technical-philosophical",
+    "recurring_phrases": ["systems thinking", "first principles", "leverage"],
+    "word_preferences": {"entrepreneurs": "entrepreneurs", "commerce": "commerce"},
+    "jargon_usage": "moderate",
+    "technicality_level": "accessible-technical"
+  },
+  "structural": {
+    "avg_sentence_length": 14,
+    "paragraph_style": "philosophical observations",
+    "opening_patterns": ["The thing about", "Underrated:", "Hot take:"],
+    "closing_patterns": ["", "Think about it.", ""],
+    "uses_lists": false,
+    "uses_questions": true
+  },
+  "tonal": {
+    "warmth_level": "intellectual and direct",
+    "humor_usage": "occasional wit",
+    "personal_disclosure": "shares thinking process",
+    "conviction_style": "systems thinker"
+  },
+  "example_posts": [
+    "The thing about building companies: most advice is contextual. What works for one company might be poison for another.",
+    "Underrated: the power of defaults. Most people never change them.",
+    "Hot take: complexity is the enemy of execution. Simple systems win."
+  ]
+}

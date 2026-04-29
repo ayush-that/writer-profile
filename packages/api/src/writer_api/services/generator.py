@@ -1,5 +1,3 @@
-"""Main generation service for creating content in a writer's voice."""
-
 from __future__ import annotations
 
 from writer_api.models.requests import GenerateRequest, RevoiceRequest
@@ -11,14 +9,11 @@ from writer_api.services.llm import get_llm_client
 
 
 class GeneratorService:
-    """Service for generating content in a CEO's voice."""
-
     def __init__(self) -> None:
         self._retriever = ExaRetriever()
         self._llm = get_llm_client()
 
     def generate(self, request: GenerateRequest, profile: VoiceProfile) -> GenerateResponse:
-        """Generate a post in the CEO's voice."""
         author_name = profile.author.replace("_", " ").title()
 
         references = self._retriever.search_for_generation(
@@ -50,7 +45,6 @@ class GeneratorService:
         )
 
     def revoice(self, request: RevoiceRequest, profile: VoiceProfile) -> GenerateResponse:
-        """Re-voice an edited draft in the CEO's voice."""
         system, user = build_revoice_prompt(profile=profile, edited_draft=request.edited_draft)
 
         response = self._llm.complete(system=system, user=user)

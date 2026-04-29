@@ -19,7 +19,9 @@ export default function SettingsPage() {
 
       <div className="max-w-2xl space-y-6">
         <div className="card-elevated rounded-2xl border border-border p-6">
-          <h2 className="text-sm font-bold text-foreground">API Configuration</h2>
+          <h2 className="text-sm font-bold text-foreground">
+            API Configuration
+          </h2>
           <p className="mt-1 text-xs text-muted-foreground">
             Backend API endpoint configuration
           </p>
@@ -73,7 +75,9 @@ export default function SettingsPage() {
             </div>
             <div className="flex items-center justify-between">
               <span className="text-xs text-muted-foreground">Framework</span>
-              <span className="text-xs font-bold text-foreground">Next.js 16</span>
+              <span className="text-xs font-bold text-foreground">
+                Next.js 16
+              </span>
             </div>
             <div className="flex items-center justify-between">
               <span className="text-xs text-muted-foreground">Backend</span>

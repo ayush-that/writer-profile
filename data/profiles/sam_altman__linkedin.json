@@ -1,0 +1,30 @@
+{
+  "author": "sam_altman",
+  "platform": "linkedin",
+  "lexical": {
+    "vocabulary_level": "executive-accessible",
+    "recurring_phrases": ["what I've learned", "the future of", "incredibly excited"],
+    "word_preferences": {"AI": "AI", "humanity": "humanity"},
+    "jargon_usage": "low",
+    "technicality_level": "accessible"
+  },
+  "structural": {
+    "avg_sentence_length": 18,
+    "paragraph_style": "thoughtful paragraphs",
+    "opening_patterns": ["What I've learned:", "Today we", "The future of AI"],
+    "closing_patterns": ["The future is bright.", "More to come.", "Grateful for this team."],
+    "uses_lists": false,
+    "uses_questions": true
+  },
+  "tonal": {
+    "warmth_level": "warm but measured",
+    "humor_usage": "rare",
+    "personal_disclosure": "shares learnings and philosophy",
+    "conviction_style": "confident visionary"
+  },
+  "example_posts": [
+    "What I've learned building OpenAI: the most important decisions are about people, not technology. We're incredibly fortunate to work with the most talented researchers in the world.",
+    "The future of AI is not about replacing humans. It's about augmenting human capability and solving problems we never could before.",
+    "Today marks a new chapter for OpenAI. Grateful for everyone who has been part of this journey."
+  ]
+}

@@ -40,9 +40,14 @@ export default function ProfilesPage() {
       ) : profiles.length === 0 ? (
         <div className="flex flex-col items-center justify-center rounded-2xl border-2 border-dashed border-border bg-card py-20">
           <div className="flex h-16 w-16 items-center justify-center rounded-full bg-muted">
-            <ProfileIcon className="h-7 w-7 text-muted-foreground" weight="fill" />
+            <ProfileIcon
+              className="h-7 w-7 text-muted-foreground"
+              weight="fill"
+            />
           </div>
-          <p className="mt-5 text-base font-semibold text-foreground">No profiles yet</p>
+          <p className="mt-5 text-base font-semibold text-foreground">
+            No profiles yet
+          </p>
           <p className="mt-1 text-sm text-muted-foreground">
             Create a profile to start generating content
           </p>
@@ -55,16 +60,20 @@ export default function ProfilesPage() {
               className="card-elevated rounded-2xl border border-border p-5"
             >
               <div className="flex items-center gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-primary/20 to-primary/5">
+                <div className="from-primary/20 to-primary/5 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br">
                   <span className="text-lg font-bold text-primary">
                     {profile.author.charAt(0).toUpperCase()}
                   </span>
                 </div>
                 <div className="min-w-0 flex-1">
                   <p className="truncate text-sm font-semibold text-foreground">
-                    {profile.author.replace(/_/g, " ")}
+                    {profile.author
+                      .replace(/_/g, " ")
+                      .replace(/\b\w/g, (c) => c.toUpperCase())}
                   </p>
-                  <p className="text-xs text-muted-foreground capitalize">{profile.platform}</p>
+                  <p className="text-xs capitalize text-muted-foreground">
+                    {profile.platform}
+                  </p>
                 </div>
               </div>
               <div className="mt-5 flex items-center justify-between">

@@ -1,5 +1,3 @@
-"""LLM client abstraction for multiple providers."""
-
 from __future__ import annotations
 
 from abc import ABC, abstractmethod
@@ -10,8 +8,6 @@ from writer_api.config import settings
 
 @dataclass
 class LLMResponse:
-    """Response from an LLM completion."""
-
     text: str
     model: str
     input_tokens: int
@@ -19,8 +15,6 @@ class LLMResponse:
 
 
 class LLMClient(ABC):
-    """Abstract base class for LLM clients."""
-
     @abstractmethod
     def complete(
         self,
@@ -28,31 +22,11 @@ class LLMClient(ABC):
         user: str,
         max_tokens: int = 1024,
         temperature: float = 0.7,
-    ) -> LLMResponse:
-        """Complete a prompt with the LLM.
-
-        Args:
-            system: System prompt.
-            user: User prompt.
-            max_tokens: Maximum tokens in the response.
-            temperature: Sampling temperature.
-
-        Returns:
-            LLM response with text and metadata.
-        """
-        ...
+    ) -> LLMResponse: ...
 
 
 class AnthropicClient(LLMClient):
-    """Anthropic Claude client implementation."""
-
     def __init__(self, api_key: str | None = None, model: str | None = None) -> None:
-        """Initialize the Anthropic client.
-
-        Args:
-            api_key: Anthropic API key. Falls back to settings if not provided.
-            model: Model to use. Falls back to settings if not provided.
-        """
         import anthropic
 
         key = api_key
@@ -72,17 +46,6 @@ class AnthropicClient(LLMClient):
         max_tokens: int = 1024,
         temperature: float = 0.7,
     ) -> LLMResponse:
-        """Complete a prompt with Claude.
-
-        Args:
-            system: System prompt.
-            user: User prompt.
-            max_tokens: Maximum tokens in the response.
-            temperature: Sampling temperature.
-
-        Returns:
-            LLM response with text and metadata.
-        """
         message = self._client.messages.create(
             model=self._model,
             max_tokens=max_tokens,
@@ -105,15 +68,7 @@ class AnthropicClient(LLMClient):
 
 
 class OpenAIClient(LLMClient):
-    """OpenAI client implementation."""
-
     def __init__(self, api_key: str | None = None, model: str | None = None) -> None:
-        """Initialize the OpenAI client.
-
-        Args:
-            api_key: OpenAI API key. Falls back to settings if not provided.
-            model: Model to use. Falls back to 'gpt-4o' if not provided.
-        """
         import openai
 
         key = api_key
@@ -133,17 +88,6 @@ class OpenAIClient(LLMClient):
         max_tokens: int = 1024,
         temperature: float = 0.7,
     ) -> LLMResponse:
-        """Complete a prompt with OpenAI.
-
-        Args:
-            system: System prompt.
-            user: User prompt.
-            max_tokens: Maximum tokens in the response.
-            temperature: Sampling temperature.
-
-        Returns:
-            LLM response with text and metadata.
-        """
         response = self._client.chat.completions.create(
             model=self._model,
             max_tokens=max_tokens,
@@ -170,19 +114,6 @@ def get_llm_client(
     api_key: str | None = None,
     model: str | None = None,
 ) -> LLMClient:
-    """Factory function to get the appropriate LLM client.
-
-    Args:
-        provider: LLM provider ('anthropic' or 'openai'). Falls back to settings.
-        api_key: Optional API key override.
-        model: Optional model override.
-
-    Returns:
-        Configured LLM client instance.
-
-    Raises:
-        ValueError: If the provider is not supported.
-    """
     provider = provider or settings.llm_provider
 
     if provider == "anthropic":

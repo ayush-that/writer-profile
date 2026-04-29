@@ -6,7 +6,12 @@ import { usePathname } from "next/navigation";
 import { List, X } from "@phosphor-icons/react";
 import { cn } from "@/lib/utils";
 import { CadenceLogo } from "./logo";
-import { DashboardIcon, GenerateIcon, ProfileIcon, SettingsIcon } from "./icons";
+import {
+  DashboardIcon,
+  GenerateIcon,
+  ProfileIcon,
+  SettingsIcon,
+} from "./icons";
 
 const navItems = [
   { href: "/", label: "Dashboard", icon: DashboardIcon },
@@ -24,12 +29,14 @@ export function MobileNav() {
       <header className="fixed left-0 right-0 top-0 z-40 flex h-16 items-center justify-between border-b border-border bg-sidebar px-4 lg:hidden">
         <Link href="/" className="flex items-center gap-2.5">
           <CadenceLogo className="h-8 w-8" />
-          <span className="text-base font-bold tracking-tight text-foreground">Cadence</span>
+          <span className="text-base font-bold tracking-tight text-foreground">
+            Cadence
+          </span>
         </Link>
 
         <button
           onClick={() => setOpen(!open)}
-          className="flex h-10 w-10 items-center justify-center rounded-xl hover:bg-muted transition-colors"
+          className="flex h-10 w-10 items-center justify-center rounded-xl transition-colors hover:bg-muted"
           aria-label="Toggle menu"
         >
           {open ? (
@@ -70,7 +77,10 @@ export function MobileNav() {
                     : "text-muted-foreground hover:bg-muted hover:text-foreground"
                 )}
               >
-                <Icon className="h-[18px] w-[18px]" weight={isActive ? "fill" : "regular"} />
+                <Icon
+                  className="h-[18px] w-[18px]"
+                  weight={isActive ? "fill" : "regular"}
+                />
                 {item.label}
               </Link>
             );

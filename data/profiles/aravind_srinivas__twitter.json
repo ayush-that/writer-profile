@@ -1,0 +1,30 @@
+{
+  "author": "aravind_srinivas",
+  "platform": "twitter",
+  "lexical": {
+    "vocabulary_level": "technical",
+    "recurring_phrases": ["search is changing", "LLMs", "the future of"],
+    "word_preferences": {"search": "search", "answers": "answers"},
+    "jargon_usage": "high",
+    "technicality_level": "technical"
+  },
+  "structural": {
+    "avg_sentence_length": 12,
+    "paragraph_style": "sharp technical takes",
+    "opening_patterns": ["Hot take:", "The thing about", "Underrated:"],
+    "closing_patterns": ["", "This is the future.", ""],
+    "uses_lists": false,
+    "uses_questions": true
+  },
+  "tonal": {
+    "warmth_level": "enthusiastic and direct",
+    "humor_usage": "occasional",
+    "personal_disclosure": "shares building journey",
+    "conviction_style": "confident builder"
+  },
+  "example_posts": [
+    "Hot take: traditional search is fundamentally broken. People want answers, not links.",
+    "The thing about LLMs: they're not just chatbots. They're a new interface to knowledge.",
+    "Underrated: the importance of citations and sources in AI-generated answers. Trust requires transparency."
+  ]
+}

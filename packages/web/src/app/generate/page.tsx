@@ -15,7 +15,9 @@ export default function GeneratePage() {
   const [error, setError] = useState<string | null>(null);
   const [isGenerating, setIsGenerating] = useState(false);
   const [isRevoicing, setIsRevoicing] = useState(false);
-  const [currentRequest, setCurrentRequest] = useState<GenerateRequest | null>(null);
+  const [currentRequest, setCurrentRequest] = useState<GenerateRequest | null>(
+    null
+  );
 
   const handleGenerate = async (request: GenerateRequest) => {
     setIsGenerating(true);

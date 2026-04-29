@@ -3,7 +3,12 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
-import { DashboardIcon, GenerateIcon, ProfileIcon, SettingsIcon } from "./icons";
+import {
+  DashboardIcon,
+  GenerateIcon,
+  ProfileIcon,
+  SettingsIcon,
+} from "./icons";
 import { CadenceLogo } from "./logo";
 
 const navItems = [
@@ -21,7 +26,9 @@ export function Sidebar() {
       <div className="mb-10 px-3">
         <Link href="/" className="flex items-center gap-3">
           <CadenceLogo className="h-9 w-9" />
-          <span className="text-lg font-bold tracking-tight text-foreground">Cadence</span>
+          <span className="text-lg font-bold tracking-tight text-foreground">
+            Cadence
+          </span>
         </Link>
       </div>
 
@@ -85,7 +92,7 @@ export function Sidebar() {
         </div>
       </nav>
 
-      <div className="mt-auto rounded-2xl bg-gradient-to-br from-primary/5 via-primary/10 to-primary/5 p-5">
+      <div className="from-primary/5 via-primary/10 to-primary/5 mt-auto rounded-2xl bg-gradient-to-br p-5">
         <p className="text-xs font-semibold text-foreground">Powered by</p>
         <p className="mt-1 text-[10px] text-muted-foreground">Exa + Claude</p>
       </div>

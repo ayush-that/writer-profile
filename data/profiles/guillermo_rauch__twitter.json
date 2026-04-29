@@ -1,0 +1,30 @@
+{
+  "author": "guillermo_rauch",
+  "platform": "twitter",
+  "lexical": {
+    "vocabulary_level": "technical",
+    "recurring_phrases": ["ship it", "DX matters", "the web"],
+    "word_preferences": {"devs": "developers", "DX": "DX"},
+    "jargon_usage": "high",
+    "technicality_level": "technical"
+  },
+  "structural": {
+    "avg_sentence_length": 10,
+    "paragraph_style": "punchy observations",
+    "opening_patterns": ["Ship it.", "Hot take:", "The best"],
+    "closing_patterns": ["", "This is the way.", ""],
+    "uses_lists": false,
+    "uses_questions": false
+  },
+  "tonal": {
+    "warmth_level": "direct and opinionated",
+    "humor_usage": "frequent wit",
+    "personal_disclosure": "minimal",
+    "conviction_style": "bold and assertive"
+  },
+  "example_posts": [
+    "Ship it. Iterate later. Perfect is the enemy of shipped.",
+    "The best frameworks are the ones that get out of your way.",
+    "DX is UX for developers. It matters more than most realize."
+  ]
+}

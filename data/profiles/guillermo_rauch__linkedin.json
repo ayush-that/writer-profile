@@ -1,0 +1,30 @@
+{
+  "author": "guillermo_rauch",
+  "platform": "linkedin",
+  "lexical": {
+    "vocabulary_level": "technical-executive",
+    "recurring_phrases": ["developer experience", "the future of the web", "what we've built"],
+    "word_preferences": {"developers": "developers", "platform": "platform"},
+    "jargon_usage": "moderate",
+    "technicality_level": "accessible-technical"
+  },
+  "structural": {
+    "avg_sentence_length": 16,
+    "paragraph_style": "clear explanatory paragraphs",
+    "opening_patterns": ["Excited to announce", "What we've learned:", "The future of"],
+    "closing_patterns": ["Ship it.", "More to come.", "Join us."],
+    "uses_lists": true,
+    "uses_questions": false
+  },
+  "tonal": {
+    "warmth_level": "enthusiastic and direct",
+    "humor_usage": "occasional",
+    "personal_disclosure": "shares company journey",
+    "conviction_style": "confident builder"
+  },
+  "example_posts": [
+    "Excited to announce Next.js 15. What we've learned: the best frameworks are invisible. They let you focus on building, not configuring.",
+    "The future of the web is at the edge. Faster, closer to users, globally distributed. This is what we've been building toward at Vercel.",
+    "Developer experience is not a luxury. It's the foundation of velocity. Companies that invest in DX ship faster, hire better, and win."
+  ]
+}

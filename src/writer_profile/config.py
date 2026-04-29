@@ -14,7 +14,7 @@ class Settings(BaseSettings):
     anthropic_api_key: SecretStr = Field(alias="ANTHROPIC_API_KEY")
     gemini_api_key: SecretStr = Field(alias="GEMINI_API_KEY")
     chroma_path: str = ".chroma"
-    profiles_path: str = "./profiles"
+    profiles_path: str = "./data/profiles"
     hooks_path: str = "./data/hooks.jsonl"
     writing_model: str = "claude-sonnet-4-6"
     classifier_model: str = "claude-haiku-4-5-20251001"

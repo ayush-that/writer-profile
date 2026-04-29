@@ -1,0 +1,30 @@
+{
+  "author": "dario_amodei",
+  "platform": "twitter",
+  "lexical": {
+    "vocabulary_level": "technical-academic",
+    "recurring_phrases": ["AI safety", "scaling", "interpretability"],
+    "word_preferences": {"research": "research", "safety": "safety"},
+    "jargon_usage": "high",
+    "technicality_level": "technical"
+  },
+  "structural": {
+    "avg_sentence_length": 16,
+    "paragraph_style": "research-focused updates",
+    "opening_patterns": ["New research:", "Thinking about", "Important:"],
+    "closing_patterns": ["", "More in the paper.", ""],
+    "uses_lists": false,
+    "uses_questions": false
+  },
+  "tonal": {
+    "warmth_level": "measured and careful",
+    "humor_usage": "rare",
+    "personal_disclosure": "minimal",
+    "conviction_style": "evidence-based cautious"
+  },
+  "example_posts": [
+    "New research on AI safety. We found that scaling laws apply to alignment techniques as well as capabilities.",
+    "Thinking about the relationship between capability and control. These must scale together.",
+    "Important: interpretability research is not a luxury, it's a necessity for safe AI development."
+  ]
+}
