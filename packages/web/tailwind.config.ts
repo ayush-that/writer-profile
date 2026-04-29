@@ -1,7 +1,6 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  darkMode: "class",
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -9,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Figtree', 'system-ui', 'sans-serif'],
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
@@ -26,11 +28,17 @@ const config: Config = {
         },
         border: "var(--border)",
         ring: "var(--ring)",
+        sidebar: "var(--sidebar)",
       },
       borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+        xl: "var(--radius)",
+        lg: "16px",
+        md: "12px",
+        sm: "8px",
+        pill: "9999px",
+      },
+      fontSize: {
+        "2xs": ["0.625rem", { lineHeight: "1rem" }],
       },
     },
   },

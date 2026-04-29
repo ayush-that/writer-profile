@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Sparkles, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { listProfiles, type Profile, type GenerateRequest } from "@/lib/api";
+import { ChevronIcon, SparkleIcon } from "./icons";
 
 interface GenerateFormProps {
   onSubmit: (request: GenerateRequest) => void;
@@ -27,8 +27,8 @@ export function GenerateForm({ onSubmit, isLoading }: GenerateFormProps) {
         if (data.length > 0) {
           setAuthor(data[0].author);
         }
-      } catch (error) {
-        console.error("Failed to load profiles:", error);
+      } catch {
+        // API not available
       } finally {
         setLoadingProfiles(false);
       }
@@ -51,52 +51,55 @@ export function GenerateForm({ onSubmit, isLoading }: GenerateFormProps) {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
-      {/* Author Select */}
       <div className="space-y-2">
-        <label className="text-sm font-medium text-foreground">
-          CEO / Author
+        <label className="text-[10px] font-semibold uppercase tracking-[0.15em] text-muted-foreground">
+          Author
         </label>
         <div className="relative">
           <select
             value={author}
             onChange={(e) => setAuthor(e.target.value)}
-            disabled={loadingProfiles}
+            disabled={loadingProfiles || profiles.length === 0}
             className={cn(
-              "w-full appearance-none rounded-lg border border-border bg-card px-4 py-3 pr-10 text-sm text-foreground",
-              "focus:ring-primary/50 focus:outline-none focus:ring-2",
-              "disabled:cursor-not-allowed disabled:opacity-50"
+              "w-full appearance-none rounded-xl border border-border bg-white px-4 py-3.5 pr-10 text-sm font-medium text-foreground",
+              "transition-all duration-200",
+              "disabled:cursor-not-allowed disabled:bg-muted disabled:opacity-60"
             )}
           >
             {loadingProfiles ? (
-              <option>Loading profiles...</option>
+              <option>Loading...</option>
             ) : profiles.length === 0 ? (
               <option>No profiles available</option>
             ) : (
               profiles.map((profile) => (
                 <option key={profile.author} value={profile.author}>
-                  {profile.author}
+                  {profile.author.replace(/_/g, " ")}
                 </option>
               ))
             )}
           </select>
-          <ChevronDown className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+          <ChevronIcon
+            className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground"
+            weight="bold"
+          />
         </div>
       </div>
 
-      {/* Platform Toggle */}
       <div className="space-y-2">
-        <label className="text-sm font-medium text-foreground">Platform</label>
-        <div className="flex gap-2">
+        <label className="text-[10px] font-semibold uppercase tracking-[0.15em] text-muted-foreground">
+          Platform
+        </label>
+        <div className="flex gap-3">
           {(["linkedin", "twitter"] as const).map((p) => (
             <button
               key={p}
               type="button"
               onClick={() => setPlatform(p)}
               className={cn(
-                "flex-1 rounded-lg border px-4 py-2.5 text-sm font-medium transition-colors",
+                "flex-1 rounded-xl border-2 px-4 py-3 text-sm font-semibold",
                 platform === p
-                  ? "bg-primary/10 border-primary text-primary"
-                  : "hover:bg-muted/50 border-border text-muted-foreground"
+                  ? "border-foreground bg-foreground text-white"
+                  : "border-border bg-white text-muted-foreground hover:border-muted-foreground hover:text-foreground"
               )}
             >
               {p === "linkedin" ? "LinkedIn" : "Twitter"}
@@ -105,46 +108,41 @@ export function GenerateForm({ onSubmit, isLoading }: GenerateFormProps) {
         </div>
       </div>
 
-      {/* Topic Input */}
       <div className="space-y-2">
-        <label className="text-sm font-medium text-foreground">Topic</label>
+        <label className="text-[10px] font-semibold uppercase tracking-[0.15em] text-muted-foreground">
+          Topic
+        </label>
         <input
           type="text"
           value={topic}
           onChange={(e) => setTopic(e.target.value)}
           placeholder="What should the post be about?"
-          className={cn(
-            "w-full rounded-lg border border-border bg-card px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground",
-            "focus:ring-primary/50 focus:outline-none focus:ring-2"
-          )}
+          className="w-full rounded-xl border border-border bg-white px-4 py-3.5 text-sm font-medium text-foreground placeholder:font-normal placeholder:text-muted-foreground transition-all duration-200"
         />
       </div>
 
-      {/* Angle Textarea */}
       <div className="space-y-2">
-        <label className="text-sm font-medium text-foreground">
+        <label className="text-[10px] font-semibold uppercase tracking-[0.15em] text-muted-foreground">
           Angle{" "}
-          <span className="font-normal text-muted-foreground">(optional)</span>
+          <span className="font-medium normal-case tracking-normal text-muted-foreground/70">
+            (optional)
+          </span>
         </label>
         <textarea
           value={angle}
           onChange={(e) => setAngle(e.target.value)}
-          placeholder="Any specific perspective or hook you want to use?"
-          rows={3}
-          className={cn(
-            "w-full resize-none rounded-lg border border-border bg-card px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground",
-            "focus:ring-primary/50 focus:outline-none focus:ring-2"
-          )}
+          placeholder="Specific perspective or hook"
+          rows={2}
+          className="w-full resize-none rounded-xl border border-border bg-white px-4 py-3.5 text-sm font-medium text-foreground placeholder:font-normal placeholder:text-muted-foreground transition-all duration-200"
         />
       </div>
 
-      {/* Virality Slider */}
       <div className="space-y-3">
         <div className="flex items-center justify-between">
-          <label className="text-sm font-medium text-foreground">
+          <label className="text-[10px] font-semibold uppercase tracking-[0.15em] text-muted-foreground">
             Virality
           </label>
-          <span className="text-sm font-medium text-primary">{virality}%</span>
+          <span className="text-sm font-bold tabular-nums text-foreground">{virality}%</span>
         </div>
         <input
           type="range"
@@ -154,33 +152,21 @@ export function GenerateForm({ onSubmit, isLoading }: GenerateFormProps) {
           onChange={(e) => setVirality(Number(e.target.value))}
           className="w-full accent-primary"
         />
-        <p className="text-xs text-muted-foreground">
-          Higher values make the post more engaging but potentially less
-          authentic
+        <p className="text-[10px] leading-relaxed text-muted-foreground">
+          Higher = more engaging hooks · Lower = more authentic voice
         </p>
       </div>
 
-      {/* Generate Button */}
       <button
         type="submit"
         disabled={isLoading || !author || !topic}
         className={cn(
-          "gradient-primary flex w-full items-center justify-center gap-2 rounded-lg px-4 py-3 text-sm font-semibold text-white transition-opacity",
-          "hover:opacity-90",
-          "disabled:cursor-not-allowed disabled:opacity-50"
+          "btn-primary flex w-full items-center justify-center gap-2.5 rounded-2xl px-6 py-4 text-sm font-bold text-white",
+          "disabled:cursor-not-allowed disabled:opacity-50 disabled:transform-none disabled:shadow-none"
         )}
       >
-        {isLoading ? (
-          <>
-            <Sparkles className="h-4 w-4 animate-pulse" />
-            Generating...
-          </>
-        ) : (
-          <>
-            <Sparkles className="h-4 w-4" />
-            Generate Post
-          </>
-        )}
+        <SparkleIcon className="h-[18px] w-[18px]" weight="fill" />
+        {isLoading ? "Generating..." : "Generate Post"}
       </button>
     </form>
   );

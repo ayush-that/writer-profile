@@ -1,13 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import { Sidebar } from "@/components/sidebar";
-
-const inter = Inter({ subsets: ["latin"] });
+import { MobileNav } from "@/components/mobile-nav";
 
 export const metadata: Metadata = {
-  title: "Writer Profile - CEO Voice Agent",
-  description: "AI-powered writing assistant that captures your unique voice",
+  title: "Cadence - Voice-First Content Generation",
+  description: "Generate authentic social media content in your unique voice",
 };
 
 export default function RootLayout({
@@ -16,12 +14,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body className={inter.className}>
-        <div className="flex h-screen overflow-hidden">
+    <html lang="en">
+      <body>
+        <div className="hidden lg:block">
           <Sidebar />
-          <main className="flex-1 overflow-auto">{children}</main>
         </div>
+
+        <MobileNav />
+
+        <main className="min-h-screen bg-background pt-16 lg:ml-60 lg:pt-0">
+          {children}
+        </main>
       </body>
     </html>
   );
