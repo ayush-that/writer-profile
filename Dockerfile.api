@@ -17,6 +17,16 @@ COPY src/ ./src/
 # Copy data directory (profiles, hooks)
 COPY data/ ./data/
 
+# Create non-root user
+RUN addgroup --system --gid 1001 appgroup && \
+    adduser --system --uid 1001 --gid 1001 appuser && \
+    chown -R appuser:appgroup /app
+
+USER appuser
+
+# Environment
+ENV PYTHONUNBUFFERED=1
+
 # Expose port
 EXPOSE 8000
 
