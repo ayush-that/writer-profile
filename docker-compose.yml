@@ -8,8 +8,6 @@ services:
       - "8001:8000"
     env_file:
       - .env
-    volumes:
-      - ./data:/app/data
     healthcheck:
       test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/api/profiles')"]
       interval: 30s
