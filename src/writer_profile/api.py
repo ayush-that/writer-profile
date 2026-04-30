@@ -40,7 +40,14 @@ def get_pipeline() -> GenerationPipeline:
             model=settings.embedding_model,
             dimensions=settings.embedding_dimensions,
         )
-        store = ExemplarStore(path=settings.chroma_path, embedder=embedder)
+        store = ExemplarStore(
+            embedder=embedder,
+            path=settings.chroma_path,
+            api_key=settings.chroma_api_key.get_secret_value() if settings.chroma_api_key else None,
+            host=settings.chroma_host,
+            tenant=settings.chroma_tenant,
+            database=settings.chroma_database,
+        )
         _profiles = VoiceProfileStore(root=settings.profiles_path)
         hooks = HookLibrary.load(settings.hooks_path)
         llm = AnthropicClient(api_key=settings.anthropic_api_key)

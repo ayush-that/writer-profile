@@ -1,7 +1,8 @@
 from __future__ import annotations
 
-import json
+import hashlib
 from dataclasses import dataclass
+from datetime import UTC, datetime
 
 import chromadb
 
@@ -17,18 +18,37 @@ class ExemplarHit:
 
 
 class ExemplarStore:
-    def __init__(self, *, path: str, embedder: Embedder, collection: str = "posts") -> None:
-        self._client = chromadb.PersistentClient(path=path)
+    def __init__(
+        self,
+        *,
+        embedder: Embedder,
+        collection: str = "posts",
+        path: str | None = None,
+        api_key: str | None = None,
+        host: str | None = None,
+        tenant: str | None = None,
+        database: str | None = None,
+    ) -> None:
+        if api_key and host and tenant and database:
+            self._client = chromadb.CloudClient(
+                cloud_port=443,
+                cloud_host=host,
+                api_key=api_key,
+                tenant=tenant,
+                database=database,
+            )
+        else:
+            self._client = chromadb.PersistentClient(path=path or ".chroma")
         self._col = self._client.get_or_create_collection(
             name=collection, metadata={"hnsw:space": "cosine"}
         )
         self._embedder = embedder
 
-    def add_many(self, items: list[AnnotatedPost]) -> None:
+    def add_many(self, items: list[AnnotatedPost], max_doc_chars: int = 4000) -> None:
         if not items:
             return
-        ids = [i.post.id for i in items]
-        docs = [i.post.text for i in items]
+        ids = [hashlib.md5(i.post.id.encode()).hexdigest()[:24] for i in items]
+        docs = [i.post.text[:max_doc_chars] for i in items]
         vectors = self._embedder.embed(docs).tolist()
         metadatas = [
             {
@@ -37,8 +57,7 @@ class ExemplarStore:
                 "tone": i.metadata.tone.value,
                 "length_bucket": i.metadata.length_bucket,
                 "language": i.metadata.language,
-                "topics_json": json.dumps(i.metadata.topics),
-                "post_json": i.post.model_dump_json(),
+                "topics": ",".join(i.metadata.topics[:5]),
             }
             for i in items
         ]
@@ -64,12 +83,23 @@ class ExemplarStore:
         hits: list[ExemplarHit] = []
         metadatas = result.get("metadatas", [[]])
         distances = result.get("distances", [[]])
+        documents = result.get("documents", [[]])
+        ids = result.get("ids", [[]])
         if not metadatas or not metadatas[0]:
             return hits
-        for meta, dist in zip(metadatas[0], distances[0], strict=True):
-            post = Post.model_validate_json(meta["post_json"])
+        for i, (meta, dist) in enumerate(zip(metadatas[0], distances[0], strict=True)):
+            doc_text = documents[0][i] if documents and documents[0] else ""
+            doc_id = ids[0][i] if ids and ids[0] else f"unknown_{i}"
+            topics = meta.get("topics", "").split(",") if meta.get("topics") else []
+            post = Post(
+                id=doc_id,
+                author=meta["author"],
+                platform=Platform(meta["platform"]),
+                text=doc_text,
+                created_at=datetime.now(UTC),
+            )
             pm = PostMetadata(
-                topics=json.loads(meta["topics_json"]),
+                topics=topics,
                 tone=meta["tone"],
                 length_bucket=meta["length_bucket"],
                 language=meta["language"],

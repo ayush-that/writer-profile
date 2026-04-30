@@ -50,9 +50,10 @@ def _stats_block(stats) -> str:
     return json.dumps(stats.model_dump(), indent=2, default=str)
 
 
-def _samples_block(posts: list[Post], limit: int = 40) -> str:
-    sorted_posts = sorted(posts, key=lambda p: len(p.text), reverse=True)[:limit]
-    return "\n\n---\n\n".join(p.text for p in sorted_posts)
+def _samples_block(posts: list[Post], limit: int = 15, max_chars_per_post: int = 2000) -> str:
+    truncated = [(p, p.text[:max_chars_per_post]) for p in posts]
+    sorted_posts = sorted(truncated, key=lambda x: len(x[1]), reverse=True)[:limit]
+    return "\n\n---\n\n".join(text for _, text in sorted_posts)
 
 
 def build_voice_profile(
