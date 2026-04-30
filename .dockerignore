@@ -1,32 +1,23 @@
-# Dependencies
 node_modules/
 .venv/
 __pycache__/
 *.pyc
 .pytest_cache/
-
-# Build outputs
 .next/
 .open-next/
 dist/
 build/
 *.egg-info/
-
-# Dev files
 .git/
 .github/
 .vscode/
 *.md
 docs/
 tests/
-
-# Environment
 .env
 .env.local
 .env*.local
 .dev.vars
-
-# Misc
 .DS_Store
 *.log
 .chroma/

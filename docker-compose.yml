@@ -11,7 +11,7 @@ services:
     volumes:
       - ./data:/app/data
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8000/api/profiles"]
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/api/profiles')"]
       interval: 30s
       timeout: 10s
       retries: 3
@@ -31,7 +31,3 @@ services:
       api:
         condition: service_healthy
     restart: unless-stopped
-
-networks:
-  default:
-    name: writer-profile-network

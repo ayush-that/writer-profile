@@ -2,33 +2,22 @@ FROM python:3.13-slim
 
 WORKDIR /app
 
-# Install uv for fast dependency management
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /usr/local/bin/uv
 
-# Copy dependency files first for caching
 COPY pyproject.toml uv.lock ./
-
-# Install dependencies
 RUN uv sync --frozen --no-dev
 
-# Copy source code
 COPY src/ ./src/
-
-# Copy data directory (profiles, hooks)
 COPY data/ ./data/
 
-# Create non-root user
 RUN addgroup --system --gid 1001 appgroup && \
     adduser --system --uid 1001 --gid 1001 appuser && \
     chown -R appuser:appgroup /app
 
 USER appuser
 
-# Environment
 ENV PYTHONUNBUFFERED=1
 
-# Expose port
 EXPOSE 8000
 
-# Run FastAPI with uvicorn
 CMD ["uv", "run", "uvicorn", "writer_profile.api:app", "--host", "0.0.0.0", "--port", "8000"]
