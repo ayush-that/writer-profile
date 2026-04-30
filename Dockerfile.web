@@ -12,12 +12,12 @@ RUN pnpm install --frozen-lockfile --filter @writer-profile/web
 FROM base AS builder
 WORKDIR /app
 
+COPY package.json pnpm-workspace.yaml ./
 COPY --from=deps /app/node_modules ./node_modules
 COPY --from=deps /app/packages/web/node_modules ./packages/web/node_modules
 COPY packages/web/ ./packages/web/
 
-WORKDIR /app/packages/web
-RUN pnpm build
+RUN pnpm --filter @writer-profile/web build
 
 FROM base AS runner
 WORKDIR /app
