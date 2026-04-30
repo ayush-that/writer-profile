@@ -81,3 +81,55 @@ export async function listProfiles(): Promise<Profile[]> {
   const data = await response.json();
   return data.profiles;
 }
+
+export interface LexicalPatterns {
+  vocabulary_level: string;
+  recurring_phrases: string[];
+  word_preferences: Record<string, string>;
+  jargon_usage: string;
+  technicality_level: string;
+}
+
+export interface StructuralPatterns {
+  avg_sentence_length: number;
+  paragraph_style: string;
+  opening_patterns: string[];
+  closing_patterns: string[];
+  uses_lists: boolean;
+  uses_questions: boolean;
+}
+
+export interface TonalPatterns {
+  warmth_level: string;
+  humor_usage: string;
+  personal_disclosure: string;
+  conviction_style: string;
+}
+
+export interface VoiceProfile {
+  author: string;
+  platform: string;
+  lexical: LexicalPatterns;
+  structural: StructuralPatterns;
+  tonal: TonalPatterns;
+  example_posts: string[];
+}
+
+export interface ProfileDetailResponse {
+  profile: VoiceProfile;
+  post_count: number;
+}
+
+export async function getProfile(
+  author: string,
+  platform: string
+): Promise<ProfileDetailResponse> {
+  const response = await fetch(`${API_BASE}/api/profiles/${author}/${platform}`);
+
+  if (!response.ok) {
+    const error = await response.json().catch(() => ({}));
+    throw new Error(error.detail || "Failed to fetch profile");
+  }
+
+  return response.json();
+}
