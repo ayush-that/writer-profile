@@ -1,7 +1,7 @@
 "use client";
 
 import { useQuery } from "@tanstack/react-query";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   listProfiles,
   getProfile,
@@ -17,6 +17,7 @@ export default function ProfilesPage() {
   const {
     data: profiles = [],
     isLoading: loadingList,
+    error: listError,
   } = useQuery({
     queryKey: ["profiles"],
     queryFn: listProfiles,
@@ -29,6 +30,7 @@ export default function ProfilesPage() {
   const {
     data: profileDetail,
     isLoading: loadingDetail,
+    error: detailError,
   } = useQuery({
     queryKey: ["profile", selectedAuthor, selectedPlatform],
     queryFn: () => getProfile(selectedAuthor!, selectedPlatform!),
@@ -49,7 +51,12 @@ export default function ProfilesPage() {
         </p>
       </header>
 
-      {loadingList ? (
+      {listError ? (
+        <div className="flex flex-col items-center justify-center rounded-2xl border-2 border-dashed border-red-200 bg-red-50 py-20">
+          <p className="text-base font-semibold text-red-600">Failed to load profiles</p>
+          <p className="mt-1 text-sm text-red-500">{listError.message}</p>
+        </div>
+      ) : loadingList ? (
         <div className="flex items-center justify-center py-20">
           <div className="h-8 w-8 animate-spin rounded-full border-[3px] border-primary border-t-transparent" />
         </div>
@@ -79,6 +86,7 @@ export default function ProfilesPage() {
         <ProfileModal
           detail={profileDetail}
           isLoading={loadingDetail}
+          error={detailError}
           onClose={closeModal}
         />
       )}
@@ -126,18 +134,31 @@ function ProfileCard({
 function ProfileModal({
   detail,
   isLoading,
+  error,
   onClose,
 }: {
   detail: ProfileDetailResponse | undefined;
   isLoading: boolean;
+  error: Error | null;
   onClose: () => void;
 }) {
   const profile = detail?.profile;
+
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    document.addEventListener("keydown", handleEscape);
+    return () => document.removeEventListener("keydown", handleEscape);
+  }, [onClose]);
 
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4"
       onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="profile-modal-title"
     >
       <div
         className="max-h-[85vh] w-full max-w-2xl overflow-y-auto rounded-2xl bg-white"
@@ -147,12 +168,17 @@ function ProfileModal({
           <div className="flex items-center justify-center py-20">
             <div className="h-8 w-8 animate-spin rounded-full border-[3px] border-primary border-t-transparent" />
           </div>
+        ) : error ? (
+          <div className="flex flex-col items-center justify-center py-20">
+            <p className="font-medium text-red-600">Failed to load profile</p>
+            <p className="mt-1 text-sm text-red-500">{error.message}</p>
+          </div>
         ) : profile ? (
           <>
             {/* Header */}
             <div className="sticky top-0 z-10 flex items-center justify-between border-b border-border bg-white px-6 py-4">
               <div>
-                <h2 className="text-xl font-bold text-foreground">
+                <h2 id="profile-modal-title" className="text-xl font-bold text-foreground">
                   {profile.author.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase())}
                 </h2>
                 <div className="mt-1 flex items-center gap-3">
