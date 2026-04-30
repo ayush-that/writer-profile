@@ -11,7 +11,8 @@ RUN uv pip install --system --no-cache .
 
 COPY data/ ./data/
 
-RUN addgroup --system --gid 1001 appgroup && \
+RUN mkdir -p /app/data/profiles && \
+    addgroup --system --gid 1001 appgroup && \
     adduser --system --uid 1001 --gid 1001 appuser && \
     chown -R appuser:appgroup /app
 
