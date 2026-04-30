@@ -20,7 +20,7 @@ class ProfileStore:
 
     def load(self, author: str, platform: Platform | str) -> VoiceProfile | None:
         plat_val = platform.value if isinstance(platform, Platform) else platform
-        filename = f"{author}_{plat_val}.json"
+        filename = f"{author}__{plat_val}.json"
         filepath = self._path / filename
 
         if not filepath.exists():
@@ -39,7 +39,7 @@ class ProfileStore:
 
         author = profile["author"]
         platform = profile["platform"]
-        filename = f"{author}_{platform}.json"
+        filename = f"{author}__{platform}.json"
         filepath = self._path / filename
 
         try:
@@ -50,7 +50,7 @@ class ProfileStore:
             return False
 
     def delete(self, author: str, platform: str) -> bool:
-        filename = f"{author}_{platform}.json"
+        filename = f"{author}__{platform}.json"
         filepath = self._path / filename
 
         if not filepath.exists():
@@ -67,7 +67,7 @@ class ProfileStore:
 
         for filepath in self._path.glob("*.json"):
             stem = filepath.stem
-            parts = stem.rsplit("_", 1)
+            parts = stem.rsplit("__", 1)
             if len(parts) == 2:
                 author, plat_str = parts
                 with contextlib.suppress(ValueError):
@@ -76,6 +76,6 @@ class ProfileStore:
         return sorted(profiles)
 
     def exists(self, author: str, platform: str) -> bool:
-        filename = f"{author}_{platform}.json"
+        filename = f"{author}__{platform}.json"
         filepath = self._path / filename
         return filepath.exists()
