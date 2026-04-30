@@ -9,6 +9,7 @@ COPY packages/api/src/ ./src/
 
 RUN uv pip install --system --no-cache .
 
+ARG CACHEBUST=1
 COPY data/ ./data/
 
 RUN mkdir -p /app/data/profiles && \
