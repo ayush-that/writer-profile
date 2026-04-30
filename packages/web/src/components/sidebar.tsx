@@ -30,70 +30,31 @@ export function Sidebar() {
         </Link>
       </div>
 
-      <nav className="flex-1 space-y-6">
-        <div className="space-y-1.5">
-          <p className="mb-3 px-3 text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">
-            General
-          </p>
-          {navItems.slice(0, 2).map((item) => {
-            const isActive = pathname === item.href;
-            const Icon = item.icon;
+      <nav className="flex-1 space-y-1.5">
+        {navItems.map((item) => {
+          const isActive = pathname === item.href;
+          const Icon = item.icon;
 
-            return (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={cn(
-                  "group flex items-center gap-3 rounded-xl px-3 py-3 text-sm font-semibold",
-                  isActive
-                    ? "bg-primary text-white"
-                    : "text-muted-foreground hover:bg-muted hover:text-foreground"
-                )}
-              >
-                <Icon
-                  className="h-[18px] w-[18px]"
-                  weight={isActive ? "fill" : "regular"}
-                />
-                {item.label}
-              </Link>
-            );
-          })}
-        </div>
-
-        <div className="space-y-1.5">
-          <p className="mb-3 px-3 text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">
-            Manage
-          </p>
-          {navItems.slice(2).map((item) => {
-            const isActive = pathname === item.href;
-            const Icon = item.icon;
-
-            return (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={cn(
-                  "group flex items-center gap-3 rounded-xl px-3 py-3 text-sm font-semibold",
-                  isActive
-                    ? "bg-primary text-white"
-                    : "text-muted-foreground hover:bg-muted hover:text-foreground"
-                )}
-              >
-                <Icon
-                  className="h-[18px] w-[18px]"
-                  weight={isActive ? "fill" : "regular"}
-                />
-                {item.label}
-              </Link>
-            );
-          })}
-        </div>
+          return (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={cn(
+                "group flex items-center gap-3 rounded-xl px-3 py-3 text-sm font-semibold",
+                isActive
+                  ? "bg-primary text-white"
+                  : "text-muted-foreground hover:bg-muted hover:text-foreground"
+              )}
+            >
+              <Icon
+                className="h-[18px] w-[18px]"
+                weight={isActive ? "fill" : "regular"}
+              />
+              {item.label}
+            </Link>
+          );
+        })}
       </nav>
-
-      <div className="from-primary/5 via-primary/10 to-primary/5 mt-auto rounded-2xl bg-gradient-to-br p-5">
-        <p className="text-xs font-semibold text-foreground">Powered by</p>
-        <p className="mt-1 text-[10px] text-muted-foreground">Exa + Claude</p>
-      </div>
     </aside>
   );
 }
