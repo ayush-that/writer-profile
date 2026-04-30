@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Sidebar } from "@/components/sidebar";
 import { MobileNav } from "@/components/mobile-nav";
+import { QueryProvider } from "@/lib/query-client";
 
 export const metadata: Metadata = {
   title: "Cadence - Voice-First Content Generation",
@@ -16,15 +17,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <div className="hidden lg:block">
-          <Sidebar />
-        </div>
+        <QueryProvider>
+          <div className="hidden lg:block">
+            <Sidebar />
+          </div>
 
-        <MobileNav />
+          <MobileNav />
 
-        <main className="min-h-screen bg-background pt-16 lg:ml-60 lg:pt-0">
-          {children}
-        </main>
+          <main className="min-h-screen bg-background pt-16 lg:ml-60 lg:pt-0">
+            {children}
+          </main>
+        </QueryProvider>
       </body>
     </html>
   );
