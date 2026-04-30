@@ -7,7 +7,6 @@ import {
   DashboardIcon,
   GenerateIcon,
   ProfileIcon,
-  SettingsIcon,
 } from "./icons";
 import { CadenceLogo } from "./logo";
 
@@ -15,7 +14,6 @@ const navItems = [
   { href: "/", label: "Dashboard", icon: DashboardIcon },
   { href: "/generate", label: "Generate", icon: GenerateIcon },
   { href: "/profiles", label: "Profiles", icon: ProfileIcon },
-  { href: "/settings", label: "Settings", icon: SettingsIcon },
 ];
 
 export function Sidebar() {

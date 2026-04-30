@@ -57,10 +57,7 @@ export default function GeneratePage() {
   return (
     <div className="min-h-screen p-4 sm:p-6 lg:p-8">
       <header className="mb-8">
-        <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-          Create
-        </p>
-        <h1 className="mt-2 text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+        <h1 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
           Generate Post
         </h1>
       </header>

@@ -25,10 +25,7 @@ export default function Home() {
   return (
     <div className="min-h-screen p-4 sm:p-6 lg:p-8">
       <header className="mb-8 lg:mb-12">
-        <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-muted-foreground">
-          Overview
-        </p>
-        <h1 className="mt-2 text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
+        <h1 className="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
           Welcome back
         </h1>
       </header>

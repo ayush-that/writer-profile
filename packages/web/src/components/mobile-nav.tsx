@@ -10,14 +10,12 @@ import {
   DashboardIcon,
   GenerateIcon,
   ProfileIcon,
-  SettingsIcon,
 } from "./icons";
 
 const navItems = [
   { href: "/", label: "Dashboard", icon: DashboardIcon },
   { href: "/generate", label: "Generate", icon: GenerateIcon },
   { href: "/profiles", label: "Profiles", icon: ProfileIcon },
-  { href: "/settings", label: "Settings", icon: SettingsIcon },
 ];
 
 export function MobileNav() {
@@ -26,10 +24,10 @@ export function MobileNav() {
 
   return (
     <>
-      <header className="fixed left-0 right-0 top-0 z-40 flex h-16 items-center border-b border-border bg-sidebar px-4 lg:hidden">
+      <header className="fixed left-0 right-0 top-0 z-40 flex h-16 items-center gap-1 border-b border-border bg-sidebar px-4 lg:hidden">
         <button
           onClick={() => setOpen(!open)}
-          className="flex h-10 w-10 items-center justify-center rounded-xl transition-colors hover:bg-muted"
+          className="-mr-1 flex h-10 w-10 items-center justify-center rounded-xl transition-colors hover:bg-muted"
           aria-label="Toggle menu"
         >
           {open ? (
