@@ -28,7 +28,7 @@ TWITTER_HANDLES = {
 }
 
 
-def fetch_tweets(handle: str, count: int = 50) -> list[dict]:
+def fetch_tweets(handle: str, count: int = 200) -> list[dict]:
     """Fetch recent tweets for a Twitter handle."""
     if not TWITTER_API_KEY:
         print("Error: TWITTER_API_KEY not set")
@@ -82,7 +82,7 @@ def analyze_voice(tweets: list[dict]) -> dict:
     top_words = sorted(word_counts.items(), key=lambda x: -x[1])[:10]
     recurring = [w for w, c in top_words if c >= 3]
 
-    example_posts = texts[:5]
+    example_posts = texts[:50]
 
     return {
         "avg_sentence_length": round(avg_sentence_len, 1),

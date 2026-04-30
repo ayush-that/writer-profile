@@ -26,7 +26,7 @@ LINKEDIN_PROFILES = {
 }
 
 
-def fetch_linkedin_posts(exa: Exa, name: str, role: str, count: int = 20) -> list[dict]:
+def fetch_linkedin_posts(exa: Exa, name: str, role: str, count: int = 50) -> list[dict]:
     """Fetch LinkedIn posts for a person using Exa API."""
     query = f"{name} {role} LinkedIn posts thoughts leadership insights"
 
@@ -112,7 +112,7 @@ def analyze_voice(posts: list[dict]) -> dict:
     top_words = sorted(word_counts.items(), key=lambda x: -x[1])[:15]
     recurring = [w for w, c in top_words if c >= 2]
 
-    example_posts = texts[:5]
+    example_posts = texts[:30]
 
     return {
         "avg_sentence_length": round(avg_sentence_len, 1),
