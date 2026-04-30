@@ -31,3 +31,7 @@ data/*.jsonl
 # OS
 .DS_Store
 Thumbs.db
+
+# Cloudflare Pages
+packages/web/out/
+packages/web/.open-next/

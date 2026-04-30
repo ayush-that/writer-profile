@@ -1,5 +1,9 @@
 const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
 
+export function getApiBase() {
+  return API_BASE;
+}
+
 export interface GenerateRequest {
   author: string;
   platform: "twitter" | "linkedin";

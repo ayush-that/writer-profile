@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { listProfiles, type Profile } from "@/lib/api";
+import { listProfiles, type Profile, getApiBase } from "@/lib/api";
 import { ProfileIcon, CloseIcon } from "@/components/icons";
 import { cn } from "@/lib/utils";
 
@@ -51,7 +51,7 @@ export default function ProfilesPage() {
   const viewProfile = async (author: string, platform: string) => {
     setLoadingDetail(true);
     try {
-      const res = await fetch(`/api/profiles/${author}/${platform}`);
+      const res = await fetch(`${getApiBase()}/api/profiles/${author}/${platform}`);
       if (res.ok) {
         const data = await res.json();
         setSelectedProfile(data);
@@ -66,10 +66,7 @@ export default function ProfilesPage() {
   return (
     <div className="min-h-screen p-4 sm:p-6 lg:p-8">
       <header className="mb-8">
-        <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-          Manage
-        </p>
-        <h1 className="mt-2 text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+        <h1 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
           Voice Profiles
         </h1>
       </header>

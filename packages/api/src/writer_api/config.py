@@ -18,7 +18,13 @@ class Settings(BaseSettings):
     profiles_path: str = "../../data/profiles"
     hooks_path: str = "../../data/hooks.jsonl"
 
-    cors_origins: list[str] = ["http://localhost:3000"]
+    cors_origins: list[str] = Field(
+        default=[
+            "http://localhost:3000",
+            "https://writer-profile.pages.dev",
+        ],
+        alias="CORS_ORIGINS",
+    )
 
 
 settings = Settings()
