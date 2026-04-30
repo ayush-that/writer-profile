@@ -14,7 +14,6 @@ def revoice(
     constraint: Constraint,
     llm: LLMClient,
     model: str,
-    temperature: float = 0.4,
 ) -> str:
     system, user = build_revoice_prompt(
         profile=profile, edited_draft=edited_draft, constraint=constraint
@@ -24,6 +23,5 @@ def revoice(
         system=system,
         messages=[LLMMessage(role="user", content=user)],
         max_tokens=1024,
-        temperature=temperature,
     )
     return unwrap(raw)

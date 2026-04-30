@@ -26,7 +26,6 @@ def generate_draft(
     llm: LLMClient,
     model: str,
     virality_strength: float = 0.15,
-    temperature: float = 0.8,
 ) -> str:
     system, user = build_generator_prompt(
         profile=profile,
@@ -41,6 +40,5 @@ def generate_draft(
         system=system,
         messages=[LLMMessage(role="user", content=user)],
         max_tokens=1024,
-        temperature=temperature,
     )
     return unwrap(raw)

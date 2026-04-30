@@ -20,9 +20,9 @@ class Settings(BaseSettings):
     chroma_database: str | None = Field(default=None, alias="CHROMA_DATABASE")
     profiles_path: str = "./data/profiles"
     hooks_path: str = "./data/hooks.jsonl"
-    writing_model: str = "claude-opus-4-5"
+    writing_model: str = "claude-opus-4-7"
     classifier_model: str = "claude-sonnet-4-6"
-    judge_model: str = "claude-opus-4-5"
+    judge_model: str = "claude-opus-4-7"
     embedding_model: str = "gemini-embedding-2"
     embedding_dimensions: int = 768
     refine_max_iterations: int = 3

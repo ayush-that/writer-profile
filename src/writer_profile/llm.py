@@ -28,7 +28,6 @@ class LLMClient(Protocol):
         system: str,
         messages: list[LLMMessage],
         max_tokens: int = 1024,
-        temperature: float = 0.7,
     ) -> str: ...
 
 
@@ -44,13 +43,11 @@ class AnthropicClient:
         system: str,
         messages: list[LLMMessage],
         max_tokens: int = 1024,
-        temperature: float = 0.7,
     ) -> str:
         response = self._client.messages.create(
             model=model,
             system=system,
             max_tokens=max_tokens,
-            temperature=temperature,
             messages=[{"role": m.role, "content": m.content} for m in messages],
         )
         parts = [b.text for b in response.content if b.type == "text"]
@@ -70,7 +67,6 @@ class StubLLMClient:
         system: str,
         messages: list[LLMMessage],
         max_tokens: int = 1024,
-        temperature: float = 0.7,
     ) -> str:
         self.calls.append(LLMCall(model=model, system=system, messages=tuple(messages)))
         response = self.responses[self._idx]

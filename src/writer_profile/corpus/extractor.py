@@ -39,7 +39,6 @@ def extract_metadata(post: Post, *, llm: LLMClient, model: str) -> PostMetadata:
         system=_EXTRACT_SYSTEM,
         messages=[LLMMessage(role="user", content=prompt)],
         max_tokens=256,
-        temperature=0.0,
     )
     try:
         data = json.loads(_strip_json_fence(raw))

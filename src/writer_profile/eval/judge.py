@@ -68,7 +68,6 @@ def score_post(
         system=system,
         messages=[LLMMessage(role="user", content=f"CANDIDATE POST by '{author}':\n\n{candidate}")],
         max_tokens=512,
-        temperature=0.0,
     )
     try:
         data = json.loads(_strip_fence(raw))

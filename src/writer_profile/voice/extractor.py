@@ -75,7 +75,6 @@ def build_voice_profile(
         system=system,
         messages=[LLMMessage(role="user", content="Produce the JSON voice profile now.")],
         max_tokens=2048,
-        temperature=0.1,
     )
     try:
         data = json.loads(_strip_fence(raw))

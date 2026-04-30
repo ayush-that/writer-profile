@@ -44,7 +44,6 @@ def _critique(
         system=system,
         messages=[LLMMessage(role="user", content=user)],
         max_tokens=256,
-        temperature=0.2,
     ).strip()
 
 
@@ -70,7 +69,6 @@ def _rewrite(
         system=system,
         messages=[LLMMessage(role="user", content=user)],
         max_tokens=1024,
-        temperature=0.6,
     )
     return unwrap(raw)
 
@@ -168,7 +166,6 @@ def _multi_critique(
             system=system,
             messages=[LLMMessage(role="user", content=user)],
             max_tokens=256,
-            temperature=0.2,
         )
         feedbacks.append(parse_critic_response(critic["name"], response))
     return feedbacks
