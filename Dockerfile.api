@@ -5,9 +5,10 @@ WORKDIR /app
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /usr/local/bin/uv
 
 COPY packages/api/pyproject.toml ./
-RUN uv sync --no-dev
-
 COPY packages/api/src/ ./src/
+
+RUN uv pip install --system --no-cache .
+
 COPY data/ ./data/
 
 RUN addgroup --system --gid 1001 appgroup && \
@@ -23,4 +24,4 @@ ENV HOOKS_PATH=/app/data/hooks.jsonl
 
 EXPOSE 8000
 
-CMD ["uv", "run", "uvicorn", "writer_api.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["python", "-m", "uvicorn", "writer_api.main:app", "--host", "0.0.0.0", "--port", "8000"]
