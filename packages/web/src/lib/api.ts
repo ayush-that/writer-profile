@@ -10,6 +10,7 @@ export interface GenerateRequest {
   topic: string;
   angle?: string;
   virality?: number;
+  word_limit?: number;
 }
 
 export interface GenerateResponse {

@@ -1,0 +1,41 @@
+{
+  "author": "brian_chesky",
+  "platform": "twitter",
+  "lexical": {
+    "vocabulary_level": "professional",
+    "recurring_phrases": [
+      "this",
+      "airbnb",
+      "design",
+      "great",
+      "with",
+      "that",
+      "more",
+      "billion"
+    ],
+    "word_preferences": {},
+    "jargon_usage": "moderate",
+    "technicality_level": "accessible"
+  },
+  "structural": {
+    "avg_sentence_length": 8.2,
+    "paragraph_style": "short",
+    "opening_patterns": [],
+    "closing_patterns": [],
+    "uses_lists": false,
+    "uses_questions": true
+  },
+  "tonal": {
+    "warmth_level": "moderate",
+    "humor_usage": "occasional",
+    "personal_disclosure": "moderate",
+    "conviction_style": "confident"
+  },
+  "example_posts": [
+    "We follow this model",
+    "After YC, Airbnb raised $615k at a $3M post-money valuation. We were the highest valuation in our batch.",
+    ".@Ahmad_Al_Dahle is joining as Airbnb's new CTO. \n\nI\u2019m often asked about our AI strategy. We believe pairing great design with frontier technology will help us improve the way people experience travel. Excited to build!",
+    "This is a great idea, and I fully support it. We\u2019re overdue for new aesthetic movements!",
+    "Talking design with @tbpn https://t.co/cRfQET3ilG"
+  ]
+}

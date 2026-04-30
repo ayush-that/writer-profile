@@ -1,0 +1,43 @@
+{
+  "author": "patrick_collison",
+  "platform": "twitter",
+  "lexical": {
+    "vocabulary_level": "professional",
+    "recurring_phrases": [
+      "stripe",
+      "with",
+      "that",
+      "your",
+      "this",
+      "announced",
+      "support",
+      "payments",
+      "just",
+      "we\u2019re"
+    ],
+    "word_preferences": {},
+    "jargon_usage": "moderate",
+    "technicality_level": "accessible"
+  },
+  "structural": {
+    "avg_sentence_length": 13.1,
+    "paragraph_style": "short",
+    "opening_patterns": [],
+    "closing_patterns": [],
+    "uses_lists": false,
+    "uses_questions": true
+  },
+  "tonal": {
+    "warmth_level": "moderate",
+    "humor_usage": "occasional",
+    "personal_disclosure": "moderate",
+    "conviction_style": "confident"
+  },
+  "example_posts": [
+    "RT @gakonst: pretty incredible to see @patrickc casually mentioning to @sama the agentic infra we built in January for @tempo and @paradigm\u2026",
+    "RT @karine_hsu: Stripe Press cafe at Stripe Sessions \ud83d\ude07 https://t.co/SHRop0g1yG",
+    "Pretty cool example of crypto going mainstream: Meta is launching creator stablecoin payouts, built on @tempo and @link. Live in Colombia and Philippines; 160+ countries coming soon.",
+    "We just announced a large raft of improvements at @Stripe Sessions. My meta reflections:\n\n\u2022 It feels that the entire economy is replatforming right now.\n\u2022 Many charts at Stripe are inflecting in quite dramatic ways. What GitHub recently reported for commits we are seeing in economic activity (such as new company formations).\n\u2022 It is increasingly clear that agents will be responsible for most transactions in the not overly distant future.\n\u2022 Stripe was always developer-centric, but AI is making developer-centricity strategic in a new way: agents are even hungrier for good DX than developers themselves are.\n\u2022 Things that we\u2019re launching are increasingly network products at heart. (Instant transfers between Stripe businesses, new kinds of fraud prevention with Stripe Radar, stablecoin payouts to anyone with Link.) \"How can we turn Stripe's economies of scale into user benefits?\" is increasingly the relevant question.\n\u2022 Between Privy, Bridge, Tempo, and Stripe\u2019s core capabilities, we\u2019re now doing a lot in stablecoins/crypto, and companies like DoorDash, Ramp, Meta, and Klarna are using our crypto stack to deploy meaningful new functionality in production. \u201cBut where\u2019s the production use?\u201d is rapidly becoming stale when applied to crypto.\n\u2022 After more than a decade of building, we seem to have hit some kind of critical mass of core platform capabilities such that building new things now feels easier and faster than before. (AI also helps.) We announced Stripe Treasury last year (originally called Financial Accounts); since then, we\u2019ve added multi-currency support, global payouts, card issuance and rewards, and a bunch of other sophisticated functionality. By the end of this year, Treasury will support 15 more currencies and be available to businesses in 160 countries.\n\nOn the launches themselves, a small selection that I thought were cool, though this is really just a subset:\n\n\u2022 The @Link AI wallet. Point your agent to https://t.co/vYdvNtJgpE and ask it to make purchases on your behalf with secure single-use tokens. (To test it, I asked Claude Code to buy a small gift for me yesterday. It purchased HTTPZine on Gumroad.)\n\u2022 New payment methods for Link, including Pix (largest payment method in Brazil) and UPI (largest payment method in India). We\u2019re also adding stablecoin support to Link (which I think will be huge if we execute well).\n\u2022 We\u2019re adding a lot of new Machine Payments Protocol functionality, including micropayment and recurring payment support.\n\u2022 We announced Checkout studio: a sophisticated dashboard for managing your checkout flow, including things like transaction replays and A/B tests. Today this tends to require a lot of fussy edits to production code.\n\u2022 Adaptive Pricing (which automatically localizes the price and currency that customers see) now supports subscriptions. We\u2019ve seen pretty huge (4\u20135%) conversion rate improvements after enabling it \u2014 customers really like paying in their home currency.\n\u2022 New Stripe Terminal reader (the T600) with a customer-facing screen that can run native apps, plus support for 15 new international markets for Stripe Terminal.\n\u2022 General availability for Stripe Managed Payments, our merchant of record solution. (Natively handles tax, disputes, fraud.) Maybe sounds a bit arcane, but it\u2019s one of those iykyk products. It saves a lot of schlep.\n\u2022 Fraud is a *much* bigger priority for customers than it was 2 years ago (AI makes fraud easier + unlike software, tokens can be resold), so we\u2019ve been extending Stripe Radar to support things beyond payments fraud: free trial abuse, multi-account abuse, pay-as-you-go abuse. Early results are extremely positive. We also announced Stripe Signals \u2014 new scoring APIs for customers, businesses, and other objects, not just payments on and off Stripe.\n\u2022 Usage-based billing is also becoming the de facto business model of the AI era, and we launched a bunch of new pricing models in @getMetronome and features like low-balance alerts, automatic credit top-ups, and multidimensional pricing structures.\n\u2022 We showed streaming payments built on @Tempo and Metronome \u2014 track usage and get paid the instant value is delivered. Hard to predict, but I think this could be big. (Why wouldn\u2019t you want to get paid as costs are incurred?)\n\u2022 We added automatic US tax filing in Stripe Tax.\n\u2022 We announced Stripe Database -- a hosted PostgreSQL database with all of your Stripe data, updated in real time. Read-only to start but we\u2019ll make it read-write.\n\u2022 Stripe Workflows are now GA.\n\u2022 We showed Stripe Console, a full agentic execution environment built directly into the Stripe Dashboard. It\u2019ll happily write code and use tools to answer your questions.\n\u2022 We previewed custom objects: model your business data directly in Stripe, with custom objects, typed fields, and relationships.\n\u2022 As mentioned above, Stripe Treasury accounts will support storage in 15 currencies by the end of the year. And instant/free(!) transfers between US Stripe businesses.\n\u2022 You can use a Stripe card with your Treasury balance and get 2% cash back on purchases.\n\u2022 We\u2019re massively expanding our Global Payouts coverage -- soon 100 countries with fiat rails and 160 with stablecoins.\n\u2022 Atlas companies can now raise money directly within Stripe.\n\u2022 We launched the platform growth studio, which uses Stripe\u2019s network data to generate specific recommendations for optimization/growth.\n\u2022 We announced the Stripe Managed Risk API \u2014 platforms can outsource risk handling to Stripe while maintaining full UI/UX control.\n\u2022 Connected accounts now benefit from networked onboarding, which hugely increases conversion rates.\n\u2022 We\u2019re launching Treasury for Platforms. Connected accounts can get spend cards with just a few lines of code. (Plus cash rewards, cash acceptance, check acceptance, real-time payments\u2026)\n\u2022 We announced Issuing for agents: easily create cards for agents.\n\nBut that\u2019s really just a subset of a subset. (See https://t.co/Ej0S8aRVi0 for more.) The Stripe team is cooking! And if you\u2019re interested in building the economic infrastructure for this new world, we\u2019re hiring.",
+    "RT @pejmanjohn: Stripe really cooked with Link CLI. Look at how easily I can get my OpenClaw agent to buy me some coffee beans. https://t.c\u2026"
+  ]
+}

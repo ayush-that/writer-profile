@@ -1,0 +1,43 @@
+{
+  "author": "ali_ghodsi",
+  "platform": "twitter",
+  "lexical": {
+    "vocabulary_level": "professional",
+    "recurring_phrases": [
+      "data",
+      "this",
+      "open",
+      "your",
+      "that",
+      "with",
+      "code",
+      "databricks",
+      "agents",
+      "source"
+    ],
+    "word_preferences": {},
+    "jargon_usage": "moderate",
+    "technicality_level": "accessible"
+  },
+  "structural": {
+    "avg_sentence_length": 9.8,
+    "paragraph_style": "short",
+    "opening_patterns": [],
+    "closing_patterns": [],
+    "uses_lists": false,
+    "uses_questions": true
+  },
+  "tonal": {
+    "warmth_level": "moderate",
+    "humor_usage": "occasional",
+    "personal_disclosure": "moderate",
+    "conviction_style": "confident"
+  },
+  "example_posts": [
+    "\ud835\udc06\ud835\udc1e\ud835\udc27\ud835\udc22\ud835\udc1e is now the most important way to do data analysis in Databricks. What's unique about it is its ability to extract semantics from your entire Lakehouse, enabling it to answer complex data questions that cripple agents without a deep data understanding. We've now added a Mobile version, added Unstructured data processing, as well as enabled it to operate on all your dashboards and notebooks. Check it out:\n\nhttps://t.co/bqPvg2lYS7",
+    "RT @apoorv03: One aha from class with @alighodsi at MS&amp;E 435 this wk:\n\nOpen source closing the gap with closed source may be inevitable.\u2026",
+    "RT @databricks: .@OpenAI GPT-5.5 is now available on Databricks, with Codex coding workflows and model inference fully governed through Uni\u2026",
+    "RT @databricks: Databricks is excited to partner with @OpenAI on GPT-5.5, their latest frontier model. GPT-5.5 will be available in Unity A\u2026",
+    "What will the future of Spark and data engineering look like? How can you radically simplify it with AI? How do you ensure that the AI doesn't screw things up? How do you productionize all this so you can track reliability over time? This is exactly the problem that \ud835\udc0b\ud835\udc1a\ud835\udc24\ud835\udc1e\ud835\udc1f\ud835\udc25\ud835\udc28\ud835\udc30 \ud835\udc03\ud835\udc1e\ud835\udc2c\ud835\udc22\ud835\udc20\ud835\udc27\ud835\udc1e\ud835\udc2b solves, this is the future for data engineering! This is now available for all our customers (public preview)!\n\nYou tell the AI what transformations you want your data pipeline! (e.g. \"join product data with the pricing table\"). It shows you a GRAPH of the transformations which you can verify and approve yourself. Everything is behind the scenes represented by CODE which can be version controlled, productionized, in CI/CD. If you want to, you can review the code as well. Behind the scenes, the pipeline code is just open source \ud835\udc00\ud835\udc29\ud835\udc1a\ud835\udc1c\ud835\udc21\ud835\udc1e \ud835\udc12\ud835\udc29\ud835\udc1a\ud835\udc2b\ud835\udc24 \ud835\udc03\ud835\udc1e\ud835\udc1c\ud835\udc25\ud835\udc1a\ud835\udc2b\ud835\udc1a\ud835\udc2d\ud835\udc22\ud835\udc2f\ud835\udc1e \ud835\udc0f\ud835\udc22\ud835\udc29\ud835\udc1e\ud835\udc25\ud835\udc22\ud835\udc27\ud835\udc1e\ud835\udc2c (\ud835\udc12\ud835\udc03\ud835\udc0f)! Check it out.\n\nhttps://t.co/0SnXUohl2R"
+  ]
+}

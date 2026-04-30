@@ -18,6 +18,14 @@ export function GenerateForm({ onSubmit, isLoading }: GenerateFormProps) {
   const [topic, setTopic] = useState("");
   const [angle, setAngle] = useState("");
   const [virality, setVirality] = useState(15);
+  const [wordLimit, setWordLimit] = useState<number | null>(null);
+
+  const WORD_PRESETS = [
+    { label: "Auto", value: null },
+    { label: "Short (~50)", value: 50 },
+    { label: "Medium (~150)", value: 150 },
+    { label: "Long (~300)", value: 300 },
+  ];
 
   useEffect(() => {
     async function fetchProfiles() {
@@ -46,6 +54,7 @@ export function GenerateForm({ onSubmit, isLoading }: GenerateFormProps) {
       topic,
       angle: angle || undefined,
       virality: virality / 100,
+      word_limit: wordLimit || undefined,
     });
   };
 
@@ -158,6 +167,32 @@ export function GenerateForm({ onSubmit, isLoading }: GenerateFormProps) {
         />
         <p className="text-[10px] leading-relaxed text-muted-foreground">
           Higher = more engaging hooks · Lower = more authentic voice
+        </p>
+      </div>
+
+      <div className="space-y-3">
+        <label className="text-[10px] font-semibold uppercase tracking-[0.15em] text-muted-foreground">
+          Post Length
+        </label>
+        <div className="flex gap-2">
+          {WORD_PRESETS.map((preset) => (
+            <button
+              key={preset.label}
+              type="button"
+              onClick={() => setWordLimit(preset.value)}
+              className={cn(
+                "flex-1 rounded-xl border-2 px-3 py-2.5 text-xs font-semibold transition-all",
+                wordLimit === preset.value
+                  ? "border-foreground bg-foreground text-white"
+                  : "border-border bg-white text-muted-foreground hover:border-muted-foreground hover:text-foreground"
+              )}
+            >
+              {preset.label}
+            </button>
+          ))}
+        </div>
+        <p className="text-[10px] leading-relaxed text-muted-foreground">
+          Target word count for the generated post
         </p>
       </div>
 

@@ -53,6 +53,7 @@ def build_generator_prompt(
     angle: str,
     references: list[dict],
     virality: float,
+    word_limit: int | None = None,
 ) -> tuple[str, str]:
     voice_summary = f"""
 Author: {profile.author}
@@ -84,6 +85,12 @@ Tone: {profile.tonal.warmth_level} warmth, {profile.tonal.humor_usage} humor, {p
         reference_posts=ref_posts,
         virality_pct=int(virality * 100),
     )
+
+    if word_limit:
+        system = system.replace(
+            "## Virality Enhancement",
+            f"## Word Limit\nTARGET LENGTH: Approximately {word_limit} words. Stay close to this target.\n\n## Virality Enhancement"
+        )
 
     user = f"""Generate a {profile.platform.value} post for {profile.author}.
 

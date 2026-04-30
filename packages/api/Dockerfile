@@ -8,6 +8,7 @@ RUN pip install uv
 # Copy project files
 COPY pyproject.toml .
 COPY src/ src/
+COPY data/ data/
 
 # Install dependencies
 RUN uv sync --no-dev
@@ -18,4 +19,4 @@ ENV HOOKS_PATH=/app/data/hooks.jsonl
 
 EXPOSE 8000
 
-CMD ["uv", "run", "uvicorn", "writer_api.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["/bin/sh", "-c", "uv run uvicorn writer_api.main:app --host 0.0.0.0 --port ${PORT:-8000}"]

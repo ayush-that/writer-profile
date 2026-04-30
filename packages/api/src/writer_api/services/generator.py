@@ -31,6 +31,7 @@ class GeneratorService:
             angle=request.angle or "",
             references=ref_dicts,
             virality=request.virality,
+            word_limit=request.word_limit,
         )
 
         response = self._llm.complete(system=system, user=user)

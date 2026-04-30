@@ -1,0 +1,43 @@
+{
+  "author": "aravind_srinivas",
+  "platform": "twitter",
+  "lexical": {
+    "vocabulary_level": "professional",
+    "recurring_phrases": [
+      "computer",
+      "model",
+      "perplexity",
+      "your",
+      "with",
+      "default",
+      "orchestration",
+      "more",
+      "@perplexity_ai:",
+      "personal"
+    ],
+    "word_preferences": {},
+    "jargon_usage": "moderate",
+    "technicality_level": "accessible"
+  },
+  "structural": {
+    "avg_sentence_length": 8.2,
+    "paragraph_style": "short",
+    "opening_patterns": [],
+    "closing_patterns": [],
+    "uses_lists": false,
+    "uses_questions": true
+  },
+  "tonal": {
+    "warmth_level": "moderate",
+    "humor_usage": "occasional",
+    "personal_disclosure": "moderate",
+    "conviction_style": "confident"
+  },
+  "example_posts": [
+    "Peprlexity Computer is helping people save some real bucks. https://t.co/sw6PFP7hW7",
+    "RT @comet: Today we\u2019re rolling out a new native Comet experience for iPad.\n\nComet now works naturally with iPadOS features like multiple wi\u2026",
+    "A Google Earth + Flight Simulator, fully cooked by Perplexity Computer with Codex/CC as subagents inside it. GTA vibes. https://t.co/TioIvaVpoL",
+    "RT @morganlinton: Whoa \ud83e\udd2f https://t.co/bRasKIJojs",
+    "You would consume less computer credits (and be able to run more tasks as a result) if you switched to GPT-5.5 as your default orchestrator. This was the number one complaint about Computer (being credits/token hungry). GPT 5.5 is more token-efficient in subagent orchestration."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "author": "tobi_lutke",
+  "platform": "twitter",
+  "lexical": {
+    "vocabulary_level": "professional",
+    "recurring_phrases": [
+      "more",
+      "that",
+      "will",
+      "&gt;",
+      "sidekick",
+      "their",
+      "this"
+    ],
+    "word_preferences": {},
+    "jargon_usage": "moderate",
+    "technicality_level": "accessible"
+  },
+  "structural": {
+    "avg_sentence_length": 9.7,
+    "paragraph_style": "short",
+    "opening_patterns": [],
+    "closing_patterns": [],
+    "uses_lists": false,
+    "uses_questions": true
+  },
+  "tonal": {
+    "warmth_level": "moderate",
+    "humor_usage": "occasional",
+    "personal_disclosure": "moderate",
+    "conviction_style": "confident"
+  },
+  "example_posts": [
+    "\ud83d\udc4c",
+    "Of course video games generalize",
+    "RT @lucyhargreaves4: I\u2019m an eternal optimist and will always want to highlight good progress. \n\nBut the more I sit with yesterday\u2019s economi\u2026",
+    "RT @Armon_Sho: When I was a kid, I found @Shopify and it CHANGED my life...\n\n16 yrs old: Affiliate for several Shopify stores\n17 yrs old: S\u2026",
+    "RT @nityeshaga: Everyone's talking about QMD \u2014 the search tool built by Shopify's CEO @tobi that got 22k+ GitHub stars.\n\nBut most explanati\u2026"
+  ]
+}
