@@ -2,29 +2,40 @@
   "author": "brian_chesky",
   "platform": "twitter",
   "lexical": {
-    "vocabulary_level": "accessible",
-    "recurring_phrases": ["design matters", "the details", "what I've learned"],
-    "word_preferences": {"founders": "founders", "design": "design"},
-    "jargon_usage": "low",
+    "vocabulary_level": "professional",
+    "recurring_phrases": [
+      "this",
+      "airbnb",
+      "design",
+      "great",
+      "with",
+      "that",
+      "more",
+      "billion"
+    ],
+    "word_preferences": {},
+    "jargon_usage": "moderate",
     "technicality_level": "accessible"
   },
   "structural": {
-    "avg_sentence_length": 14,
-    "paragraph_style": "story-driven observations",
-    "opening_patterns": ["What I've learned:", "The best", "Here's the thing:"],
-    "closing_patterns": ["Details matter.", "", "This changed everything."],
+    "avg_sentence_length": 8.2,
+    "paragraph_style": "short",
+    "opening_patterns": [],
+    "closing_patterns": [],
     "uses_lists": false,
     "uses_questions": true
   },
   "tonal": {
-    "warmth_level": "warm and personal",
+    "warmth_level": "moderate",
     "humor_usage": "occasional",
-    "personal_disclosure": "high - shares founder journey",
-    "conviction_style": "passionate about craft"
+    "personal_disclosure": "moderate",
+    "conviction_style": "confident"
   },
   "example_posts": [
-    "What I've learned about product: the last 10% of polish takes 50% of the time. But it's the difference between good and great.",
-    "The best founders I know are obsessed with details others miss.",
-    "Here's the thing about Airbnb: we're not a hotel company. We're a design company that happens to do travel."
+    "We follow this model",
+    "After YC, Airbnb raised $615k at a $3M post-money valuation. We were the highest valuation in our batch.",
+    ".@Ahmad_Al_Dahle is joining as Airbnb's new CTO. \n\nI\u2019m often asked about our AI strategy. We believe pairing great design with frontier technology will help us improve the way people experience travel. Excited to build!",
+    "This is a great idea, and I fully support it. We\u2019re overdue for new aesthetic movements!",
+    "Talking design with @tbpn https://t.co/cRfQET3ilG"
   ]
 }

@@ -2,29 +2,39 @@
   "author": "sam_altman",
   "platform": "twitter",
   "lexical": {
-    "vocabulary_level": "accessible",
-    "recurring_phrases": ["the thing about", "i think", "worth noting"],
-    "word_preferences": {"AI": "AI", "people": "people"},
-    "jargon_usage": "low",
+    "vocabulary_level": "professional",
+    "recurring_phrases": [
+      "codex",
+      "will",
+      "with",
+      "have",
+      "like",
+      "love",
+      "this"
+    ],
+    "word_preferences": {},
+    "jargon_usage": "moderate",
     "technicality_level": "accessible"
   },
   "structural": {
-    "avg_sentence_length": 12,
-    "paragraph_style": "short declarative statements",
-    "opening_patterns": ["i think", "the thing about", "worth noting:"],
-    "closing_patterns": ["", "more soon", ""],
+    "avg_sentence_length": 8.0,
+    "paragraph_style": "short",
+    "opening_patterns": [],
+    "closing_patterns": [],
     "uses_lists": false,
-    "uses_questions": false
+    "uses_questions": true
   },
   "tonal": {
-    "warmth_level": "calm and measured",
-    "humor_usage": "rare",
-    "personal_disclosure": "occasional",
-    "conviction_style": "quietly confident"
+    "warmth_level": "moderate",
+    "humor_usage": "occasional",
+    "personal_disclosure": "moderate",
+    "conviction_style": "confident"
   },
   "example_posts": [
-    "the most important thing about AGI is making sure it benefits everyone.",
-    "i think AI will be the most transformative technology in human history.",
-    "worth noting: we are still very early."
+    "RT @amasad: When future historians write about Silicon Valley, they\u2019ll have an entire chapter dedicated to the Ron Conway way: how he turne\u2026",
+    "lisan say more mean things about us you're being too nice",
+    "alignment failure",
+    "we're starting rollout of GPT-5.5-Cyber, a frontier cybersecurity model, to critical cyber defenders in the next few days.\n\nwe will work with the entire ecosystem and the government to figure out trusted access for cyber; we want to rapidly help secure companies/infrastructure.",
+    "goblinblog dropped"
   ]
 }

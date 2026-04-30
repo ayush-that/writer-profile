@@ -2,29 +2,42 @@
   "author": "guillermo_rauch",
   "platform": "twitter",
   "lexical": {
-    "vocabulary_level": "technical",
-    "recurring_phrases": ["ship it", "DX matters", "the web"],
-    "word_preferences": {"devs": "developers", "DX": "DX"},
-    "jargon_usage": "high",
-    "technicality_level": "technical"
+    "vocabulary_level": "professional",
+    "recurring_phrases": [
+      "that",
+      "agents",
+      "with",
+      "vercel",
+      "your",
+      "this",
+      "coding",
+      "security",
+      "design",
+      "from"
+    ],
+    "word_preferences": {},
+    "jargon_usage": "moderate",
+    "technicality_level": "accessible"
   },
   "structural": {
-    "avg_sentence_length": 10,
-    "paragraph_style": "punchy observations",
-    "opening_patterns": ["Ship it.", "Hot take:", "The best"],
-    "closing_patterns": ["", "This is the way.", ""],
+    "avg_sentence_length": 12.2,
+    "paragraph_style": "short",
+    "opening_patterns": [],
+    "closing_patterns": [],
     "uses_lists": false,
-    "uses_questions": false
+    "uses_questions": true
   },
   "tonal": {
-    "warmth_level": "direct and opinionated",
-    "humor_usage": "frequent wit",
-    "personal_disclosure": "minimal",
-    "conviction_style": "bold and assertive"
+    "warmth_level": "moderate",
+    "humor_usage": "occasional",
+    "personal_disclosure": "moderate",
+    "conviction_style": "confident"
   },
   "example_posts": [
-    "Ship it. Iterate later. Perfect is the enemy of shipped.",
-    "The best frameworks are the ones that get out of your way.",
-    "DX is UX for developers. It matters more than most realize."
+    "RT @matiNotFound: @vercel Ship26 is live!\n\nThis year, we shipped a 3D device that can create WASM apps using wterm, just-bash, and @workflo\u2026",
+    "We're growing the Vercel Labs team. Our mission is to build the devtools of the AI era.\n\nWe used to build tools for humans, now we're building them for agents. @ctatedev & team have shipped the tools that agents love: \ud835\ude8a\ud835\ude90\ud835\ude8e\ud835\ude97\ud835\ude9d-\ud835\ude8b\ud835\ude9b\ud835\ude98\ud835\udea0\ud835\ude9c\ud835\ude8e\ud835\ude9b, \ud835\ude99\ud835\ude98\ud835\ude9b\ud835\ude9d\ud835\ude95\ud835\ude8e\ud835\ude9c\ud835\ude9c, \ud835\ude9c\ud835\ude94\ud835\ude92\ud835\ude95\ud835\ude95\ud835\ude9c, \ud835\ude8c\ud835\ude91\ud835\ude8a\ud835\ude9d, \ud835\ude93\ud835\ude9e\ud835\ude9c\ud835\ude9d-\ud835\ude8b\ud835\ude8a\ud835\ude9c\ud835\ude91, \ud835\ude93\ud835\ude9c\ud835\ude98\ud835\ude97-\ud835\ude9b\ud835\ude8e\ud835\ude97\ud835\ude8d\ud835\ude8e\ud835\ude9b\u2026 22.8M+ downloads to date.\n\nDream job. DMs open \ud83d\ude00",
+    "RT @soleio: New season incoming.\n\nFollow @firstofkind or sign up for an email when Episode 1 drops:\n\n@rauchg of @vercel",
+    "Coding agents will be the foundation of all superintelligence. \n\nAt a minimum, coding ability is indistinguishable from 'proficiency with computers'. Great coding agents like Claude Code master bash, filesystems, configuring and installing programs\u2026\n\nBut it's also about self-improvement. A coding agent has the ability to examine its source, its state, its skills, its instructions\u2026 it can propose changes to itself (with human supervision and audit trail, I recommend), or even mutate itself directly.\n\nIn retrospect, this should be obvious. \"What I cannot create, I cannot understand\". Coding fluency has given models a deeper understanding of all computer and knowledge work. To master programs, you must be able to create them.",
+    "RT @vercel_dev: GPT-5.5 and GPT-5.5 Pro are live on AI Gateway.\n\nBuilt for long-running agentic work and more token-efficient than GPT-5.4.\u2026"
   ]
 }

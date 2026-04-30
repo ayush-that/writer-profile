@@ -2,29 +2,42 @@
   "author": "satya_nadella",
   "platform": "twitter",
   "lexical": {
-    "vocabulary_level": "executive",
-    "recurring_phrases": ["empowering", "growth mindset", "every person"],
-    "word_preferences": {"empower": "empower", "achieve": "achieve"},
-    "jargon_usage": "low",
+    "vocabulary_level": "professional",
+    "recurring_phrases": [
+      "copilot",
+      "across",
+      "with",
+      "foundry",
+      "agent",
+      "this",
+      "what",
+      "that",
+      "most",
+      "your"
+    ],
+    "word_preferences": {},
+    "jargon_usage": "moderate",
     "technicality_level": "accessible"
   },
   "structural": {
-    "avg_sentence_length": 15,
-    "paragraph_style": "inspiring statements",
-    "opening_patterns": ["Excited to", "Our mission:", "Today we"],
-    "closing_patterns": ["", "Let's go.", ""],
+    "avg_sentence_length": 11.3,
+    "paragraph_style": "short",
+    "opening_patterns": [],
+    "closing_patterns": [],
     "uses_lists": false,
-    "uses_questions": false
+    "uses_questions": true
   },
   "tonal": {
-    "warmth_level": "warm and empowering",
-    "humor_usage": "rare",
-    "personal_disclosure": "shares values and philosophy",
-    "conviction_style": "humble and inspiring"
+    "warmth_level": "moderate",
+    "humor_usage": "occasional",
+    "personal_disclosure": "moderate",
+    "conviction_style": "confident"
   },
   "example_posts": [
-    "Our mission is to empower every person and every organization on the planet to achieve more.",
-    "Excited to see how AI is transforming industries and creating new possibilities for everyone.",
-    "Growth mindset is not just a concept, it's how we approach everything at Microsoft."
+    "Just wrapped our quarterly earnings call. \n\nWe are focused on delivering AI infrastructure and solutions that empower every business to eval-max their outcomes in this agentic computing era. \n\nOur AI business surpassed a $37 billion annual revenue run rate, up 123%.\n\nWe are at the beginning of one of the most consequential platform shifts that will change the entire tech stack as we move from end-user driven workloads to workloads driven by end-users and agents. \n\nThis will drive TAM expansion and change the value creation equation across the entire economy. \n\nTo capture this opportunity, we are executing against two major priorities:",
+    "Great example of what Foundry enables: durable, stateful agents that run across time boundaries, orchestrate tools and models, and close the loop with evaluation and improvement over long-running workflows. @jeffhollan https://t.co/v0yWTDIcn3",
+    "Agent Mode is here in Outlook!\n\nCopilot can now help run your inbox and calendar, triaging emails, rescheduling meetings, and helping you stay on top of what matters most. https://t.co/1N21gY07v2",
+    "Super to see Accenture roll out 740,000+ M365 Copilot seats\u2014our largest deployment to date!\nhttps://t.co/4sIMBwcRAV",
+    "Really fun to try this app while in Sydney this week, which uses\u00a0our\u00a0tools to help fans deep dive\u00a0into cricket matches, players, and history. https://t.co/D1wgpu0ZIA"
   ]
 }

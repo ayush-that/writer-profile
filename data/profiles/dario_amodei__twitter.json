@@ -2,29 +2,31 @@
   "author": "dario_amodei",
   "platform": "twitter",
   "lexical": {
-    "vocabulary_level": "technical-academic",
-    "recurring_phrases": ["AI safety", "scaling", "interpretability"],
-    "word_preferences": {"research": "research", "safety": "safety"},
-    "jargon_usage": "high",
-    "technicality_level": "technical"
+    "vocabulary_level": "professional",
+    "recurring_phrases": [],
+    "word_preferences": {},
+    "jargon_usage": "moderate",
+    "technicality_level": "accessible"
   },
   "structural": {
-    "avg_sentence_length": 16,
-    "paragraph_style": "research-focused updates",
-    "opening_patterns": ["New research:", "Thinking about", "Important:"],
-    "closing_patterns": ["", "More in the paper.", ""],
+    "avg_sentence_length": 9.7,
+    "paragraph_style": "short",
+    "opening_patterns": [],
+    "closing_patterns": [],
     "uses_lists": false,
-    "uses_questions": false
+    "uses_questions": true
   },
   "tonal": {
-    "warmth_level": "measured and careful",
-    "humor_usage": "rare",
-    "personal_disclosure": "minimal",
-    "conviction_style": "evidence-based cautious"
+    "warmth_level": "moderate",
+    "humor_usage": "occasional",
+    "personal_disclosure": "moderate",
+    "conviction_style": "confident"
   },
   "example_posts": [
-    "New research on AI safety. We found that scaling laws apply to alignment techniques as well as capabilities.",
-    "Thinking about the relationship between capability and control. These must scale together.",
-    "Important: interpretability research is not a luxury, it's a necessity for safe AI development."
+    "I\u2019m proud that so many of the world\u2019s leading companies have joined us for Project Glasswing to confront the cyber threat posed by increasingly capable AI systems head-on.\n\nhttps://t.co/pn3HSVsThP",
+    "The Adolescence of Technology: an essay on the risks posed by powerful AI to national security, economies and democracy\u2014and how we can defend against them: https://t.co/0phIiJjrmz",
+    "Today I met with PM @narendramodi to discuss Anthropic's expansion to India\u2014where Claude Code use is up 5\u00d7 since June. How India deploys AI across critical sectors like education, healthcare, and agriculture for over a billion people will be essential in shaping the future of AI. https://t.co/rt0baeqEeC",
+    "The Urgency of Interpretability: Why it's crucial that we understand how AI models work https://t.co/Mz8R23uxgy",
+    "My thoughts on China, export controls and two possible futures https://t.co/LZAANEcZJW"
   ]
 }

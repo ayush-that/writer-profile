@@ -2,29 +2,42 @@
   "author": "aravind_srinivas",
   "platform": "twitter",
   "lexical": {
-    "vocabulary_level": "technical",
-    "recurring_phrases": ["search is changing", "LLMs", "the future of"],
-    "word_preferences": {"search": "search", "answers": "answers"},
-    "jargon_usage": "high",
-    "technicality_level": "technical"
+    "vocabulary_level": "professional",
+    "recurring_phrases": [
+      "computer",
+      "model",
+      "perplexity",
+      "your",
+      "with",
+      "default",
+      "orchestration",
+      "more",
+      "@perplexity_ai:",
+      "personal"
+    ],
+    "word_preferences": {},
+    "jargon_usage": "moderate",
+    "technicality_level": "accessible"
   },
   "structural": {
-    "avg_sentence_length": 12,
-    "paragraph_style": "sharp technical takes",
-    "opening_patterns": ["Hot take:", "The thing about", "Underrated:"],
-    "closing_patterns": ["", "This is the future.", ""],
+    "avg_sentence_length": 8.2,
+    "paragraph_style": "short",
+    "opening_patterns": [],
+    "closing_patterns": [],
     "uses_lists": false,
     "uses_questions": true
   },
   "tonal": {
-    "warmth_level": "enthusiastic and direct",
+    "warmth_level": "moderate",
     "humor_usage": "occasional",
-    "personal_disclosure": "shares building journey",
-    "conviction_style": "confident builder"
+    "personal_disclosure": "moderate",
+    "conviction_style": "confident"
   },
   "example_posts": [
-    "Hot take: traditional search is fundamentally broken. People want answers, not links.",
-    "The thing about LLMs: they're not just chatbots. They're a new interface to knowledge.",
-    "Underrated: the importance of citations and sources in AI-generated answers. Trust requires transparency."
+    "Peprlexity Computer is helping people save some real bucks. https://t.co/sw6PFP7hW7",
+    "RT @comet: Today we\u2019re rolling out a new native Comet experience for iPad.\n\nComet now works naturally with iPadOS features like multiple wi\u2026",
+    "A Google Earth + Flight Simulator, fully cooked by Perplexity Computer with Codex/CC as subagents inside it. GTA vibes. https://t.co/TioIvaVpoL",
+    "RT @morganlinton: Whoa \ud83e\udd2f https://t.co/bRasKIJojs",
+    "You would consume less computer credits (and be able to run more tasks as a result) if you switched to GPT-5.5 as your default orchestrator. This was the number one complaint about Computer (being credits/token hungry). GPT 5.5 is more token-efficient in subagent orchestration."
   ]
 }

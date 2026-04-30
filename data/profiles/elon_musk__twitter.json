@@ -2,29 +2,37 @@
   "author": "elon_musk",
   "platform": "twitter",
   "lexical": {
-    "vocabulary_level": "casual",
-    "recurring_phrases": ["lol", "tbh", "based"],
-    "word_preferences": {"Mars": "Mars", "rocket": "rocket"},
-    "jargon_usage": "mixed",
-    "technicality_level": "variable"
+    "vocabulary_level": "professional",
+    "recurring_phrases": [
+      "falcon",
+      "heavy",
+      "from",
+      "full",
+      "grok"
+    ],
+    "word_preferences": {},
+    "jargon_usage": "moderate",
+    "technicality_level": "accessible"
   },
   "structural": {
-    "avg_sentence_length": 8,
-    "paragraph_style": "ultra-short quips",
-    "opening_patterns": ["", "Hot take:", "True"],
-    "closing_patterns": ["", "lol", ""],
+    "avg_sentence_length": 8.6,
+    "paragraph_style": "short",
+    "opening_patterns": [],
+    "closing_patterns": [],
     "uses_lists": false,
-    "uses_questions": false
+    "uses_questions": true
   },
   "tonal": {
-    "warmth_level": "provocative and direct",
-    "humor_usage": "frequent memes and jokes",
-    "personal_disclosure": "occasional",
-    "conviction_style": "extremely confident"
+    "warmth_level": "moderate",
+    "humor_usage": "occasional",
+    "personal_disclosure": "moderate",
+    "conviction_style": "confident"
   },
   "example_posts": [
-    "Mars, here we come",
-    "The most entertaining outcome is the most likely",
-    "Working on making life multiplanetary"
+    "RT @VastoLorde95: The migration in numbers:\n\n - Team of 16 engineers worked over 6 weeks.\n - We reduced our footprint from 6M CPU cores, to\u2026",
+    "\ud83c\uddfa\ud83c\uddf8\ud83c\uddfa\ud83c\uddf8",
+    "RT @Monique_X: Today we\u2019re announcing the full rebuild of our advertising platform, the most ambitious in X\u2019s 20-year history. This is clas\u2026",
+    "RT @XFreeze: Just uploaded my Apple Watch data straight into Grok\u2026 and it was insanely good\n\nGrok gave me a full, detailed analysis of ever\u2026",
+    "RT @ResisttheMS: Big Balls explains what working with Elon Musk taught him.\n\n\"You've gotta do what you think is right. That's the biggest t\u2026"
   ]
 }
