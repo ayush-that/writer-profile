@@ -42,7 +42,6 @@ class Settings(BaseSettings):
         default=[
             "http://localhost:3000",
             "https://writer-profile.pages.dev",
-            "https://writer-profile-api-production.up.railway.app",
         ],
         alias="CORS_ORIGINS",
     )
