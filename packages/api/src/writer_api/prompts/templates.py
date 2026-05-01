@@ -6,6 +6,31 @@ from writer_api.models.voice import VoiceProfile
 
 if TYPE_CHECKING:
     from writer_api.services.hybrid_retriever import HybridBundle
+    from writer_api.services.voice_tells import VoiceTells
+
+
+def _build_hard_rules(author: str, tells: VoiceTells | None) -> str:
+    if tells is None:
+        return ""
+    if not (tells.em_dash_forbidden or tells.emoji_forbidden):
+        return ""
+    em_pct = int(round(tells.em_dash_rate * 100))
+    emj_pct = int(round(tells.emoji_rate * 100))
+    rules: list[str] = []
+    if tells.em_dash_forbidden:
+        rules.append("FORBIDDEN: em-dashes (—, –, --). Replace with periods or commas.")
+    if tells.emoji_forbidden:
+        rules.append("FORBIDDEN: emojis. Use plain text only.")
+    rule_lines = "\n".join(rules)
+    return (
+        "## HARD RULES — MUST FOLLOW\n"
+        f"{author} writes {tells.sample_size} posts. Of those:\n"
+        f"- {em_pct}% use em-dashes (—, –, --)\n"
+        f"- {emj_pct}% use emojis\n\n"
+        f"{rule_lines}\n\n"
+        "Violating these rules makes the post obviously LLM-generated. "
+        "Use periods, commas, and plain text instead.\n\n"
+    )
 
 GENERATOR_SYSTEM = """You are a ghostwriter who perfectly mimics a CEO's authentic voice for social media.
 
@@ -61,6 +86,7 @@ def build_generator_prompt(
     references: list[dict],
     virality: float,
     word_limit: int | None = None,
+    tells: VoiceTells | None = None,
 ) -> tuple[str, str]:
     voice_summary = f"""
 Author: {profile.author}
@@ -92,6 +118,10 @@ Tone: {profile.tonal.warmth_level} warmth, {profile.tonal.humor_usage} humor, {p
         reference_posts=ref_posts,
         virality_pct=int(virality * 100),
     )
+
+    hard_rules = _build_hard_rules(profile.author, tells)
+    if hard_rules:
+        system = system.replace("## Guidelines", hard_rules + "## Guidelines")
 
     if word_limit:
         system = system.replace(
@@ -206,6 +236,7 @@ def build_generator_prompt_hybrid(
     bundle: HybridBundle,
     virality: float,
     word_limit: int | None = None,
+    tells: VoiceTells | None = None,
 ) -> tuple[str, str]:
     voice_summary = f"""
 Author: {profile.author}
@@ -226,6 +257,10 @@ Tone: {profile.tonal.warmth_level} warmth, {profile.tonal.humor_usage} humor, {p
         web_posts=_format_web_posts(bundle),
         virality_pct=int(virality * 100),
     )
+
+    hard_rules = _build_hard_rules(profile.author, tells)
+    if hard_rules:
+        system = system.replace("## Guidelines", hard_rules + "## Guidelines")
 
     if word_limit:
         system = system.replace(
@@ -266,11 +301,24 @@ def build_judge_prompt(
     candidate_text: str,
     bundle: HybridBundle,
     candidate_index: int,
+    tells: VoiceTells | None = None,
 ) -> tuple[str, str]:
     system = JUDGE_SYSTEM.format(
         platform=profile.platform.value,
         author=profile.author,
     )
+
+    if tells is not None and (tells.em_dash_forbidden or tells.emoji_forbidden):
+        forbidden_bits: list[str] = []
+        if tells.em_dash_forbidden:
+            forbidden_bits.append("em-dashes (—, –, --)")
+        if tells.emoji_forbidden:
+            forbidden_bits.append("emojis")
+        forbidden_str = " or ".join(forbidden_bits)
+        system += (
+            f"\nPenalize heavily (set voice_match <= 0.3) if the candidate uses "
+            f"{forbidden_str} when {profile.author} does not.\n"
+        )
 
     references = _format_own_posts(bundle, profile)
 

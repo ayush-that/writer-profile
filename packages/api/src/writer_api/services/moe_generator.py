@@ -11,6 +11,7 @@ from writer_api.models.voice import VoiceProfile
 from writer_api.prompts.templates import build_generator_prompt_hybrid
 from writer_api.services.hybrid_retriever import HybridBundle
 from writer_api.services.llm import LLMClient, LLMResponse, get_llm_client
+from writer_api.services.voice_tells import VoiceTells, sanitize_output
 
 logger = logging.getLogger(__name__)
 
@@ -34,6 +35,7 @@ class MoEGenerator:
         profile: VoiceProfile,
         request: GenerateRequest,
         bundle: HybridBundle,
+        tells: VoiceTells | None = None,
     ) -> list[Candidate]:
         if not self._experts:
             raise RuntimeError("No generator experts available")
@@ -45,6 +47,7 @@ class MoEGenerator:
             bundle=bundle,
             virality=request.virality,
             word_limit=request.word_limit,
+            tells=tells,
         )
 
         max_tokens = 4096 if profile.platform.value == "linkedin" else 2048
@@ -68,6 +71,10 @@ class MoEGenerator:
                 continue
             response, latency_ms = result
             text = (response.text or "").strip()
+            if not text:
+                continue
+            if tells is not None:
+                text = sanitize_output(text, tells)
             if not text:
                 continue
             candidates.append(

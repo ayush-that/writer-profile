@@ -10,6 +10,7 @@ from writer_api.services.hybrid_retriever import HybridRetriever
 from writer_api.services.llm import LLMClient, get_llm_client
 from writer_api.services.moe_generator import MoEGenerator
 from writer_api.services.moe_judge import MoEJudge
+from writer_api.services.voice_tells import extract_tells, sanitize_output
 
 
 class GeneratorService:
@@ -58,16 +59,20 @@ class GeneratorService:
             k_web=3,
         )
 
+        tells = extract_tells(profile.example_posts)
+
         candidates: list[Candidate] = await self._get_moe_generator().generate(
             profile=profile,
             request=request,
             bundle=bundle,
+            tells=tells,
         )
 
         scores = await self._get_moe_judge().score_all(
             candidates=candidates,
             profile=profile,
             bundle=bundle,
+            tells=tells,
         )
 
         winner, all_scores = MoEJudge.pick_winner(candidates, scores)
@@ -97,6 +102,8 @@ class GeneratorService:
 
         ref_dicts = [{"text": r.text, "source_type": r.source_type} for r in references]
 
+        tells = extract_tells(profile.example_posts)
+
         system, user = build_generator_prompt(
             profile=profile,
             topic=request.topic,
@@ -104,10 +111,12 @@ class GeneratorService:
             references=ref_dicts,
             virality=request.virality,
             word_limit=request.word_limit,
+            tells=tells,
         )
 
         response = self._get_llm().complete(system=system, user=user)
-        text = response.text.strip().strip('"').strip("'")
+        text = sanitize_output(response.text, tells)
+        text = text.strip().strip('"').strip("'")
 
         return GenerateResponse(
             text=text,
@@ -120,10 +129,13 @@ class GeneratorService:
     def revoice(self, request: RevoiceRequest, profile: VoiceProfile) -> GenerateResponse:
         system, user = build_revoice_prompt(profile=profile, edited_draft=request.edited_draft)
 
+        tells = extract_tells(profile.example_posts)
+
         response = self._get_llm().complete(system=system, user=user)
+        text = sanitize_output(response.text, tells).strip()
 
         return GenerateResponse(
-            text=response.text.strip(),
+            text=text,
             author=request.author,
             platform=request.platform,
             validation_ok=True,

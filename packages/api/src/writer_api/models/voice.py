@@ -32,6 +32,14 @@ class TonalPatterns(BaseModel):
     conviction_style: str = "confident"
 
 
+class VoiceTellsModel(BaseModel):
+    em_dash_rate: float = 0.0
+    emoji_rate: float = 0.0
+    em_dash_forbidden: bool = False
+    emoji_forbidden: bool = False
+    sample_size: int = 0
+
+
 class VoiceProfile(BaseModel):
     author: str
     platform: Platform
@@ -39,3 +47,4 @@ class VoiceProfile(BaseModel):
     structural: StructuralPatterns = Field(default_factory=StructuralPatterns)
     tonal: TonalPatterns = Field(default_factory=TonalPatterns)
     example_posts: list[str] = Field(default_factory=list)
+    voice_tells: VoiceTellsModel | None = None

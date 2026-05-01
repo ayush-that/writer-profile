@@ -12,6 +12,7 @@ from writer_api.models.voice import VoiceProfile
 from writer_api.prompts.templates import build_judge_prompt
 from writer_api.services.hybrid_retriever import HybridBundle
 from writer_api.services.llm import LLMClient, get_llm_client
+from writer_api.services.voice_tells import VoiceTells
 
 logger = logging.getLogger(__name__)
 
@@ -42,6 +43,7 @@ class MoEJudge:
         candidates: list[Candidate],
         profile: VoiceProfile,
         bundle: HybridBundle,
+        tells: VoiceTells | None = None,
     ) -> list[JudgeScore]:
         if not self._judges:
             raise RuntimeError("No judges available")
@@ -51,7 +53,7 @@ class MoEJudge:
         tasks = []
         for c_idx, candidate in enumerate(candidates):
             for judge in self._judges:
-                tasks.append(self._score_one(judge, candidate, c_idx, profile, bundle))
+                tasks.append(self._score_one(judge, candidate, c_idx, profile, bundle, tells))
 
         results = await asyncio.gather(*tasks)
         return [r for r in results if r is not None]
@@ -63,12 +65,14 @@ class MoEJudge:
         candidate_index: int,
         profile: VoiceProfile,
         bundle: HybridBundle,
+        tells: VoiceTells | None = None,
     ) -> JudgeScore | None:
         system, user = build_judge_prompt(
             profile=profile,
             candidate_text=candidate.text,
             bundle=bundle,
             candidate_index=candidate_index,
+            tells=tells,
         )
         try:
             response = await asyncio.to_thread(judge.complete, system, user, 2048, 0.0)
