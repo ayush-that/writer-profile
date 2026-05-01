@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from pydantic import BaseModel, Field
 
+from writer_api.models.responses import Source
 from writer_api.models.voice import Platform
 
 
@@ -30,6 +31,9 @@ class RetrievedContextSummary(BaseModel):
 
 
 class MoEResponse(BaseModel):
+    text: str
+    sources: list[Source] = Field(default_factory=list)
+    sources_used: int = 0
     winner: Candidate
     candidates: list[Candidate]
     scores: list[JudgeScore]

@@ -59,10 +59,10 @@ class HybridRetriever:
                 own_posts = chroma.query(
                     text=topic,
                     k=k_own,
-                    where={"author": author, "platform": platform},
+                    where={"author": author},
                 )
             except Exception as exc:
-                logger.warning("Chroma query failed for %s/%s: %s", author, platform, exc)
+                logger.warning("Chroma query failed for %s: %s", author, exc)
 
         exa = self._get_exa()
         if exa is not None:

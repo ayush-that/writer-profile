@@ -4,10 +4,12 @@ from writer_api.models.voice import Platform, VoiceProfile
 
 
 class Source(BaseModel):
-    url: str
+    url: str = ""
     title: str = ""
     source_type: str = ""
     snippet: str = ""
+    origin: str = "web"
+    score: float | None = None
 
 
 class GenerateResponse(BaseModel):

@@ -18,14 +18,16 @@ export interface Source {
   title: string;
   source_type: string;
   snippet: string;
+  origin: "own" | "web";
+  score?: number | null;
 }
 
 export interface GenerateResponse {
   text: string;
   author: string;
   platform: string;
-  validation_ok: boolean;
-  validation_issues: string[];
+  validation_ok?: boolean;
+  validation_issues?: string[];
   sources_used: number;
   sources: Source[];
 }
@@ -38,7 +40,7 @@ export interface Profile {
 export async function generatePost(
   req: GenerateRequest
 ): Promise<GenerateResponse> {
-  const response = await fetch(`${API_BASE}/api/generate`, {
+  const response = await fetch(`${API_BASE}/api/generate/moe`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

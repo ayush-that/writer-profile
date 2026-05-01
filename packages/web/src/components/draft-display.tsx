@@ -143,15 +143,33 @@ export function DraftDisplay({
           </p>
           <ul className="space-y-2">
             {draft.sources.map((s, i) => (
-              <li key={`${s.url}-${i}`} className="text-xs">
-                <a
-                  href={s.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-medium text-foreground underline-offset-2 hover:underline"
-                >
-                  {s.title || s.url}
-                </a>
+              <li key={`${s.origin}-${s.url}-${i}`} className="text-xs">
+                <div className="flex items-center gap-2">
+                  <span
+                    className={cn(
+                      "rounded px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wide",
+                      s.origin === "own"
+                        ? "bg-violet-100 text-violet-700"
+                        : "bg-amber-100 text-amber-700"
+                    )}
+                  >
+                    {s.origin === "own" ? `${draft.author} voice` : "web"}
+                  </span>
+                  {s.url ? (
+                    <a
+                      href={s.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-medium text-foreground underline-offset-2 hover:underline"
+                    >
+                      {s.title || s.url}
+                    </a>
+                  ) : (
+                    <span className="font-medium text-foreground">
+                      {s.title || "Past post"}
+                    </span>
+                  )}
+                </div>
                 {s.snippet && (
                   <p className="mt-0.5 line-clamp-2 text-muted-foreground">
                     {s.snippet}

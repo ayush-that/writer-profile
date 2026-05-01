@@ -77,7 +77,34 @@ class GeneratorService:
 
         winner, all_scores = MoEJudge.pick_winner(candidates, scores)
 
+        own_sources = [
+            Source(
+                url="",
+                title=f"{profile.author} — past post",
+                source_type="chroma",
+                snippet=(p.text or "")[:280],
+                origin="own",
+                score=p.score,
+            )
+            for p in bundle.own_posts
+        ]
+        web_sources = [
+            Source(
+                url=w.url,
+                title=w.title,
+                source_type=w.source_type,
+                snippet=(w.text or "")[:280],
+                origin="web",
+            )
+            for w in bundle.web_posts
+            if w.url
+        ]
+        sources = own_sources + web_sources
+
         return MoEResponse(
+            text=winner.text,
+            sources=sources,
+            sources_used=len(sources),
             winner=winner,
             candidates=candidates,
             scores=all_scores,
@@ -124,6 +151,7 @@ class GeneratorService:
                 title=r.title,
                 source_type=r.source_type,
                 snippet=(r.text or "")[:280],
+                origin="web",
             )
             for r in references
             if r.url
