@@ -1,5 +1,6 @@
 from fastapi import APIRouter, HTTPException
 
+from writer_api.models.moe import MoEResponse
 from writer_api.models.requests import GenerateRequest, RevoiceRequest
 from writer_api.models.responses import GenerateResponse
 from writer_api.services.generator import GeneratorService
@@ -13,7 +14,7 @@ _profiles = ProfileStore()
 
 @router.post("/generate", response_model=GenerateResponse)
 async def generate_post(request: GenerateRequest) -> GenerateResponse:
-    """Generate a post in a CEO's voice."""
+    """Generate a post in a CEO's voice (legacy single-LLM Exa-only path)."""
     profile = _profiles.load(request.author, request.platform)
     if not profile:
         raise HTTPException(
@@ -21,6 +22,24 @@ async def generate_post(request: GenerateRequest) -> GenerateResponse:
             detail=f"No voice profile found for {request.author} on {request.platform.value}",
         )
     return _generator.generate(request, profile)
+
+
+@router.post("/generate/moe", response_model=MoEResponse)
+async def generate_post_moe(request: GenerateRequest) -> MoEResponse:
+    """Generate a post using mixture of experts:
+    hybrid retrieval (Chroma + Exa) + parallel multi-LLM generation
+    + parallel multi-LLM scoring + winner selection.
+    """
+    profile = _profiles.load(request.author, request.platform)
+    if not profile:
+        raise HTTPException(
+            status_code=404,
+            detail=f"No voice profile found for {request.author} on {request.platform.value}",
+        )
+    try:
+        return await _generator.generate_moe(request, profile)
+    except RuntimeError as exc:
+        raise HTTPException(status_code=503, detail=str(exc)) from exc
 
 
 @router.post("/revoice", response_model=GenerateResponse)

@@ -35,3 +35,6 @@ Thumbs.db
 # Cloudflare Pages
 packages/web/out/
 packages/web/.open-next/
+
+# Local Claude settings
+.claude/
