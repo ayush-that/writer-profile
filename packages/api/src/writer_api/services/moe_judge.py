@@ -78,15 +78,10 @@ class MoEJudge:
 
         parsed = self._parse_json(response.text)
         if parsed is None:
-            return JudgeScore(
-                judge_model=response.model,
-                candidate_index=candidate_index,
-                voice_match=0.5,
-                virality=0.5,
-                authenticity=0.5,
-                overall=0.5,
-                rationale="parse failed",
+            logger.warning(
+                "Judge %s returned unparseable JSON, dropping score", response.model
             )
+            return None
 
         voice_match = self._clamp(parsed.get("voice_match", 0.5))
         virality = self._clamp(parsed.get("virality", 0.5))
@@ -153,7 +148,9 @@ class MoEJudge:
         best_idx = 0
         best_mean = -1.0
         for idx, vals in per_candidate.items():
-            avg = mean(vals) if vals else 0.0
+            if not vals:
+                continue
+            avg = mean(vals)
             if avg > best_mean:
                 best_mean = avg
                 best_idx = idx

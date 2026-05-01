@@ -167,7 +167,6 @@ def test_uses_cloud_client_when_cloud_creds_set(fake_chromadb, monkeypatch):
 
     from writer_api.config import settings
 
-    monkeypatch.setattr(settings, "chroma_host", "api.trychroma.com", raising=False)
     monkeypatch.setattr(
         settings, "chroma_api_key", SecretStr("super-secret"), raising=False
     )
@@ -179,9 +178,7 @@ def test_uses_cloud_client_when_cloud_creds_set(fake_chromadb, monkeypatch):
 
     ChromaStore(embedding_client=_fake_embedding_client())
 
-    # CloudClient is preferred for managed Chroma Cloud (auto-routes by tenant).
     fake_chromadb.module.CloudClient.assert_called_once()
-    fake_chromadb.HttpClient.assert_not_called()
     fake_chromadb.PersistentClient.assert_not_called()
     kwargs = fake_chromadb.module.CloudClient.call_args.kwargs
     assert kwargs["api_key"] == "super-secret"
@@ -192,7 +189,6 @@ def test_uses_cloud_client_when_cloud_creds_set(fake_chromadb, monkeypatch):
 def test_falls_back_to_persistent_client_when_no_cloud_creds(fake_chromadb, monkeypatch):
     from writer_api.config import settings
 
-    monkeypatch.setattr(settings, "chroma_host", None, raising=False)
     monkeypatch.setattr(settings, "chroma_api_key", None, raising=False)
     monkeypatch.setattr(settings, "chroma_tenant", None, raising=False)
     monkeypatch.setattr(settings, "chroma_database", None, raising=False)

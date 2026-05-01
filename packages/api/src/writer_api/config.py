@@ -18,7 +18,6 @@ class Settings(BaseSettings):
     mistral_api_key: SecretStr | None = Field(default=None, alias="MISTRAL_API_KEY")
 
     chroma_api_key: SecretStr | None = Field(default=None, alias="CHROMA_API_KEY")
-    chroma_host: str | None = Field(default=None, alias="CHROMA_HOST")
     chroma_tenant: str | None = Field(default=None, alias="CHROMA_TENANT")
     chroma_database: str | None = Field(default=None, alias="CHROMA_DATABASE")
     chroma_collection: str = "ceo_posts"

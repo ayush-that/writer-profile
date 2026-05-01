@@ -7,22 +7,32 @@ from writer_api.models.voice import VoiceProfile
 from writer_api.prompts.templates import build_generator_prompt, build_revoice_prompt
 from writer_api.services.exa_retriever import ExaRetriever
 from writer_api.services.hybrid_retriever import HybridRetriever
-from writer_api.services.llm import get_llm_client
+from writer_api.services.llm import LLMClient, get_llm_client
 from writer_api.services.moe_generator import MoEGenerator
 from writer_api.services.moe_judge import MoEJudge
 
 
 class GeneratorService:
     def __init__(self) -> None:
-        self._retriever = ExaRetriever()
-        self._llm = get_llm_client()
+        self._retriever: ExaRetriever | None = None
+        self._llm: LLMClient | None = None
         self._hybrid_retriever: HybridRetriever | None = None
         self._moe_generator: MoEGenerator | None = None
         self._moe_judge: MoEJudge | None = None
 
+    def _get_retriever(self) -> ExaRetriever:
+        if self._retriever is None:
+            self._retriever = ExaRetriever()
+        return self._retriever
+
+    def _get_llm(self) -> LLMClient:
+        if self._llm is None:
+            self._llm = get_llm_client()
+        return self._llm
+
     def _get_hybrid_retriever(self) -> HybridRetriever:
         if self._hybrid_retriever is None:
-            self._hybrid_retriever = HybridRetriever(exa_retriever=self._retriever)
+            self._hybrid_retriever = HybridRetriever(exa_retriever=self._get_retriever())
         return self._hybrid_retriever
 
     def _get_moe_generator(self) -> MoEGenerator:
@@ -62,8 +72,6 @@ class GeneratorService:
 
         winner, all_scores = MoEJudge.pick_winner(candidates, scores)
 
-        own_authors = sorted({p.author for p in bundle.own_posts})
-
         return MoEResponse(
             winner=winner,
             candidates=candidates,
@@ -71,7 +79,7 @@ class GeneratorService:
             context=RetrievedContextSummary(
                 own_post_count=len(bundle.own_posts),
                 web_post_count=len(bundle.web_posts),
-                own_post_authors=own_authors,
+                own_post_authors=[profile.author] if bundle.own_posts else [],
             ),
             author=profile.author,
             platform=profile.platform,
@@ -80,7 +88,7 @@ class GeneratorService:
     def generate(self, request: GenerateRequest, profile: VoiceProfile) -> GenerateResponse:
         author_name = profile.author.replace("_", " ").title()
 
-        references = self._retriever.search_for_generation(
+        references = self._get_retriever().search_for_generation(
             author_name=author_name,
             platform=request.platform,
             topic=request.topic,
@@ -98,7 +106,7 @@ class GeneratorService:
             word_limit=request.word_limit,
         )
 
-        response = self._llm.complete(system=system, user=user)
+        response = self._get_llm().complete(system=system, user=user)
         text = response.text.strip().strip('"').strip("'")
 
         return GenerateResponse(
@@ -112,7 +120,7 @@ class GeneratorService:
     def revoice(self, request: RevoiceRequest, profile: VoiceProfile) -> GenerateResponse:
         system, user = build_revoice_prompt(profile=profile, edited_draft=request.edited_draft)
 
-        response = self._llm.complete(system=system, user=user)
+        response = self._get_llm().complete(system=system, user=user)
 
         return GenerateResponse(
             text=response.text.strip(),

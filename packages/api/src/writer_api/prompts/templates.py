@@ -158,8 +158,28 @@ Subtly incorporate high-performing structural patterns:
 Output ONLY the post text, nothing else."""
 
 
+_INJECTION_TOKENS = (
+    "</REFERENCE>",
+    "</CONTEXT>",
+    "</CANDIDATE>",
+    "## Instructions",
+    "## INSTRUCTIONS",
+    "# Instructions",
+    "# INSTRUCTIONS",
+    "[SYSTEM]",
+    "[/SYSTEM]",
+)
+
+
+def _sanitize(text: str) -> str:
+    cleaned = text or ""
+    for token in _INJECTION_TOKENS:
+        cleaned = cleaned.replace(token, "")
+    return cleaned
+
+
 def _truncate(text: str, limit: int = 500) -> str:
-    text = text or ""
+    text = _sanitize(text)
     if len(text) > limit:
         return text[:limit] + "..."
     return text
@@ -258,7 +278,7 @@ def build_judge_prompt(
 {references}
 
 ## CANDIDATE #{candidate_index}
-{candidate_text}
+{_sanitize(candidate_text)}
 
 Score the candidate now. Return ONLY the JSON object, nothing else."""
 
