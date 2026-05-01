@@ -13,6 +13,13 @@ export interface GenerateRequest {
   word_limit?: number;
 }
 
+export interface Source {
+  url: string;
+  title: string;
+  source_type: string;
+  snippet: string;
+}
+
 export interface GenerateResponse {
   text: string;
   author: string;
@@ -20,6 +27,7 @@ export interface GenerateResponse {
   validation_ok: boolean;
   validation_issues: string[];
   sources_used: number;
+  sources: Source[];
 }
 
 export interface Profile {

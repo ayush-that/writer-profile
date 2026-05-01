@@ -3,6 +3,13 @@ from pydantic import BaseModel, Field
 from writer_api.models.voice import Platform, VoiceProfile
 
 
+class Source(BaseModel):
+    url: str
+    title: str = ""
+    source_type: str = ""
+    snippet: str = ""
+
+
 class GenerateResponse(BaseModel):
     text: str
     author: str
@@ -10,6 +17,7 @@ class GenerateResponse(BaseModel):
     validation_ok: bool = True
     validation_issues: list[str] = Field(default_factory=list)
     sources_used: int = 0
+    sources: list[Source] = Field(default_factory=list)
 
 
 class ProfileResponse(BaseModel):

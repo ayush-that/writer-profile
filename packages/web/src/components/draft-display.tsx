@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import type { GenerateResponse } from "@/lib/api";
-import { CopyIcon, CheckIcon, RefreshIcon, FileIcon } from "./icons";
+import { CopyIcon, CheckIcon, RefreshIcon, FileIcon, ChevronIcon } from "./icons";
 
 interface DraftDisplayProps {
   draft: GenerateResponse | null;
@@ -21,6 +21,7 @@ export function DraftDisplay({
   const [copied, setCopied] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
   const [editedText, setEditedText] = useState("");
+  const [showSources, setShowSources] = useState(false);
 
   useEffect(() => {
     if (draft) {
@@ -83,9 +84,20 @@ export function DraftDisplay({
             {draft.platform}
           </span>
           {draft.sources_used > 0 && (
-            <span className="text-xs text-muted-foreground">
+            <button
+              type="button"
+              onClick={() => setShowSources((s) => !s)}
+              className="flex items-center gap-1 text-xs text-muted-foreground transition-colors hover:text-foreground"
+            >
               {draft.sources_used} sources
-            </span>
+              <ChevronIcon
+                className={cn(
+                  "h-3 w-3 transition-transform",
+                  showSources && "rotate-180"
+                )}
+                weight="bold"
+              />
+            </button>
           )}
         </div>
         <button
@@ -123,6 +135,33 @@ export function DraftDisplay({
           </div>
         )}
       </div>
+
+      {showSources && draft.sources && draft.sources.length > 0 && (
+        <div className="border-t border-border bg-muted/30 px-5 py-4">
+          <p className="mb-2 text-[10px] font-bold uppercase tracking-wide text-muted-foreground">
+            Sources used by the model
+          </p>
+          <ul className="space-y-2">
+            {draft.sources.map((s, i) => (
+              <li key={`${s.url}-${i}`} className="text-xs">
+                <a
+                  href={s.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium text-foreground underline-offset-2 hover:underline"
+                >
+                  {s.title || s.url}
+                </a>
+                {s.snippet && (
+                  <p className="mt-0.5 line-clamp-2 text-muted-foreground">
+                    {s.snippet}
+                  </p>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
 
       {isEditing && hasChanges && (
         <div className="flex flex-col gap-3 border-t border-border p-5 sm:flex-row sm:items-center">

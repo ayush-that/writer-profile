@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from writer_api.models.moe import Candidate, MoEResponse, RetrievedContextSummary
 from writer_api.models.requests import GenerateRequest, RevoiceRequest
-from writer_api.models.responses import GenerateResponse
+from writer_api.models.responses import GenerateResponse, Source
 from writer_api.models.voice import VoiceProfile
 from writer_api.prompts.templates import build_generator_prompt, build_revoice_prompt
 from writer_api.services.exa_retriever import ExaRetriever
@@ -118,12 +118,24 @@ class GeneratorService:
         text = sanitize_output(response.text, tells)
         text = text.strip().strip('"').strip("'")
 
+        sources = [
+            Source(
+                url=r.url,
+                title=r.title,
+                source_type=r.source_type,
+                snippet=(r.text or "")[:280],
+            )
+            for r in references
+            if r.url
+        ]
+
         return GenerateResponse(
             text=text,
             author=request.author,
             platform=request.platform,
             validation_ok=True,
             sources_used=len(references),
+            sources=sources,
         )
 
     def revoice(self, request: RevoiceRequest, profile: VoiceProfile) -> GenerateResponse:
