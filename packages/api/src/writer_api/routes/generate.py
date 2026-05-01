@@ -14,7 +14,7 @@ _profiles = ProfileStore()
 
 @router.post("/generate", response_model=GenerateResponse)
 async def generate_post(request: GenerateRequest) -> GenerateResponse:
-    """Generate a post in a CEO's voice (legacy single-LLM Exa-only path)."""
+    """Generate a post in a CEO's voice."""
     profile = _profiles.load(request.author, request.platform)
     if not profile:
         raise HTTPException(
@@ -26,10 +26,7 @@ async def generate_post(request: GenerateRequest) -> GenerateResponse:
 
 @router.post("/generate/moe", response_model=MoEResponse)
 async def generate_post_moe(request: GenerateRequest) -> MoEResponse:
-    """Generate a post using mixture of experts:
-    hybrid retrieval (Chroma + Exa) + parallel multi-LLM generation
-    + parallel multi-LLM scoring + winner selection.
-    """
+    """Generate a post using mixture of experts (Chroma + Exa retrieval, parallel multi-LLM gen + scoring)."""
     profile = _profiles.load(request.author, request.platform)
     if not profile:
         raise HTTPException(

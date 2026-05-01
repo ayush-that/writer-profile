@@ -29,7 +29,7 @@ class HybridRetriever:
             try:
                 self._chroma_store = ChromaStore()
             except Exception as exc:
-                logger.warning("Failed to initialize ChromaStore: %s", exc)
+                logger.warning("ChromaStore init failed: %s", exc)
                 return None
         return self._chroma_store
 
@@ -38,7 +38,7 @@ class HybridRetriever:
             try:
                 self._exa_retriever = ExaRetriever()
             except Exception as exc:
-                logger.warning("Failed to initialize ExaRetriever: %s", exc)
+                logger.warning("ExaRetriever init failed: %s", exc)
                 return None
         return self._exa_retriever
 
@@ -56,24 +56,13 @@ class HybridRetriever:
         chroma = self._get_chroma()
         if chroma is not None:
             try:
-                where = {
-                    "$and": [
-                        {"author": author},
-                        {"platform": platform},
-                    ]
-                }
-                try:
-                    own_posts = chroma.query(text=topic, k=k_own, where=where)
-                except Exception:
-                    # Some chroma versions do not require $and wrapping
-                    own_posts = chroma.query(
-                        text=topic,
-                        k=k_own,
-                        where={"author": author, "platform": platform},
-                    )
+                own_posts = chroma.query(
+                    text=topic,
+                    k=k_own,
+                    where={"author": author, "platform": platform},
+                )
             except Exception as exc:
                 logger.warning("Chroma query failed for %s/%s: %s", author, platform, exc)
-                own_posts = []
 
         exa = self._get_exa()
         if exa is not None:
@@ -86,6 +75,5 @@ class HybridRetriever:
                 )
             except Exception as exc:
                 logger.warning("Exa search failed for %s/%s: %s", author, platform, exc)
-                web_posts = []
 
         return HybridBundle(own_posts=own_posts, web_posts=web_posts)

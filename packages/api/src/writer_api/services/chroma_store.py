@@ -25,17 +25,12 @@ class QueryResult:
     text: str
     author: str
     platform: str
-    score: float  # similarity, higher = better
+    score: float
     metadata: dict = field(default_factory=dict)
 
 
 class ChromaStore:
-    """Wrapper around a Chroma collection that uses an external EmbeddingClient.
-
-    Falls back to a local PersistentClient at ./.chroma when cloud creds aren't
-    configured (handy for dev + tests). When `chroma_host` is set in settings,
-    we use chromadb.HttpClient with the cloud auth headers.
-    """
+    _MAX_DOC_BYTES = 15_000
 
     def __init__(
         self,
@@ -44,49 +39,35 @@ class ChromaStore:
     ) -> None:
         import chromadb
 
-        self._collection_name = collection_name or getattr(
-            settings, "chroma_collection", "ceo_posts"
-        )
+        self._collection_name = collection_name or settings.chroma_collection
 
         if embedding_client is None:
-            # Lazy import to avoid circular deps with embeddings module
             from writer_api.services.embeddings import get_embedding_client
 
             embedding_client = get_embedding_client()
         self._embedding_client = embedding_client
 
-        host = getattr(settings, "chroma_host", None)
-        api_key_secret = getattr(settings, "chroma_api_key", None)
-        api_key = api_key_secret.get_secret_value() if api_key_secret else None
-        tenant = getattr(settings, "chroma_tenant", None)
-        database = getattr(settings, "chroma_database", None)
+        api_key = (
+            settings.chroma_api_key.get_secret_value()
+            if settings.chroma_api_key
+            else None
+        )
+        tenant = settings.chroma_tenant
+        database = settings.chroma_database
 
         if api_key and tenant and database:
-            # Chroma Cloud — uses managed CloudClient (resolves region from tenant).
             self._client = chromadb.CloudClient(
                 api_key=api_key,
                 tenant=tenant,
                 database=database,
             )
-        elif host and api_key and tenant and database:
-            self._client = chromadb.HttpClient(
-                host=host,
-                ssl=True,
-                tenant=tenant,
-                database=database,
-                headers={"x-chroma-token": api_key},
-            )
         else:
             self._client = chromadb.PersistentClient(path="./.chroma")
 
-        # We pass embeddings ourselves, so disable Chroma's default embedder.
         self._collection = self._client.get_or_create_collection(
             name=self._collection_name,
             embedding_function=None,
         )
-
-    # Chroma free tier has a 16,384-byte per-document limit.
-    _MAX_DOC_BYTES = 15_000
 
     def upsert_posts(self, posts: list[IndexedPost], batch_size: int = 100) -> int:
         if not posts:
@@ -98,7 +79,6 @@ class ChromaStore:
             texts = [self._truncate(p.text) for p in batch]
             embeddings = self._embedding_client.embed(texts)
 
-            ids = [p.id for p in batch]
             metadatas: list[dict[str, Any]] = []
             for p in batch:
                 meta: dict[str, Any] = {
@@ -111,7 +91,7 @@ class ChromaStore:
                 metadatas.append(meta)
 
             self._collection.upsert(
-                ids=ids,
+                ids=[p.id for p in batch],
                 documents=texts,
                 embeddings=embeddings,
                 metadatas=metadatas,
@@ -125,7 +105,6 @@ class ChromaStore:
         encoded = text.encode("utf-8")
         if len(encoded) <= cls._MAX_DOC_BYTES:
             return text
-        # Slice bytes safely to a valid utf-8 boundary.
         return encoded[: cls._MAX_DOC_BYTES].decode("utf-8", errors="ignore")
 
     def query(
@@ -136,35 +115,20 @@ class ChromaStore:
     ) -> list[QueryResult]:
         embedding = self._embedding_client.embed([text])[0]
 
-        normalized_where = self._normalize_where(where)
-
         kwargs: dict[str, Any] = {
             "query_embeddings": [embedding],
             "n_results": k,
         }
+        normalized_where = self._normalize_where(where)
         if normalized_where is not None:
             kwargs["where"] = normalized_where
 
-        try:
-            raw = self._collection.query(**kwargs)
-        except Exception:
-            # Newer chromadb requires $and wrapping for multi-key filters; older
-            # versions accept the flat form. Retry with the alternate shape.
-            if normalized_where is not None and where is not None:
-                kwargs["where"] = where
-                raw = self._collection.query(**kwargs)
-            else:
-                raise
+        raw = self._collection.query(**kwargs)
 
-        ids_outer = raw.get("ids") or [[]]
-        docs_outer = raw.get("documents") or [[]]
-        metas_outer = raw.get("metadatas") or [[]]
-        dists_outer = raw.get("distances") or [[]]
-
-        ids = ids_outer[0] if ids_outer else []
-        docs = docs_outer[0] if docs_outer else []
-        metas = metas_outer[0] if metas_outer else []
-        dists = dists_outer[0] if dists_outer else []
+        ids = (raw.get("ids") or [[]])[0]
+        docs = (raw.get("documents") or [[]])[0]
+        metas = (raw.get("metadatas") or [[]])[0]
+        dists = (raw.get("distances") or [[]])[0]
 
         results: list[QueryResult] = []
         for i, doc_id in enumerate(ids):
@@ -191,21 +155,13 @@ class ChromaStore:
             where: dict = {"author": author}
         else:
             where = {"$and": [{"author": author}, {"platform": platform}]}
-        try:
-            self._collection.delete(where=where)
-        except Exception:
-            if platform is not None:
-                self._collection.delete(where={"author": author, "platform": platform})
-            else:
-                raise
+        self._collection.delete(where=where)
         return max(0, before - self.count())
 
     @staticmethod
     def _normalize_where(where: dict | None) -> dict | None:
-        """Wrap multi-key filters in $and so newer chromadb versions accept them."""
         if not where:
             return None
-        # Already an operator-rooted filter ($and / $or / $eq etc.) — pass through.
         if any(k.startswith("$") for k in where):
             return where
         if len(where) <= 1:

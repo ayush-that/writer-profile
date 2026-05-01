@@ -50,20 +50,11 @@ class EmbeddingClient:
 
     def embed(self, texts: list[str]) -> list[list[float]]:
         if self._provider == "openai":
-            response = self._client.embeddings.create(
-                model=self._model,
-                input=texts,
-            )
+            response = self._client.embeddings.create(model=self._model, input=texts)
             return [item.embedding for item in response.data]
 
-        elif self._provider == "gemini":
-            response = self._client.models.embed_content(
-                model=self._model,
-                contents=texts,
-            )
-            return [list(emb.values) for emb in response.embeddings]
-
-        raise ValueError(f"Unsupported embedding provider: {self._provider}")
+        response = self._client.models.embed_content(model=self._model, contents=texts)
+        return [list(emb.values) for emb in response.embeddings]
 
     @property
     def dimension(self) -> int:

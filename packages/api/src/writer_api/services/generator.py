@@ -1,12 +1,6 @@
 from __future__ import annotations
 
-import logging
-
-from writer_api.models.moe import (
-    Candidate,
-    MoEResponse,
-    RetrievedContextSummary,
-)
+from writer_api.models.moe import Candidate, MoEResponse, RetrievedContextSummary
 from writer_api.models.requests import GenerateRequest, RevoiceRequest
 from writer_api.models.responses import GenerateResponse
 from writer_api.models.voice import VoiceProfile
@@ -16,8 +10,6 @@ from writer_api.services.hybrid_retriever import HybridRetriever
 from writer_api.services.llm import get_llm_client
 from writer_api.services.moe_generator import MoEGenerator
 from writer_api.services.moe_judge import MoEJudge
-
-logger = logging.getLogger(__name__)
 
 
 class GeneratorService:

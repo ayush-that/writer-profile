@@ -1,13 +1,5 @@
-"""One-shot script: scan local profile JSONs, embed every example_post,
-and upsert into the configured Chroma collection.
-
-Run from the repo root:
-
-    python scripts/index_posts.py --dry-run
-    python scripts/index_posts.py --author sam_altman
-    python scripts/index_posts.py
-"""
-
+#!/usr/bin/env python3
+"""Embed every example_post in profile JSONs and upsert into Chroma."""
 from __future__ import annotations
 
 import argparse
@@ -21,8 +13,6 @@ sys.path.insert(0, str(API_SRC))
 
 
 PROFILE_DIRS: list[Path] = [
-    # Order matters for de-dupe: later entries WIN when keys collide. The
-    # packages/api/data dir holds the larger scraped sets, so list it last.
     REPO_ROOT / "data" / "profiles",
     REPO_ROOT / "packages" / "api" / "data" / "profiles",
 ]
@@ -38,12 +28,6 @@ def _load_profile(path: Path) -> dict | None:
 
 
 def collect_posts(author_filter: str | None = None) -> list:
-    """Walk profile dirs and build a deduped list of IndexedPost.
-
-    De-dupe key is (author, platform, post_index). When the same key exists in
-    multiple source dirs, the file from the later directory in PROFILE_DIRS wins
-    (so packages/api/data/profiles overrides data/profiles when both have it).
-    """
     from writer_api.services.chroma_store import IndexedPost
 
     deduped: dict[tuple[str, str, int], IndexedPost] = {}
@@ -117,7 +101,6 @@ def main() -> int:
     from writer_api.services.chroma_store import ChromaStore
 
     store = ChromaStore()
-    # Smaller batches to stay under Chroma free-tier per-request size limits.
     indexed = 0
     batch_size = 25
     for start in range(0, len(posts), batch_size):

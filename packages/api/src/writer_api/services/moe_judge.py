@@ -53,17 +53,8 @@ class MoEJudge:
             for judge in self._judges:
                 tasks.append(self._score_one(judge, candidate, c_idx, profile, bundle))
 
-        results = await asyncio.gather(*tasks, return_exceptions=True)
-
-        scores: list[JudgeScore] = []
-        for result in results:
-            if isinstance(result, BaseException):
-                logger.warning("Judge task raised: %s", result)
-                continue
-            if result is None:
-                continue
-            scores.append(result)
-        return scores
+        results = await asyncio.gather(*tasks)
+        return [r for r in results if r is not None]
 
     async def _score_one(
         self,
@@ -80,11 +71,9 @@ class MoEJudge:
             candidate_index=candidate_index,
         )
         try:
-            # 2048 tokens to give thinking-style models (gemini 2.5 pro) headroom
-            # before they emit the JSON object.
             response = await asyncio.to_thread(judge.complete, system, user, 2048, 0.0)
         except Exception as exc:
-            logger.warning("Judge call failed: %s", exc)
+            logger.warning("Judge %s failed: %s", type(judge).__name__, exc)
             return None
 
         parsed = self._parse_json(response.text)

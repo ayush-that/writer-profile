@@ -201,9 +201,9 @@ class OpenRouterClient(LLMClient):
 class MistralClient(LLMClient):
     def __init__(self, api_key: str | None = None, model: str | None = None) -> None:
         try:
-            from mistralai import Mistral  # newer SDK exposes top-level
+            from mistralai import Mistral
         except ImportError:
-            from mistralai.client.sdk import Mistral  # mistralai 2.x layout
+            from mistralai.client.sdk import Mistral
 
         key = api_key
         if key is None and settings.mistral_api_key:
@@ -250,7 +250,7 @@ def get_llm_client(
 ) -> LLMClient:
     provider = provider or settings.llm_provider
 
-    if provider == "anthropic" or provider == "claude":
+    if provider in ("anthropic", "claude"):
         return AnthropicClient(api_key=api_key, model=model)
     elif provider == "openai":
         return OpenAIClient(api_key=api_key, model=model)
