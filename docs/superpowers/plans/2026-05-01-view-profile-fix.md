@@ -526,7 +526,7 @@ git commit -m "feat(web): redesign profiles page with caching and full data disp
 ```bash
 cd /Users/shydev/mini-projects/writer-profile/packages/api
 cp -r ../../data/profiles data/
-railway up --detach --service writer-profile-api
+# DEPLOY: pushed to main → Coolify auto-builds (project: cadence)
 ```
 
 - [ ] **Step 2: Build and deploy frontend**

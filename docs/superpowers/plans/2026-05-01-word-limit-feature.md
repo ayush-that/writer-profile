@@ -305,23 +305,23 @@ git commit -m "feat(web): add word limit selector to generate form"
 **Files:**
 - No file changes
 
-- [ ] **Step 1: Deploy API to Railway**
+- [ ] **Step 1: Deploy API to Coolify**
 
 ```bash
 cd /Users/shydev/mini-projects/writer-profile/packages/api
 cp -r ../../data/profiles data/
-railway up --detach --service writer-profile-api
+# DEPLOY: pushed to main → Coolify auto-builds (project: cadence)
 ```
 
 Wait for deployment to complete:
 ```bash
-sleep 30 && railway service list
+sleep 30 && # Coolify dashboard: https://coolify.ayushworks.com
 ```
 
 - [ ] **Step 2: Test API word limit**
 
 ```bash
-curl -s "https://writer-profile-api-production.up.railway.app/api/generate" \
+curl -s "https://coolify-backend/api/generate" \
   -X POST -H "Content-Type: application/json" \
   -d '{"author":"sam_altman","platform":"linkedin","topic":"AI progress","word_limit":50}' | jq -r '.text' | wc -w
 ```
@@ -1331,13 +1331,13 @@ git commit -m "feat(web): integrate streaming progress in generate page"
 ```bash
 cd /Users/shydev/mini-projects/writer-profile/packages/api
 cp -r ../../data/profiles data/
-railway up --detach --service writer-profile-api
+# DEPLOY: pushed to main → Coolify auto-builds (project: cadence)
 ```
 
 - [ ] **Step 2: Wait for deployment and test streaming endpoint**
 
 ```bash
-sleep 45 && curl -N "https://writer-profile-api-production.up.railway.app/api/generate/stream" \
+sleep 45 && curl -N "https://coolify-backend/api/generate/stream" \
   -X POST -H "Content-Type: application/json" \
   -d '{"author":"sam_altman","platform":"linkedin","topic":"AI","word_limit":50}'
 ```

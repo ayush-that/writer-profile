@@ -809,17 +809,17 @@ data/
   context/
 ```
 
-- [ ] **Step 3: Deploy API to Railway**
+- [ ] **Step 3: Deploy API to Coolify**
 
 ```bash
 cd /Users/shydev/mini-projects/writer-profile/packages/api
-railway up --detach --service writer-profile-api
+# DEPLOY: pushed to main → Coolify auto-builds (project: cadence)
 ```
 
 - [ ] **Step 4: Wait and test**
 
 ```bash
-sleep 45 && curl -s "https://writer-profile-api-production.up.railway.app/api/generate/stream" \
+sleep 45 && curl -s "https://coolify-backend/api/generate/stream" \
   -X POST -H "Content-Type: application/json" \
   -d '{"author":"sam_altman","platform":"linkedin","topic":"AI safety"}' | head -20
 ```

@@ -10,7 +10,7 @@
 - Backend: FastAPI, Pydantic, Exa API, Claude/OpenAI (configurable)
 - Frontend: Next.js 14, TypeScript, Tailwind CSS, shadcn/ui, Framer Motion
 - Monorepo: pnpm workspaces, Turborepo
-- Infrastructure: Docker, Railway/Vercel deployment ready
+- Infrastructure: Docker, Coolify (backend) + Cloudflare Pages (frontend)
 
 ---
 

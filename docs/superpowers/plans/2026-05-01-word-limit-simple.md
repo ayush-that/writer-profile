@@ -273,11 +273,11 @@ git commit -m "feat(web): add word limit selector to generate form"
 **Files:**
 - No new files
 
-- [ ] **Step 1: Deploy API to Railway**
+- [ ] **Step 1: Deploy API to Coolify**
 
 ```bash
 cd /Users/shydev/mini-projects/writer-profile/packages/api
-railway up --detach --service writer-profile-api
+# DEPLOY: pushed to main → Coolify auto-builds (project: cadence)
 ```
 
 - [ ] **Step 2: Build and deploy frontend**
