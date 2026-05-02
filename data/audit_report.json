@@ -1,0 +1,4386 @@
+{
+  "before": {
+    "totals": {
+      "files": 43,
+      "posts": 2541,
+      "duplicates": 0,
+      "boilerplate_hits": 4614
+    },
+    "by_author_platform": {
+      "ali_ghodsi__linkedin": {
+        "post_count": 236,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 540,
+        "files": [
+          "data/profiles/ali_ghodsi__linkedin.json",
+          "packages/api/data/profiles/ali_ghodsi__linkedin.json"
+        ]
+      },
+      "ali_ghodsi__twitter": {
+        "post_count": 40,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 0,
+        "files": [
+          "data/profiles/ali_ghodsi__twitter.json",
+          "packages/api/data/profiles/ali_ghodsi__twitter.json"
+        ]
+      },
+      "aravind_srinivas__linkedin": {
+        "post_count": 197,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 473,
+        "files": [
+          "data/profiles/aravind_srinivas__linkedin.json",
+          "packages/api/data/profiles/aravind_srinivas__linkedin.json"
+        ]
+      },
+      "aravind_srinivas__twitter": {
+        "post_count": 40,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 0,
+        "files": [
+          "data/profiles/aravind_srinivas__twitter.json",
+          "packages/api/data/profiles/aravind_srinivas__twitter.json"
+        ]
+      },
+      "brian_chesky__linkedin": {
+        "post_count": 159,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 334,
+        "files": [
+          "data/profiles/brian_chesky__linkedin.json",
+          "packages/api/data/profiles/brian_chesky__linkedin.json"
+        ]
+      },
+      "brian_chesky__twitter": {
+        "post_count": 73,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 28,
+        "files": [
+          "data/profiles/brian_chesky__twitter.json",
+          "packages/api/data/profiles/brian_chesky__twitter.json"
+        ]
+      },
+      "dario_amodei__linkedin": {
+        "post_count": 241,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 575,
+        "files": [
+          "data/profiles/dario_amodei__linkedin.json",
+          "packages/api/data/profiles/dario_amodei__linkedin.json"
+        ]
+      },
+      "dario_amodei__twitter": {
+        "post_count": 53,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 50,
+        "files": [
+          "data/profiles/dario_amodei__twitter.json",
+          "packages/api/data/profiles/dario_amodei__twitter.json"
+        ]
+      },
+      "elon_musk__linkedin": {
+        "post_count": 258,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 564,
+        "files": [
+          "data/profiles/elon_musk__linkedin.json",
+          "packages/api/data/profiles/elon_musk__linkedin.json"
+        ]
+      },
+      "elon_musk__twitter": {
+        "post_count": 40,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 0,
+        "files": [
+          "data/profiles/elon_musk__twitter.json",
+          "packages/api/data/profiles/elon_musk__twitter.json"
+        ]
+      },
+      "guillermo_rauch__linkedin": {
+        "post_count": 149,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 319,
+        "files": [
+          "data/profiles/guillermo_rauch__linkedin.json",
+          "packages/api/data/profiles/guillermo_rauch__linkedin.json"
+        ]
+      },
+      "guillermo_rauch__twitter": {
+        "post_count": 40,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 0,
+        "files": [
+          "data/profiles/guillermo_rauch__twitter.json",
+          "packages/api/data/profiles/guillermo_rauch__twitter.json"
+        ]
+      },
+      "matei_zaharia__linkedin": {
+        "post_count": 48,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 85,
+        "files": [
+          "packages/api/data/profiles/matei_zaharia__linkedin.json"
+        ]
+      },
+      "matei_zaharia__twitter": {
+        "post_count": 50,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 75,
+        "files": [
+          "data/profiles/matei_zaharia__twitter.json",
+          "packages/api/data/profiles/matei_zaharia__twitter.json"
+        ]
+      },
+      "patrick_collison__linkedin": {
+        "post_count": 161,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 347,
+        "files": [
+          "data/profiles/patrick_collison__linkedin.json",
+          "packages/api/data/profiles/patrick_collison__linkedin.json"
+        ]
+      },
+      "patrick_collison__twitter": {
+        "post_count": 40,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 0,
+        "files": [
+          "data/profiles/patrick_collison__twitter.json",
+          "packages/api/data/profiles/patrick_collison__twitter.json"
+        ]
+      },
+      "sam_altman__linkedin": {
+        "post_count": 208,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 473,
+        "files": [
+          "data/profiles/sam_altman__linkedin.json",
+          "packages/api/data/profiles/sam_altman__linkedin.json"
+        ]
+      },
+      "sam_altman__twitter": {
+        "post_count": 78,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 34,
+        "files": [
+          "data/profiles/sam_altman__twitter.json",
+          "packages/api/data/profiles/sam_altman__twitter.json"
+        ]
+      },
+      "satya_nadella__linkedin": {
+        "post_count": 166,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 363,
+        "files": [
+          "data/profiles/satya_nadella__linkedin.json",
+          "packages/api/data/profiles/satya_nadella__linkedin.json"
+        ]
+      },
+      "satya_nadella__twitter": {
+        "post_count": 40,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 0,
+        "files": [
+          "data/profiles/satya_nadella__twitter.json",
+          "packages/api/data/profiles/satya_nadella__twitter.json"
+        ]
+      },
+      "tobi_lutke__linkedin": {
+        "post_count": 147,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 320,
+        "files": [
+          "data/profiles/tobi_lutke__linkedin.json",
+          "packages/api/data/profiles/tobi_lutke__linkedin.json"
+        ]
+      },
+      "tobi_lutke__twitter": {
+        "post_count": 77,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 34,
+        "files": [
+          "data/profiles/tobi_lutke__twitter.json",
+          "packages/api/data/profiles/tobi_lutke__twitter.json"
+        ]
+      }
+    },
+    "per_file": [
+      {
+        "file": "data/profiles/ali_ghodsi__linkedin.json",
+        "author": "ali_ghodsi",
+        "platform": "linkedin",
+        "post_count": 30,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 90,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 28,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 2,
+          "# ": 30,
+          "## ": 30
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.967,
+        "length_stats": {
+          "min": 787,
+          "median": 7543,
+          "p95": 41493,
+          "max": 65377
+        }
+      },
+      {
+        "file": "data/profiles/ali_ghodsi__twitter.json",
+        "author": "ali_ghodsi",
+        "platform": "twitter",
+        "post_count": 20,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 0,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 0,
+          "## ": 0
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.5,
+        "length_stats": {
+          "min": 14,
+          "median": 140,
+          "p95": 516,
+          "max": 898
+        }
+      },
+      {
+        "file": "data/profiles/aravind_srinivas__linkedin.json",
+        "author": "aravind_srinivas",
+        "platform": "linkedin",
+        "post_count": 30,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 91,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 30,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 1,
+          "Cookie Policy": 0,
+          "# ": 30,
+          "## ": 30
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.967,
+        "length_stats": {
+          "min": 1447,
+          "median": 4943,
+          "p95": 35171,
+          "max": 36566
+        }
+      },
+      {
+        "file": "data/profiles/aravind_srinivas__twitter.json",
+        "author": "aravind_srinivas",
+        "platform": "twitter",
+        "post_count": 20,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 0,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 0,
+          "## ": 0
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.35,
+        "length_stats": {
+          "min": 1,
+          "median": 140,
+          "p95": 734,
+          "max": 1152
+        }
+      },
+      {
+        "file": "data/profiles/brian_chesky__linkedin.json",
+        "author": "brian_chesky",
+        "platform": "linkedin",
+        "post_count": 30,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 93,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 29,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 1,
+          "Cookie Policy": 3,
+          "# ": 30,
+          "## ": 30
+        },
+        "top_source_urls": [],
+        "first_person_rate": 1.0,
+        "length_stats": {
+          "min": 1013,
+          "median": 15045,
+          "p95": 41649,
+          "max": 51046
+        }
+      },
+      {
+        "file": "data/profiles/brian_chesky__twitter.json",
+        "author": "brian_chesky",
+        "platform": "twitter",
+        "post_count": 20,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 0,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 0,
+          "## ": 0
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.5,
+        "length_stats": {
+          "min": 4,
+          "median": 90,
+          "p95": 178,
+          "max": 263
+        }
+      },
+      {
+        "file": "data/profiles/dario_amodei__linkedin.json",
+        "author": "dario_amodei",
+        "platform": "linkedin",
+        "post_count": 30,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 92,
+        "boilerplate_per_marker": {
+          "Source: http": 1,
+          "Agree & Join LinkedIn": 29,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 1,
+          "Cookie Policy": 1,
+          "# ": 30,
+          "## ": 30
+        },
+        "top_source_urls": [
+          [
+            "https://lnkd.in/em9xsyXS)#science#business#news#health",
+            1
+          ]
+        ],
+        "first_person_rate": 1.0,
+        "length_stats": {
+          "min": 1057,
+          "median": 12620,
+          "p95": 28629,
+          "max": 40938
+        }
+      },
+      {
+        "file": "data/profiles/dario_amodei__twitter.json",
+        "author": "dario_amodei",
+        "platform": "twitter",
+        "post_count": 6,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 0,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 0,
+          "## ": 0
+        },
+        "top_source_urls": [],
+        "first_person_rate": 1.0,
+        "length_stats": {
+          "min": 86,
+          "median": 145,
+          "p95": 196,
+          "max": 304
+        }
+      },
+      {
+        "file": "data/profiles/elon_musk__linkedin.json",
+        "author": "elon_musk",
+        "platform": "linkedin",
+        "post_count": 30,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 94,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 30,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 4,
+          "# ": 30,
+          "## ": 30
+        },
+        "top_source_urls": [],
+        "first_person_rate": 1.0,
+        "length_stats": {
+          "min": 3509,
+          "median": 21532,
+          "p95": 49993,
+          "max": 56994
+        }
+      },
+      {
+        "file": "data/profiles/elon_musk__twitter.json",
+        "author": "elon_musk",
+        "platform": "twitter",
+        "post_count": 20,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 0,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 0,
+          "## ": 0
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.15,
+        "length_stats": {
+          "min": 1,
+          "median": 72,
+          "p95": 140,
+          "max": 140
+        }
+      },
+      {
+        "file": "data/profiles/guillermo_rauch__linkedin.json",
+        "author": "guillermo_rauch",
+        "platform": "linkedin",
+        "post_count": 30,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 90,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 29,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 1,
+          "# ": 30,
+          "## ": 30
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.967,
+        "length_stats": {
+          "min": 1394,
+          "median": 6833,
+          "p95": 25913,
+          "max": 54208
+        }
+      },
+      {
+        "file": "data/profiles/guillermo_rauch__twitter.json",
+        "author": "guillermo_rauch",
+        "platform": "twitter",
+        "post_count": 20,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 0,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 0,
+          "## ": 0
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.7,
+        "length_stats": {
+          "min": 5,
+          "median": 277,
+          "p95": 1356,
+          "max": 2923
+        }
+      },
+      {
+        "file": "data/profiles/matei_zaharia__twitter.json",
+        "author": "matei_zaharia",
+        "platform": "twitter",
+        "post_count": 3,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 0,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 0,
+          "## ": 0
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.0,
+        "length_stats": {
+          "min": 138,
+          "median": 148,
+          "p95": 148,
+          "max": 150
+        }
+      },
+      {
+        "file": "data/profiles/patrick_collison__linkedin.json",
+        "author": "patrick_collison",
+        "platform": "linkedin",
+        "post_count": 30,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 96,
+        "boilerplate_per_marker": {
+          "Source: http": 1,
+          "Agree & Join LinkedIn": 30,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 1,
+          "Cookie Policy": 4,
+          "# ": 30,
+          "## ": 30
+        },
+        "top_source_urls": [
+          [
+            "https://lnkd.in/gMp44Qi5",
+            1
+          ]
+        ],
+        "first_person_rate": 0.967,
+        "length_stats": {
+          "min": 968,
+          "median": 8904,
+          "p95": 21758,
+          "max": 35332
+        }
+      },
+      {
+        "file": "data/profiles/patrick_collison__twitter.json",
+        "author": "patrick_collison",
+        "platform": "twitter",
+        "post_count": 20,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 0,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 0,
+          "## ": 0
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.55,
+        "length_stats": {
+          "min": 73,
+          "median": 140,
+          "p95": 284,
+          "max": 6094
+        }
+      },
+      {
+        "file": "data/profiles/sam_altman__linkedin.json",
+        "author": "sam_altman",
+        "platform": "linkedin",
+        "post_count": 30,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 93,
+        "boilerplate_per_marker": {
+          "Source: http": 1,
+          "Agree & Join LinkedIn": 30,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 2,
+          "# ": 30,
+          "## ": 30
+        },
+        "top_source_urls": [
+          [
+            "https://lnkd.in/ddtkVcCS",
+            1
+          ]
+        ],
+        "first_person_rate": 1.0,
+        "length_stats": {
+          "min": 3380,
+          "median": 10776,
+          "p95": 30884,
+          "max": 50688
+        }
+      },
+      {
+        "file": "data/profiles/sam_altman__twitter.json",
+        "author": "sam_altman",
+        "platform": "twitter",
+        "post_count": 20,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 0,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 0,
+          "## ": 0
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.3,
+        "length_stats": {
+          "min": 17,
+          "median": 69,
+          "p95": 278,
+          "max": 279
+        }
+      },
+      {
+        "file": "data/profiles/satya_nadella__linkedin.json",
+        "author": "satya_nadella",
+        "platform": "linkedin",
+        "post_count": 30,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 94,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 30,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 1,
+          "Cookie Policy": 3,
+          "# ": 30,
+          "## ": 30
+        },
+        "top_source_urls": [],
+        "first_person_rate": 1.0,
+        "length_stats": {
+          "min": 1830,
+          "median": 14169,
+          "p95": 45861,
+          "max": 49373
+        }
+      },
+      {
+        "file": "data/profiles/satya_nadella__twitter.json",
+        "author": "satya_nadella",
+        "platform": "twitter",
+        "post_count": 20,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 0,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 0,
+          "## ": 0
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.4,
+        "length_stats": {
+          "min": 42,
+          "median": 198,
+          "p95": 550,
+          "max": 642
+        }
+      },
+      {
+        "file": "data/profiles/tobi_lutke__linkedin.json",
+        "author": "tobi_lutke",
+        "platform": "linkedin",
+        "post_count": 30,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 94,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 28,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 2,
+          "Cookie Policy": 4,
+          "# ": 30,
+          "## ": 30
+        },
+        "top_source_urls": [],
+        "first_person_rate": 1.0,
+        "length_stats": {
+          "min": 1215,
+          "median": 10776,
+          "p95": 34108,
+          "max": 42946
+        }
+      },
+      {
+        "file": "data/profiles/tobi_lutke__twitter.json",
+        "author": "tobi_lutke",
+        "platform": "twitter",
+        "post_count": 20,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 0,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 0,
+          "## ": 0
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.35,
+        "length_stats": {
+          "min": 1,
+          "median": 140,
+          "p95": 149,
+          "max": 197
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/ali_ghodsi__linkedin.json",
+        "author": "ali_ghodsi",
+        "platform": "linkedin",
+        "post_count": 206,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 450,
+        "boilerplate_per_marker": {
+          "Source: http": 77,
+          "Agree & Join LinkedIn": 28,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 1,
+          "Subscribe to": 5,
+          "Cookie Policy": 2,
+          "# ": 179,
+          "## ": 158
+        },
+        "top_source_urls": [
+          [
+            "https://www.youtube.com/watch?v=-6dt7eJ3cMs",
+            1
+          ],
+          [
+            "https://pages.databricks.com/2016databricks-ceo-keynote.html",
+            1
+          ],
+          [
+            "https://www.goldmansachs.com/insights/talks-at-gs/ai-and-the-enterprise-revolution-databricks-ceo-ali-ghodsi",
+            1
+          ],
+          [
+            "https://stvp.stanford.edu/wp-content/uploads/sites/3/2024/09/lessons-from-a-large-founding-team-entire-talk-transcript.pdf",
+            1
+          ],
+          [
+            "https://pages.databricks.com/ali-ghodsi-interview.html",
+            1
+          ],
+          [
+            "https://stvp.stanford.edu/contributor/ali-ghodsi/",
+            1
+          ],
+          [
+            "https://www.joincolossus.com/episodes/4919706/ghodsi-the-past-present-and-future-of-big-data",
+            1
+          ],
+          [
+            "https://slideplayer.com/slide/3860325",
+            1
+          ],
+          [
+            "https://stvp.stanford.edu/podcasts/ali-ghodsi-databricks-lessons-from-a-large-founding-team/",
+            1
+          ],
+          [
+            "https://www.slideshare.net/databricks/spark-summit-san-francisco-2016-ali-ghodsi-keynote",
+            1
+          ]
+        ],
+        "first_person_rate": 0.617,
+        "length_stats": {
+          "min": 204,
+          "median": 2156,
+          "p95": 22991,
+          "max": 95583
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/ali_ghodsi__twitter.json",
+        "author": "ali_ghodsi",
+        "platform": "twitter",
+        "post_count": 20,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 0,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 0,
+          "## ": 0
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.5,
+        "length_stats": {
+          "min": 14,
+          "median": 140,
+          "p95": 516,
+          "max": 898
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/aravind_srinivas__linkedin.json",
+        "author": "aravind_srinivas",
+        "platform": "linkedin",
+        "post_count": 167,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 382,
+        "boilerplate_per_marker": {
+          "Source: http": 66,
+          "Agree & Join LinkedIn": 30,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 2,
+          "Cookie Policy": 0,
+          "# ": 149,
+          "## ": 135
+        },
+        "top_source_urls": [
+          [
+            "https://singjupost.com/aravind-srinivas-perplexitys-race-to-build-agentic-search-transcript/",
+            1
+          ],
+          [
+            "https://lexfridman.com/aravind-srinivas-transcript/",
+            1
+          ],
+          [
+            "https://singjupost.com/how-ai-will-answer-questions-we-havent-thought-to-ask-aravind-srinivas-transcript/?singlepage=1",
+            1
+          ],
+          [
+            "https://singjupost.com/transcript-perplexity-ceo-srinivas-on-winning-search-with-ai/",
+            1
+          ],
+          [
+            "https://www.ted.com/talks/aravind_srinivas_how_ai_will_answer_questions_we_haven_t_thought_to_ask",
+            1
+          ],
+          [
+            "https://scripod.com/episode/b7abykvhdv7c58oqq52j60m3",
+            1
+          ],
+          [
+            "https://fireflies.ai/blog/aarthi-sriram-show-aravind-srinivas",
+            1
+          ],
+          [
+            "https://www.inbound.com/speakers/recwvBDMmtsrInWlR",
+            1
+          ],
+          [
+            "https://live-stanford-business.pantheonsite.io/insights/perplexitys-aravind-srinivas-infinite-value-knowledge",
+            1
+          ],
+          [
+            "https://lilys.ai/notes/1067713",
+            1
+          ]
+        ],
+        "first_person_rate": 0.784,
+        "length_stats": {
+          "min": 151,
+          "median": 2233,
+          "p95": 44745,
+          "max": 168498
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/aravind_srinivas__twitter.json",
+        "author": "aravind_srinivas",
+        "platform": "twitter",
+        "post_count": 20,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 0,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 0,
+          "## ": 0
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.35,
+        "length_stats": {
+          "min": 1,
+          "median": 140,
+          "p95": 734,
+          "max": 1152
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/brian_chesky__linkedin.json",
+        "author": "brian_chesky",
+        "platform": "linkedin",
+        "post_count": 129,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 241,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 29,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 1,
+          "Subscribe to": 1,
+          "Cookie Policy": 3,
+          "# ": 115,
+          "## ": 92
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.86,
+        "length_stats": {
+          "min": 266,
+          "median": 3003,
+          "p95": 44827,
+          "max": 113832
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/brian_chesky__twitter.json",
+        "author": "brian_chesky",
+        "platform": "twitter",
+        "post_count": 53,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 28,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 2,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 21,
+          "## ": 5
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.642,
+        "length_stats": {
+          "min": 4,
+          "median": 1535,
+          "p95": 2003,
+          "max": 2003
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/dario_amodei__linkedin.json",
+        "author": "dario_amodei",
+        "platform": "linkedin",
+        "post_count": 211,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 483,
+        "boilerplate_per_marker": {
+          "Source: http": 110,
+          "Agree & Join LinkedIn": 29,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 3,
+          "Cookie Policy": 1,
+          "# ": 182,
+          "## ": 158
+        },
+        "top_source_urls": [
+          [
+            "https://lnkd.in/em9xsyXS)#science#business#news#health",
+            1
+          ],
+          [
+            "https://singjupost.com/transcript-the-future-of-u-s-ai-leadership-with-dario-amodei-of-anthropic/?singlepage=1",
+            1
+          ],
+          [
+            "https://www.cbsnews.com/news/anthropic-ceo-dario-amodei-full-transcript/",
+            1
+          ],
+          [
+            "https://transcriptmate.com/interviews/dario-amodei/dario-amodei-on-ai-s-impact-opportunity-risk-and-societal-adaptation",
+            1
+          ],
+          [
+            "https://www.cfr.org/event/ceo-speaker-series-dario-amodei-anthropic",
+            1
+          ],
+          [
+            "https://www.dwarkeshpatel.com/i/135814349/transcript",
+            1
+          ],
+          [
+            "https://knowledge.kevinjosethomas.com/Talks/Dario-Amodei-%E2%80%94-The-Urgency-of-Interpretability",
+            1
+          ],
+          [
+            "https://www.judiciary.senate.gov/download/2023-07-26-testimony-amodei?download=1",
+            1
+          ],
+          [
+            "https://lesserwrong.com/api/post/dario-amodei-s-prepared-remarks-from-the-uk-ai-safety-summit",
+            1
+          ],
+          [
+            "https://singjupost.com/anthropic-ceo-dario-amodeis-interview-on-dwarkesh-podcast-transcript/",
+            1
+          ]
+        ],
+        "first_person_rate": 0.815,
+        "length_stats": {
+          "min": 283,
+          "median": 2209,
+          "p95": 54607,
+          "max": 121670
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/dario_amodei__twitter.json",
+        "author": "dario_amodei",
+        "platform": "twitter",
+        "post_count": 47,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 50,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 1,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 34,
+          "## ": 15
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.787,
+        "length_stats": {
+          "min": 86,
+          "median": 2003,
+          "p95": 2003,
+          "max": 2003
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/elon_musk__linkedin.json",
+        "author": "elon_musk",
+        "platform": "linkedin",
+        "post_count": 228,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 470,
+        "boilerplate_per_marker": {
+          "Source: http": 99,
+          "Agree & Join LinkedIn": 30,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 2,
+          "Cookie Policy": 4,
+          "# ": 184,
+          "## ": 151
+        },
+        "top_source_urls": [
+          [
+            "https://stvp.stanford.edu/videos/elon-musks-vision-for-the-future-entire-talk/transcript-pdf-elon-musks-vision-for-the-future-entire-talk/",
+            1
+          ],
+          [
+            "https://www.ted.com/talks/elon_musk_a_future_worth_getting_excited_about/transcript?language=en",
+            1
+          ],
+          [
+            "https://singjupost.com/transcript-of-elon-musk-remarks-at-the-qatar-economic-forum/",
+            1
+          ],
+          [
+            "https://www.businessinsider.com/elon-musk-mars-speech-transcript-2016-9?op=1",
+            1
+          ],
+          [
+            "https://whatsuptesla.com/2025/11/11/elon-musk-talks-at-2025-tesla-shareholders-general-meeting-my-transcript/",
+            1
+          ],
+          [
+            "https://whatsuptesla.com/2026/03/28/terafab/",
+            1
+          ],
+          [
+            "https://ytscribe.com/v/kzlUyrccbos/",
+            1
+          ],
+          [
+            "https://electrek.co/2017/05/01/elon-musk-on-boring-company-semi-truck-mars-ted-talk-transcript/?extended-comments=1",
+            1
+          ],
+          [
+            "https://www.theverge.com/elon-musk/617090/elon-musk-cpac-2025-transcript",
+            1
+          ],
+          [
+            "https://singjupost.com/transcript-of-elon-musk-digital-superintelligence-multiplanetary-life-how-to-be-useful/",
+            1
+          ]
+        ],
+        "first_person_rate": 0.776,
+        "length_stats": {
+          "min": 158,
+          "median": 2228,
+          "p95": 73620,
+          "max": 473598
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/elon_musk__twitter.json",
+        "author": "elon_musk",
+        "platform": "twitter",
+        "post_count": 20,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 0,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 0,
+          "## ": 0
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.15,
+        "length_stats": {
+          "min": 1,
+          "median": 72,
+          "p95": 140,
+          "max": 140
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/guillermo_rauch__linkedin.json",
+        "author": "guillermo_rauch",
+        "platform": "linkedin",
+        "post_count": 119,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 229,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 29,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 1,
+          "# ": 106,
+          "## ": 93
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.874,
+        "length_stats": {
+          "min": 167,
+          "median": 3003,
+          "p95": 68355,
+          "max": 97876
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/guillermo_rauch__twitter.json",
+        "author": "guillermo_rauch",
+        "platform": "twitter",
+        "post_count": 20,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 0,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 0,
+          "## ": 0
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.7,
+        "length_stats": {
+          "min": 5,
+          "median": 277,
+          "p95": 1356,
+          "max": 2923
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/matei_zaharia__linkedin.json",
+        "author": "matei_zaharia",
+        "platform": "linkedin",
+        "post_count": 48,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 85,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 13,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 46,
+          "## ": 26
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.729,
+        "length_stats": {
+          "min": 442,
+          "median": 3003,
+          "p95": 3003,
+          "max": 3003
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/matei_zaharia__twitter.json",
+        "author": "matei_zaharia",
+        "platform": "twitter",
+        "post_count": 47,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 75,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 10,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 42,
+          "## ": 23
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.681,
+        "length_stats": {
+          "min": 138,
+          "median": 2503,
+          "p95": 2503,
+          "max": 2503
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/patrick_collison__linkedin.json",
+        "author": "patrick_collison",
+        "platform": "linkedin",
+        "post_count": 131,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 251,
+        "boilerplate_per_marker": {
+          "Source: http": 27,
+          "Agree & Join LinkedIn": 30,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 1,
+          "Cookie Policy": 4,
+          "# ": 101,
+          "## ": 88
+        },
+        "top_source_urls": [
+          [
+            "https://lnkd.in/gMp44Qi5",
+            1
+          ],
+          [
+            "https://www.irishtimes.com/business/2025/05/07/stripes-patrick-collison-praises-ai-and-stable-coins/",
+            1
+          ],
+          [
+            "https://www.rte.ie/news/2026/0108/1552188-patrick-collison/",
+            1
+          ],
+          [
+            "https://africa.businessinsider.com/news/stripe-ceos-ai-era-software-pitch-start-serving-it-like-pizza/yjxzpkq",
+            1
+          ],
+          [
+            "https://www2.businessinsider.com/the-stripe-ceo-floats-creating-software-on-demand-sell-off-2026-3",
+            1
+          ],
+          [
+            "https://www.digitaltoday.co.kr/en/view/17073/stripe-ceo-says-software-in-ai-era-should-be-made-to-order-like-pizza",
+            1
+          ],
+          [
+            "https://fora.ie/patrick-collison-interview-3435044-Jun2017/",
+            1
+          ],
+          [
+            "https://fora.ie/stripe-patrick-collison-3390925-May2017/",
+            1
+          ],
+          [
+            "https://retool.com/blog/stripe-ceo-ai-agents-and-the-future-of-software",
+            1
+          ],
+          [
+            "https://www.businessinsider.com/stripe-ceo-patrick-collison-ai-ask-questions-writing-grok-2025-7",
+            1
+          ]
+        ],
+        "first_person_rate": 0.817,
+        "length_stats": {
+          "min": 191,
+          "median": 3003,
+          "p95": 53326,
+          "max": 112698
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/patrick_collison__twitter.json",
+        "author": "patrick_collison",
+        "platform": "twitter",
+        "post_count": 20,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 0,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 0,
+          "## ": 0
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.55,
+        "length_stats": {
+          "min": 73,
+          "median": 140,
+          "p95": 284,
+          "max": 6094
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/sam_altman__linkedin.json",
+        "author": "sam_altman",
+        "platform": "linkedin",
+        "post_count": 178,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 380,
+        "boilerplate_per_marker": {
+          "Source: http": 120,
+          "Agree & Join LinkedIn": 30,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 2,
+          "Cookie Policy": 2,
+          "# ": 134,
+          "## ": 92
+        },
+        "top_source_urls": [
+          [
+            "https://lnkd.in/ddtkVcCS",
+            1
+          ],
+          [
+            "https://www.ted.com/talks/sam_altman_openai_s_sam_altman_talks_chatgpt_ai_agents_and_superintelligence_live_at_ted2025/transcript",
+            1
+          ],
+          [
+            "https://www.ted.com/pages/sam-altman-on-the-future-of-ai-and-humanity-transcript",
+            1
+          ],
+          [
+            "https://stvp.stanford.edu/wp-content/uploads/sites/3/2024/09/the-possibilities-of-ai-entire-talk-transcript.pdf",
+            1
+          ],
+          [
+            "https://singjupost.com/feds-michelle-bowman-interviews-openai-ceo-sam-altman-transcript/",
+            1
+          ],
+          [
+            "https://ytscribe.com/v/iRwk9UajXFg/",
+            1
+          ],
+          [
+            "https://www.ted.com/podcasts/ted.com/podcasts/sam-altman-on-the-future-of-ai-and-humanity-transcript",
+            1
+          ],
+          [
+            "https://ytscribe.com/v/GLKoDkbS1Cg/",
+            1
+          ],
+          [
+            "https://conversationswithtyler.com/episodes/sam-altman-2/",
+            1
+          ],
+          [
+            "https://www.federalreserve.gov/mediacenter/files/capital-framework-conference-fireside-chat-transcript.pdf",
+            1
+          ]
+        ],
+        "first_person_rate": 0.736,
+        "length_stats": {
+          "min": 215,
+          "median": 2172,
+          "p95": 15054,
+          "max": 50688
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/sam_altman__twitter.json",
+        "author": "sam_altman",
+        "platform": "twitter",
+        "post_count": 58,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 34,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 20,
+          "## ": 14
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.586,
+        "length_stats": {
+          "min": 17,
+          "median": 2003,
+          "p95": 2003,
+          "max": 2003
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/satya_nadella__linkedin.json",
+        "author": "satya_nadella",
+        "platform": "linkedin",
+        "post_count": 136,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 269,
+        "boilerplate_per_marker": {
+          "Source: http": 23,
+          "Agree & Join LinkedIn": 30,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 1,
+          "Cookie Policy": 3,
+          "# ": 117,
+          "## ": 95
+        },
+        "top_source_urls": [
+          [
+            "https://techcrunch.com/2026/04/29/satya-nadella-says-hes-ready-to-exploit-the-new-openai-deal/",
+            1
+          ],
+          [
+            "https://www.9news.com.au/technology/microsoft-ceo-satya-nadella-exclusive-australian-workers-ai-training/ad59e869-eb6d-4b86-a5f0-5c703aed920b",
+            1
+          ],
+          [
+            "http://www.economictimes.indiatimes.com/tech/artificial-intelligence/ai-led-job-disruption-is-real-but-so-is-human-adaptability-microsoft-ceo-satya-nadella/articleshow/129037925.cms",
+            1
+          ],
+          [
+            "https://www.itpro.com/software/development/satya-nadella-ai-software-development-skills",
+            1
+          ],
+          [
+            "https://eftm.com/2026/04/microsoft-satya-nadella-australia-25-billion-ai-investment-exclusive-interview-274901",
+            1
+          ],
+          [
+            "https://tech.yahoo.com/business/articles/why-satya-nadella-said-hes-051636772.html",
+            1
+          ],
+          [
+            "https://economictimes.indiatimes.com/tech/artificial-intelligence/microsoft-ceo-satya-nadella-downplays-ai-bubble-fears-amid-openais-110-billion-fundraise/articleshow/129037029.cms",
+            1
+          ],
+          [
+            "https://fortune.com/article/microsoft-ceo-satya-nadella-recession-inflation-quarterly-earnings-report-q3/",
+            1
+          ],
+          [
+            "https://www.geekwire.com/2025/microsoft-ceo-satya-nadella-on-the-tech-giants-50th-anniversary-and-what-comes-next/",
+            1
+          ],
+          [
+            "https://www.thetimes.com/uk/technology-uk/article/big-tech-microsoft-interview-satya-nadella-gks2nl2jb",
+            1
+          ]
+        ],
+        "first_person_rate": 0.824,
+        "length_stats": {
+          "min": 205,
+          "median": 3003,
+          "p95": 49373,
+          "max": 88021
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/satya_nadella__twitter.json",
+        "author": "satya_nadella",
+        "platform": "twitter",
+        "post_count": 20,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 0,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 0,
+          "## ": 0
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.4,
+        "length_stats": {
+          "min": 42,
+          "median": 198,
+          "p95": 550,
+          "max": 642
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/tobi_lutke__linkedin.json",
+        "author": "tobi_lutke",
+        "platform": "linkedin",
+        "post_count": 117,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 226,
+        "boilerplate_per_marker": {
+          "Source: http": 24,
+          "Agree & Join LinkedIn": 28,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 2,
+          "Cookie Policy": 4,
+          "# ": 94,
+          "## ": 74
+        },
+        "top_source_urls": [
+          [
+            "http://businessinsider.com/shopify-ceo-how-to-manage-founders-company-acquisitions-tobi-lutke-2026-1",
+            1
+          ],
+          [
+            "https://www.cbc.ca/news/politics/shopify-federal-budget-stock-options-1.3455013",
+            1
+          ],
+          [
+            "https://www.businessinsider.com/shopify-ceo-tobi-lutke-on-app-store-internal-tech-conflict-2022-2",
+            1
+          ],
+          [
+            "https://www.fastcompany.com/91312832/shopify-ceo-tobi-lutke-ai-is-now-a-fundamental-expectation-for-employees",
+            1
+          ],
+          [
+            "https://www.benzinga.com/news/topics/26/01/50287861/companies-cocoon-them-shopify-co-founder-tobi-lutke-says-why-ex-entrepreneurs-get-pushed-to-the-outskirts-instead-of-promoted",
+            1
+          ],
+          [
+            "https://www.cnbc.com/2025/04/07/shopify-ceo-prove-ai-cant-do-jobs-before-asking-for-more-headcount.html",
+            1
+          ],
+          [
+            "https://www.shopify.com/blog/shopify-ceo-tobi-lutke-shares-his-secrets-to-entrepreneurial-success",
+            1
+          ],
+          [
+            "https://www.fool.com/investing/2019/08/15/interview-with-shopify-ceo-tobias-lutke.aspx",
+            1
+          ],
+          [
+            "https://www.businessinsider.com/shopify-toby-lutke-efficiency-mandatory-messaging-internal-memo-2025-4?op=1",
+            1
+          ],
+          [
+            "https://www.startuparchive.org/p/tobi-lutke-the-best-gift-in-life-is-finding-a-beautiful-problem-that-you-can-never-solve",
+            1
+          ]
+        ],
+        "first_person_rate": 0.829,
+        "length_stats": {
+          "min": 456,
+          "median": 3003,
+          "p95": 57837,
+          "max": 113391
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/tobi_lutke__twitter.json",
+        "author": "tobi_lutke",
+        "platform": "twitter",
+        "post_count": 57,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 34,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 23,
+          "## ": 11
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.632,
+        "length_stats": {
+          "min": 1,
+          "median": 2003,
+          "p95": 2003,
+          "max": 2003
+        }
+      }
+    ]
+  },
+  "after_clean": {
+    "totals": {
+      "files": 43,
+      "posts": 3327,
+      "duplicates": 0,
+      "boilerplate_hits": 1356
+    },
+    "by_author_platform": {
+      "ali_ghodsi__linkedin": {
+        "post_count": 224,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 145,
+        "files": [
+          "data/profiles/ali_ghodsi__linkedin.json",
+          "packages/api/data/profiles/ali_ghodsi__linkedin.json"
+        ]
+      },
+      "ali_ghodsi__twitter": {
+        "post_count": 95,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 19,
+        "files": [
+          "data/profiles/ali_ghodsi__twitter.json",
+          "packages/api/data/profiles/ali_ghodsi__twitter.json"
+        ]
+      },
+      "aravind_srinivas__linkedin": {
+        "post_count": 198,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 108,
+        "files": [
+          "data/profiles/aravind_srinivas__linkedin.json",
+          "packages/api/data/profiles/aravind_srinivas__linkedin.json"
+        ]
+      },
+      "aravind_srinivas__twitter": {
+        "post_count": 92,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 9,
+        "files": [
+          "data/profiles/aravind_srinivas__twitter.json",
+          "packages/api/data/profiles/aravind_srinivas__twitter.json"
+        ]
+      },
+      "brian_chesky__linkedin": {
+        "post_count": 200,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 113,
+        "files": [
+          "data/profiles/brian_chesky__linkedin.json",
+          "packages/api/data/profiles/brian_chesky__linkedin.json"
+        ]
+      },
+      "brian_chesky__twitter": {
+        "post_count": 115,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 9,
+        "files": [
+          "data/profiles/brian_chesky__twitter.json",
+          "packages/api/data/profiles/brian_chesky__twitter.json"
+        ]
+      },
+      "dario_amodei__linkedin": {
+        "post_count": 234,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 103,
+        "files": [
+          "data/profiles/dario_amodei__linkedin.json",
+          "packages/api/data/profiles/dario_amodei__linkedin.json"
+        ]
+      },
+      "dario_amodei__twitter": {
+        "post_count": 100,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 5,
+        "files": [
+          "data/profiles/dario_amodei__twitter.json",
+          "packages/api/data/profiles/dario_amodei__twitter.json"
+        ]
+      },
+      "elon_musk__linkedin": {
+        "post_count": 247,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 111,
+        "files": [
+          "data/profiles/elon_musk__linkedin.json",
+          "packages/api/data/profiles/elon_musk__linkedin.json"
+        ]
+      },
+      "elon_musk__twitter": {
+        "post_count": 94,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 9,
+        "files": [
+          "data/profiles/elon_musk__twitter.json",
+          "packages/api/data/profiles/elon_musk__twitter.json"
+        ]
+      },
+      "guillermo_rauch__linkedin": {
+        "post_count": 200,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 151,
+        "files": [
+          "data/profiles/guillermo_rauch__linkedin.json",
+          "packages/api/data/profiles/guillermo_rauch__linkedin.json"
+        ]
+      },
+      "guillermo_rauch__twitter": {
+        "post_count": 98,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 48,
+        "files": [
+          "data/profiles/guillermo_rauch__twitter.json",
+          "packages/api/data/profiles/guillermo_rauch__twitter.json"
+        ]
+      },
+      "matei_zaharia__linkedin": {
+        "post_count": 111,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 43,
+        "files": [
+          "packages/api/data/profiles/matei_zaharia__linkedin.json"
+        ]
+      },
+      "matei_zaharia__twitter": {
+        "post_count": 92,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 23,
+        "files": [
+          "data/profiles/matei_zaharia__twitter.json",
+          "packages/api/data/profiles/matei_zaharia__twitter.json"
+        ]
+      },
+      "patrick_collison__linkedin": {
+        "post_count": 202,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 102,
+        "files": [
+          "data/profiles/patrick_collison__linkedin.json",
+          "packages/api/data/profiles/patrick_collison__linkedin.json"
+        ]
+      },
+      "patrick_collison__twitter": {
+        "post_count": 94,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 3,
+        "files": [
+          "data/profiles/patrick_collison__twitter.json",
+          "packages/api/data/profiles/patrick_collison__twitter.json"
+        ]
+      },
+      "sam_altman__linkedin": {
+        "post_count": 203,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 99,
+        "files": [
+          "data/profiles/sam_altman__linkedin.json",
+          "packages/api/data/profiles/sam_altman__linkedin.json"
+        ]
+      },
+      "sam_altman__twitter": {
+        "post_count": 120,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 0,
+        "files": [
+          "data/profiles/sam_altman__twitter.json",
+          "packages/api/data/profiles/sam_altman__twitter.json"
+        ]
+      },
+      "satya_nadella__linkedin": {
+        "post_count": 210,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 111,
+        "files": [
+          "data/profiles/satya_nadella__linkedin.json",
+          "packages/api/data/profiles/satya_nadella__linkedin.json"
+        ]
+      },
+      "satya_nadella__twitter": {
+        "post_count": 100,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 12,
+        "files": [
+          "data/profiles/satya_nadella__twitter.json",
+          "packages/api/data/profiles/satya_nadella__twitter.json"
+        ]
+      },
+      "tobi_lutke__linkedin": {
+        "post_count": 186,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 117,
+        "files": [
+          "data/profiles/tobi_lutke__linkedin.json",
+          "packages/api/data/profiles/tobi_lutke__linkedin.json"
+        ]
+      },
+      "tobi_lutke__twitter": {
+        "post_count": 112,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 16,
+        "files": [
+          "data/profiles/tobi_lutke__twitter.json",
+          "packages/api/data/profiles/tobi_lutke__twitter.json"
+        ]
+      }
+    },
+    "per_file": [
+      {
+        "file": "data/profiles/ali_ghodsi__linkedin.json",
+        "author": "ali_ghodsi",
+        "platform": "linkedin",
+        "post_count": 30,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 90,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 28,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 2,
+          "# ": 30,
+          "## ": 30
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.967,
+        "length_stats": {
+          "min": 787,
+          "median": 7543,
+          "p95": 41493,
+          "max": 65377
+        }
+      },
+      {
+        "file": "data/profiles/ali_ghodsi__twitter.json",
+        "author": "ali_ghodsi",
+        "platform": "twitter",
+        "post_count": 20,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 0,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 0,
+          "## ": 0
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.5,
+        "length_stats": {
+          "min": 14,
+          "median": 140,
+          "p95": 516,
+          "max": 898
+        }
+      },
+      {
+        "file": "data/profiles/aravind_srinivas__linkedin.json",
+        "author": "aravind_srinivas",
+        "platform": "linkedin",
+        "post_count": 30,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 91,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 30,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 1,
+          "Cookie Policy": 0,
+          "# ": 30,
+          "## ": 30
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.967,
+        "length_stats": {
+          "min": 1447,
+          "median": 4943,
+          "p95": 35171,
+          "max": 36566
+        }
+      },
+      {
+        "file": "data/profiles/aravind_srinivas__twitter.json",
+        "author": "aravind_srinivas",
+        "platform": "twitter",
+        "post_count": 20,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 0,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 0,
+          "## ": 0
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.35,
+        "length_stats": {
+          "min": 1,
+          "median": 140,
+          "p95": 734,
+          "max": 1152
+        }
+      },
+      {
+        "file": "data/profiles/brian_chesky__linkedin.json",
+        "author": "brian_chesky",
+        "platform": "linkedin",
+        "post_count": 30,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 93,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 29,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 1,
+          "Cookie Policy": 3,
+          "# ": 30,
+          "## ": 30
+        },
+        "top_source_urls": [],
+        "first_person_rate": 1.0,
+        "length_stats": {
+          "min": 1013,
+          "median": 15045,
+          "p95": 41649,
+          "max": 51046
+        }
+      },
+      {
+        "file": "data/profiles/brian_chesky__twitter.json",
+        "author": "brian_chesky",
+        "platform": "twitter",
+        "post_count": 20,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 0,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 0,
+          "## ": 0
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.5,
+        "length_stats": {
+          "min": 4,
+          "median": 90,
+          "p95": 178,
+          "max": 263
+        }
+      },
+      {
+        "file": "data/profiles/dario_amodei__linkedin.json",
+        "author": "dario_amodei",
+        "platform": "linkedin",
+        "post_count": 30,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 92,
+        "boilerplate_per_marker": {
+          "Source: http": 1,
+          "Agree & Join LinkedIn": 29,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 1,
+          "Cookie Policy": 1,
+          "# ": 30,
+          "## ": 30
+        },
+        "top_source_urls": [
+          [
+            "https://lnkd.in/em9xsyXS)#science#business#news#health",
+            1
+          ]
+        ],
+        "first_person_rate": 1.0,
+        "length_stats": {
+          "min": 1057,
+          "median": 12620,
+          "p95": 28629,
+          "max": 40938
+        }
+      },
+      {
+        "file": "data/profiles/dario_amodei__twitter.json",
+        "author": "dario_amodei",
+        "platform": "twitter",
+        "post_count": 6,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 0,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 0,
+          "## ": 0
+        },
+        "top_source_urls": [],
+        "first_person_rate": 1.0,
+        "length_stats": {
+          "min": 86,
+          "median": 145,
+          "p95": 196,
+          "max": 304
+        }
+      },
+      {
+        "file": "data/profiles/elon_musk__linkedin.json",
+        "author": "elon_musk",
+        "platform": "linkedin",
+        "post_count": 30,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 94,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 30,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 4,
+          "# ": 30,
+          "## ": 30
+        },
+        "top_source_urls": [],
+        "first_person_rate": 1.0,
+        "length_stats": {
+          "min": 3509,
+          "median": 21532,
+          "p95": 49993,
+          "max": 56994
+        }
+      },
+      {
+        "file": "data/profiles/elon_musk__twitter.json",
+        "author": "elon_musk",
+        "platform": "twitter",
+        "post_count": 20,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 0,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 0,
+          "## ": 0
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.15,
+        "length_stats": {
+          "min": 1,
+          "median": 72,
+          "p95": 140,
+          "max": 140
+        }
+      },
+      {
+        "file": "data/profiles/guillermo_rauch__linkedin.json",
+        "author": "guillermo_rauch",
+        "platform": "linkedin",
+        "post_count": 30,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 90,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 29,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 1,
+          "# ": 30,
+          "## ": 30
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.967,
+        "length_stats": {
+          "min": 1394,
+          "median": 6833,
+          "p95": 25913,
+          "max": 54208
+        }
+      },
+      {
+        "file": "data/profiles/guillermo_rauch__twitter.json",
+        "author": "guillermo_rauch",
+        "platform": "twitter",
+        "post_count": 20,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 0,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 0,
+          "## ": 0
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.7,
+        "length_stats": {
+          "min": 5,
+          "median": 277,
+          "p95": 1356,
+          "max": 2923
+        }
+      },
+      {
+        "file": "data/profiles/matei_zaharia__twitter.json",
+        "author": "matei_zaharia",
+        "platform": "twitter",
+        "post_count": 3,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 0,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 0,
+          "## ": 0
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.0,
+        "length_stats": {
+          "min": 138,
+          "median": 148,
+          "p95": 148,
+          "max": 150
+        }
+      },
+      {
+        "file": "data/profiles/patrick_collison__linkedin.json",
+        "author": "patrick_collison",
+        "platform": "linkedin",
+        "post_count": 30,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 96,
+        "boilerplate_per_marker": {
+          "Source: http": 1,
+          "Agree & Join LinkedIn": 30,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 1,
+          "Cookie Policy": 4,
+          "# ": 30,
+          "## ": 30
+        },
+        "top_source_urls": [
+          [
+            "https://lnkd.in/gMp44Qi5",
+            1
+          ]
+        ],
+        "first_person_rate": 0.967,
+        "length_stats": {
+          "min": 968,
+          "median": 8904,
+          "p95": 21758,
+          "max": 35332
+        }
+      },
+      {
+        "file": "data/profiles/patrick_collison__twitter.json",
+        "author": "patrick_collison",
+        "platform": "twitter",
+        "post_count": 20,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 0,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 0,
+          "## ": 0
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.55,
+        "length_stats": {
+          "min": 73,
+          "median": 140,
+          "p95": 284,
+          "max": 6094
+        }
+      },
+      {
+        "file": "data/profiles/sam_altman__linkedin.json",
+        "author": "sam_altman",
+        "platform": "linkedin",
+        "post_count": 30,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 93,
+        "boilerplate_per_marker": {
+          "Source: http": 1,
+          "Agree & Join LinkedIn": 30,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 2,
+          "# ": 30,
+          "## ": 30
+        },
+        "top_source_urls": [
+          [
+            "https://lnkd.in/ddtkVcCS",
+            1
+          ]
+        ],
+        "first_person_rate": 1.0,
+        "length_stats": {
+          "min": 3380,
+          "median": 10776,
+          "p95": 30884,
+          "max": 50688
+        }
+      },
+      {
+        "file": "data/profiles/sam_altman__twitter.json",
+        "author": "sam_altman",
+        "platform": "twitter",
+        "post_count": 20,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 0,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 0,
+          "## ": 0
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.3,
+        "length_stats": {
+          "min": 17,
+          "median": 69,
+          "p95": 278,
+          "max": 279
+        }
+      },
+      {
+        "file": "data/profiles/satya_nadella__linkedin.json",
+        "author": "satya_nadella",
+        "platform": "linkedin",
+        "post_count": 30,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 94,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 30,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 1,
+          "Cookie Policy": 3,
+          "# ": 30,
+          "## ": 30
+        },
+        "top_source_urls": [],
+        "first_person_rate": 1.0,
+        "length_stats": {
+          "min": 1830,
+          "median": 14169,
+          "p95": 45861,
+          "max": 49373
+        }
+      },
+      {
+        "file": "data/profiles/satya_nadella__twitter.json",
+        "author": "satya_nadella",
+        "platform": "twitter",
+        "post_count": 20,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 0,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 0,
+          "## ": 0
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.4,
+        "length_stats": {
+          "min": 42,
+          "median": 198,
+          "p95": 550,
+          "max": 642
+        }
+      },
+      {
+        "file": "data/profiles/tobi_lutke__linkedin.json",
+        "author": "tobi_lutke",
+        "platform": "linkedin",
+        "post_count": 30,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 94,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 28,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 2,
+          "Cookie Policy": 4,
+          "# ": 30,
+          "## ": 30
+        },
+        "top_source_urls": [],
+        "first_person_rate": 1.0,
+        "length_stats": {
+          "min": 1215,
+          "median": 10776,
+          "p95": 34108,
+          "max": 42946
+        }
+      },
+      {
+        "file": "data/profiles/tobi_lutke__twitter.json",
+        "author": "tobi_lutke",
+        "platform": "twitter",
+        "post_count": 20,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 0,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 0,
+          "## ": 0
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.35,
+        "length_stats": {
+          "min": 1,
+          "median": 140,
+          "p95": 149,
+          "max": 197
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/ali_ghodsi__linkedin.json",
+        "author": "ali_ghodsi",
+        "platform": "linkedin",
+        "post_count": 194,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 55,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 3,
+          "Cookie Policy": 0,
+          "# ": 26,
+          "## ": 26
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.706,
+        "length_stats": {
+          "min": 53,
+          "median": 935,
+          "p95": 23611,
+          "max": 95457
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/ali_ghodsi__twitter.json",
+        "author": "ali_ghodsi",
+        "platform": "twitter",
+        "post_count": 75,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 19,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 1,
+          "Cookie Policy": 0,
+          "# ": 9,
+          "## ": 9
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.627,
+        "length_stats": {
+          "min": 47,
+          "median": 437,
+          "p95": 496,
+          "max": 898
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/aravind_srinivas__linkedin.json",
+        "author": "aravind_srinivas",
+        "platform": "linkedin",
+        "post_count": 168,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 17,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 2,
+          "Cookie Policy": 0,
+          "# ": 9,
+          "## ": 6
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.774,
+        "length_stats": {
+          "min": 104,
+          "median": 814,
+          "p95": 44645,
+          "max": 168359
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/aravind_srinivas__twitter.json",
+        "author": "aravind_srinivas",
+        "platform": "twitter",
+        "post_count": 72,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 9,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 5,
+          "## ": 4
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.653,
+        "length_stats": {
+          "min": 44,
+          "median": 424,
+          "p95": 615,
+          "max": 1152
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/brian_chesky__linkedin.json",
+        "author": "brian_chesky",
+        "platform": "linkedin",
+        "post_count": 170,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 20,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 11,
+          "## ": 9
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.882,
+        "length_stats": {
+          "min": 208,
+          "median": 1646,
+          "p95": 33799,
+          "max": 113725
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/brian_chesky__twitter.json",
+        "author": "brian_chesky",
+        "platform": "twitter",
+        "post_count": 95,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 9,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 5,
+          "## ": 4
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.789,
+        "length_stats": {
+          "min": 33,
+          "median": 450,
+          "p95": 2003,
+          "max": 2003
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/dario_amodei__linkedin.json",
+        "author": "dario_amodei",
+        "platform": "linkedin",
+        "post_count": 204,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 11,
+        "boilerplate_per_marker": {
+          "Source: http": 1,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 3,
+          "Cookie Policy": 0,
+          "# ": 4,
+          "## ": 3
+        },
+        "top_source_urls": [
+          [
+            "https://lnkd.in/em9xsyXS)#science#business#news#health",
+            1
+          ]
+        ],
+        "first_person_rate": 0.814,
+        "length_stats": {
+          "min": 177,
+          "median": 1737,
+          "p95": 39189,
+          "max": 121574
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/dario_amodei__twitter.json",
+        "author": "dario_amodei",
+        "platform": "twitter",
+        "post_count": 94,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 5,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 3,
+          "## ": 2
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.734,
+        "length_stats": {
+          "min": 86,
+          "median": 448,
+          "p95": 1970,
+          "max": 2003
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/elon_musk__linkedin.json",
+        "author": "elon_musk",
+        "platform": "linkedin",
+        "post_count": 217,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 17,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 2,
+          "Cookie Policy": 0,
+          "# ": 9,
+          "## ": 6
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.825,
+        "length_stats": {
+          "min": 124,
+          "median": 1998,
+          "p95": 73569,
+          "max": 473483
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/elon_musk__twitter.json",
+        "author": "elon_musk",
+        "platform": "twitter",
+        "post_count": 74,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 9,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 6,
+          "## ": 3
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.581,
+        "length_stats": {
+          "min": 30,
+          "median": 410,
+          "p95": 491,
+          "max": 685
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/guillermo_rauch__linkedin.json",
+        "author": "guillermo_rauch",
+        "platform": "linkedin",
+        "post_count": 170,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 61,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 31,
+          "## ": 30
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.747,
+        "length_stats": {
+          "min": 100,
+          "median": 1303,
+          "p95": 55014,
+          "max": 97788
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/guillermo_rauch__twitter.json",
+        "author": "guillermo_rauch",
+        "platform": "twitter",
+        "post_count": 78,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 48,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 24,
+          "## ": 24
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.654,
+        "length_stats": {
+          "min": 60,
+          "median": 478,
+          "p95": 1523,
+          "max": 2923
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/matei_zaharia__linkedin.json",
+        "author": "matei_zaharia",
+        "platform": "linkedin",
+        "post_count": 111,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 43,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 1,
+          "Cookie Policy": 0,
+          "# ": 22,
+          "## ": 20
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.523,
+        "length_stats": {
+          "min": 218,
+          "median": 496,
+          "p95": 2959,
+          "max": 3003
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/matei_zaharia__twitter.json",
+        "author": "matei_zaharia",
+        "platform": "twitter",
+        "post_count": 89,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 23,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 1,
+          "Cookie Policy": 0,
+          "# ": 11,
+          "## ": 11
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.506,
+        "length_stats": {
+          "min": 138,
+          "median": 494,
+          "p95": 2460,
+          "max": 2503
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/patrick_collison__linkedin.json",
+        "author": "patrick_collison",
+        "platform": "linkedin",
+        "post_count": 172,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 6,
+        "boilerplate_per_marker": {
+          "Source: http": 1,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 4,
+          "## ": 1
+        },
+        "top_source_urls": [
+          [
+            "https://lnkd.in/gMp44Qi5",
+            1
+          ]
+        ],
+        "first_person_rate": 0.75,
+        "length_stats": {
+          "min": 113,
+          "median": 1028,
+          "p95": 48456,
+          "max": 112588
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/patrick_collison__twitter.json",
+        "author": "patrick_collison",
+        "platform": "twitter",
+        "post_count": 74,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 3,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 3,
+          "## ": 0
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.608,
+        "length_stats": {
+          "min": 73,
+          "median": 428,
+          "p95": 533,
+          "max": 6094
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/sam_altman__linkedin.json",
+        "author": "sam_altman",
+        "platform": "linkedin",
+        "post_count": 173,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 6,
+        "boilerplate_per_marker": {
+          "Source: http": 1,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 2,
+          "Cookie Policy": 0,
+          "# ": 3,
+          "## ": 0
+        },
+        "top_source_urls": [
+          [
+            "https://lnkd.in/ddtkVcCS",
+            1
+          ]
+        ],
+        "first_person_rate": 0.884,
+        "length_stats": {
+          "min": 184,
+          "median": 681,
+          "p95": 13738,
+          "max": 50257
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/sam_altman__twitter.json",
+        "author": "sam_altman",
+        "platform": "twitter",
+        "post_count": 100,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 0,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 0,
+          "## ": 0
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.83,
+        "length_stats": {
+          "min": 41,
+          "median": 452,
+          "p95": 2003,
+          "max": 2003
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/satya_nadella__linkedin.json",
+        "author": "satya_nadella",
+        "platform": "linkedin",
+        "post_count": 180,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 17,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 1,
+          "Cookie Policy": 0,
+          "# ": 9,
+          "## ": 7
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.883,
+        "length_stats": {
+          "min": 157,
+          "median": 1094,
+          "p95": 45575,
+          "max": 87928
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/satya_nadella__twitter.json",
+        "author": "satya_nadella",
+        "platform": "twitter",
+        "post_count": 80,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 12,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 6,
+          "## ": 6
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.8,
+        "length_stats": {
+          "min": 42,
+          "median": 416,
+          "p95": 615,
+          "max": 1514
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/tobi_lutke__linkedin.json",
+        "author": "tobi_lutke",
+        "platform": "linkedin",
+        "post_count": 156,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 23,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 2,
+          "Cookie Policy": 0,
+          "# ": 14,
+          "## ": 7
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.827,
+        "length_stats": {
+          "min": 124,
+          "median": 887,
+          "p95": 42306,
+          "max": 113277
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/tobi_lutke__twitter.json",
+        "author": "tobi_lutke",
+        "platform": "twitter",
+        "post_count": 92,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 16,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 11,
+          "## ": 5
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.707,
+        "length_stats": {
+          "min": 32,
+          "median": 452,
+          "p95": 2003,
+          "max": 2003
+        }
+      }
+    ]
+  },
+  "after": {
+    "totals": {
+      "files": 43,
+      "posts": 3304,
+      "duplicates": 0,
+      "boilerplate_hits": 454
+    },
+    "by_author_platform": {
+      "ali_ghodsi__linkedin": {
+        "post_count": 224,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 61,
+        "files": [
+          "data/profiles/ali_ghodsi__linkedin.json",
+          "packages/api/data/profiles/ali_ghodsi__linkedin.json"
+        ]
+      },
+      "ali_ghodsi__twitter": {
+        "post_count": 92,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 19,
+        "files": [
+          "data/profiles/ali_ghodsi__twitter.json",
+          "packages/api/data/profiles/ali_ghodsi__twitter.json"
+        ]
+      },
+      "aravind_srinivas__linkedin": {
+        "post_count": 198,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 19,
+        "files": [
+          "data/profiles/aravind_srinivas__linkedin.json",
+          "packages/api/data/profiles/aravind_srinivas__linkedin.json"
+        ]
+      },
+      "aravind_srinivas__twitter": {
+        "post_count": 88,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 9,
+        "files": [
+          "data/profiles/aravind_srinivas__twitter.json",
+          "packages/api/data/profiles/aravind_srinivas__twitter.json"
+        ]
+      },
+      "brian_chesky__linkedin": {
+        "post_count": 200,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 20,
+        "files": [
+          "data/profiles/brian_chesky__linkedin.json",
+          "packages/api/data/profiles/brian_chesky__linkedin.json"
+        ]
+      },
+      "brian_chesky__twitter": {
+        "post_count": 112,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 9,
+        "files": [
+          "data/profiles/brian_chesky__twitter.json",
+          "packages/api/data/profiles/brian_chesky__twitter.json"
+        ]
+      },
+      "dario_amodei__linkedin": {
+        "post_count": 234,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 13,
+        "files": [
+          "data/profiles/dario_amodei__linkedin.json",
+          "packages/api/data/profiles/dario_amodei__linkedin.json"
+        ]
+      },
+      "dario_amodei__twitter": {
+        "post_count": 100,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 5,
+        "files": [
+          "data/profiles/dario_amodei__twitter.json",
+          "packages/api/data/profiles/dario_amodei__twitter.json"
+        ]
+      },
+      "elon_musk__linkedin": {
+        "post_count": 247,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 21,
+        "files": [
+          "data/profiles/elon_musk__linkedin.json",
+          "packages/api/data/profiles/elon_musk__linkedin.json"
+        ]
+      },
+      "elon_musk__twitter": {
+        "post_count": 88,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 9,
+        "files": [
+          "data/profiles/elon_musk__twitter.json",
+          "packages/api/data/profiles/elon_musk__twitter.json"
+        ]
+      },
+      "guillermo_rauch__linkedin": {
+        "post_count": 200,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 63,
+        "files": [
+          "data/profiles/guillermo_rauch__linkedin.json",
+          "packages/api/data/profiles/guillermo_rauch__linkedin.json"
+        ]
+      },
+      "guillermo_rauch__twitter": {
+        "post_count": 97,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 48,
+        "files": [
+          "data/profiles/guillermo_rauch__twitter.json",
+          "packages/api/data/profiles/guillermo_rauch__twitter.json"
+        ]
+      },
+      "matei_zaharia__linkedin": {
+        "post_count": 111,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 43,
+        "files": [
+          "packages/api/data/profiles/matei_zaharia__linkedin.json"
+        ]
+      },
+      "matei_zaharia__twitter": {
+        "post_count": 92,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 23,
+        "files": [
+          "data/profiles/matei_zaharia__twitter.json",
+          "packages/api/data/profiles/matei_zaharia__twitter.json"
+        ]
+      },
+      "patrick_collison__linkedin": {
+        "post_count": 202,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 7,
+        "files": [
+          "data/profiles/patrick_collison__linkedin.json",
+          "packages/api/data/profiles/patrick_collison__linkedin.json"
+        ]
+      },
+      "patrick_collison__twitter": {
+        "post_count": 94,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 3,
+        "files": [
+          "data/profiles/patrick_collison__twitter.json",
+          "packages/api/data/profiles/patrick_collison__twitter.json"
+        ]
+      },
+      "sam_altman__linkedin": {
+        "post_count": 203,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 9,
+        "files": [
+          "data/profiles/sam_altman__linkedin.json",
+          "packages/api/data/profiles/sam_altman__linkedin.json"
+        ]
+      },
+      "sam_altman__twitter": {
+        "post_count": 115,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 0,
+        "files": [
+          "data/profiles/sam_altman__twitter.json",
+          "packages/api/data/profiles/sam_altman__twitter.json"
+        ]
+      },
+      "satya_nadella__linkedin": {
+        "post_count": 210,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 18,
+        "files": [
+          "data/profiles/satya_nadella__linkedin.json",
+          "packages/api/data/profiles/satya_nadella__linkedin.json"
+        ]
+      },
+      "satya_nadella__twitter": {
+        "post_count": 100,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 12,
+        "files": [
+          "data/profiles/satya_nadella__twitter.json",
+          "packages/api/data/profiles/satya_nadella__twitter.json"
+        ]
+      },
+      "tobi_lutke__linkedin": {
+        "post_count": 186,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 27,
+        "files": [
+          "data/profiles/tobi_lutke__linkedin.json",
+          "packages/api/data/profiles/tobi_lutke__linkedin.json"
+        ]
+      },
+      "tobi_lutke__twitter": {
+        "post_count": 111,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 16,
+        "files": [
+          "data/profiles/tobi_lutke__twitter.json",
+          "packages/api/data/profiles/tobi_lutke__twitter.json"
+        ]
+      }
+    },
+    "per_file": [
+      {
+        "file": "data/profiles/ali_ghodsi__linkedin.json",
+        "author": "ali_ghodsi",
+        "platform": "linkedin",
+        "post_count": 30,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 6,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 3,
+          "## ": 3
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.933,
+        "length_stats": {
+          "min": 508,
+          "median": 7279,
+          "p95": 40735,
+          "max": 64117
+        }
+      },
+      {
+        "file": "data/profiles/ali_ghodsi__twitter.json",
+        "author": "ali_ghodsi",
+        "platform": "twitter",
+        "post_count": 17,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 0,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 0,
+          "## ": 0
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.588,
+        "length_stats": {
+          "min": 47,
+          "median": 141,
+          "p95": 516,
+          "max": 898
+        }
+      },
+      {
+        "file": "data/profiles/aravind_srinivas__linkedin.json",
+        "author": "aravind_srinivas",
+        "platform": "linkedin",
+        "post_count": 30,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 2,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 1,
+          "Cookie Policy": 0,
+          "# ": 1,
+          "## ": 0
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.967,
+        "length_stats": {
+          "min": 1285,
+          "median": 4823,
+          "p95": 34973,
+          "max": 35636
+        }
+      },
+      {
+        "file": "data/profiles/aravind_srinivas__twitter.json",
+        "author": "aravind_srinivas",
+        "platform": "twitter",
+        "post_count": 16,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 0,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 0,
+          "## ": 0
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.438,
+        "length_stats": {
+          "min": 44,
+          "median": 140,
+          "p95": 734,
+          "max": 1152
+        }
+      },
+      {
+        "file": "data/profiles/brian_chesky__linkedin.json",
+        "author": "brian_chesky",
+        "platform": "linkedin",
+        "post_count": 30,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 0,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 0,
+          "## ": 0
+        },
+        "top_source_urls": [],
+        "first_person_rate": 1.0,
+        "length_stats": {
+          "min": 790,
+          "median": 13961,
+          "p95": 41517,
+          "max": 50931
+        }
+      },
+      {
+        "file": "data/profiles/brian_chesky__twitter.json",
+        "author": "brian_chesky",
+        "platform": "twitter",
+        "post_count": 17,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 0,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 0,
+          "## ": 0
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.529,
+        "length_stats": {
+          "min": 33,
+          "median": 123,
+          "p95": 178,
+          "max": 263
+        }
+      },
+      {
+        "file": "data/profiles/dario_amodei__linkedin.json",
+        "author": "dario_amodei",
+        "platform": "linkedin",
+        "post_count": 30,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 2,
+        "boilerplate_per_marker": {
+          "Source: http": 1,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 1,
+          "Cookie Policy": 0,
+          "# ": 0,
+          "## ": 0
+        },
+        "top_source_urls": [
+          [
+            "https://lnkd.in/em9xsyXS)#science#business#news#health",
+            1
+          ]
+        ],
+        "first_person_rate": 1.0,
+        "length_stats": {
+          "min": 638,
+          "median": 12142,
+          "p95": 27362,
+          "max": 39189
+        }
+      },
+      {
+        "file": "data/profiles/dario_amodei__twitter.json",
+        "author": "dario_amodei",
+        "platform": "twitter",
+        "post_count": 6,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 0,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 0,
+          "## ": 0
+        },
+        "top_source_urls": [],
+        "first_person_rate": 1.0,
+        "length_stats": {
+          "min": 86,
+          "median": 145,
+          "p95": 196,
+          "max": 304
+        }
+      },
+      {
+        "file": "data/profiles/elon_musk__linkedin.json",
+        "author": "elon_musk",
+        "platform": "linkedin",
+        "post_count": 30,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 4,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 2,
+          "## ": 2
+        },
+        "top_source_urls": [],
+        "first_person_rate": 1.0,
+        "length_stats": {
+          "min": 3459,
+          "median": 21182,
+          "p95": 49767,
+          "max": 56725
+        }
+      },
+      {
+        "file": "data/profiles/elon_musk__twitter.json",
+        "author": "elon_musk",
+        "platform": "twitter",
+        "post_count": 14,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 0,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 0,
+          "## ": 0
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.214,
+        "length_stats": {
+          "min": 30,
+          "median": 121,
+          "p95": 140,
+          "max": 140
+        }
+      },
+      {
+        "file": "data/profiles/guillermo_rauch__linkedin.json",
+        "author": "guillermo_rauch",
+        "platform": "linkedin",
+        "post_count": 30,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 2,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 1,
+          "## ": 1
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.967,
+        "length_stats": {
+          "min": 1213,
+          "median": 6619,
+          "p95": 25734,
+          "max": 53348
+        }
+      },
+      {
+        "file": "data/profiles/guillermo_rauch__twitter.json",
+        "author": "guillermo_rauch",
+        "platform": "twitter",
+        "post_count": 19,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 0,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 0,
+          "## ": 0
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.737,
+        "length_stats": {
+          "min": 60,
+          "median": 279,
+          "p95": 1356,
+          "max": 2923
+        }
+      },
+      {
+        "file": "data/profiles/matei_zaharia__twitter.json",
+        "author": "matei_zaharia",
+        "platform": "twitter",
+        "post_count": 3,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 0,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 0,
+          "## ": 0
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.0,
+        "length_stats": {
+          "min": 138,
+          "median": 148,
+          "p95": 148,
+          "max": 150
+        }
+      },
+      {
+        "file": "data/profiles/patrick_collison__linkedin.json",
+        "author": "patrick_collison",
+        "platform": "linkedin",
+        "post_count": 30,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 1,
+        "boilerplate_per_marker": {
+          "Source: http": 1,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 0,
+          "## ": 0
+        },
+        "top_source_urls": [
+          [
+            "https://lnkd.in/gMp44Qi5",
+            1
+          ]
+        ],
+        "first_person_rate": 0.967,
+        "length_stats": {
+          "min": 723,
+          "median": 8675,
+          "p95": 21692,
+          "max": 35143
+        }
+      },
+      {
+        "file": "data/profiles/patrick_collison__twitter.json",
+        "author": "patrick_collison",
+        "platform": "twitter",
+        "post_count": 20,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 0,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 0,
+          "## ": 0
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.55,
+        "length_stats": {
+          "min": 73,
+          "median": 140,
+          "p95": 284,
+          "max": 6094
+        }
+      },
+      {
+        "file": "data/profiles/sam_altman__linkedin.json",
+        "author": "sam_altman",
+        "platform": "linkedin",
+        "post_count": 30,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 3,
+        "boilerplate_per_marker": {
+          "Source: http": 1,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 2,
+          "## ": 0
+        },
+        "top_source_urls": [
+          [
+            "https://lnkd.in/ddtkVcCS",
+            1
+          ]
+        ],
+        "first_person_rate": 1.0,
+        "length_stats": {
+          "min": 2931,
+          "median": 10556,
+          "p95": 30170,
+          "max": 50257
+        }
+      },
+      {
+        "file": "data/profiles/sam_altman__twitter.json",
+        "author": "sam_altman",
+        "platform": "twitter",
+        "post_count": 15,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 0,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 0,
+          "## ": 0
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.4,
+        "length_stats": {
+          "min": 41,
+          "median": 110,
+          "p95": 278,
+          "max": 279
+        }
+      },
+      {
+        "file": "data/profiles/satya_nadella__linkedin.json",
+        "author": "satya_nadella",
+        "platform": "linkedin",
+        "post_count": 30,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 1,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 1,
+          "Cookie Policy": 0,
+          "# ": 0,
+          "## ": 0
+        },
+        "top_source_urls": [],
+        "first_person_rate": 1.0,
+        "length_stats": {
+          "min": 1569,
+          "median": 13912,
+          "p95": 45575,
+          "max": 47915
+        }
+      },
+      {
+        "file": "data/profiles/satya_nadella__twitter.json",
+        "author": "satya_nadella",
+        "platform": "twitter",
+        "post_count": 20,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 0,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 0,
+          "## ": 0
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.4,
+        "length_stats": {
+          "min": 42,
+          "median": 198,
+          "p95": 550,
+          "max": 642
+        }
+      },
+      {
+        "file": "data/profiles/tobi_lutke__linkedin.json",
+        "author": "tobi_lutke",
+        "platform": "linkedin",
+        "post_count": 30,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 4,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 2,
+          "Cookie Policy": 0,
+          "# ": 1,
+          "## ": 1
+        },
+        "top_source_urls": [],
+        "first_person_rate": 1.0,
+        "length_stats": {
+          "min": 1014,
+          "median": 10463,
+          "p95": 33936,
+          "max": 42306
+        }
+      },
+      {
+        "file": "data/profiles/tobi_lutke__twitter.json",
+        "author": "tobi_lutke",
+        "platform": "twitter",
+        "post_count": 19,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 0,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 0,
+          "## ": 0
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.368,
+        "length_stats": {
+          "min": 32,
+          "median": 140,
+          "p95": 149,
+          "max": 197
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/ali_ghodsi__linkedin.json",
+        "author": "ali_ghodsi",
+        "platform": "linkedin",
+        "post_count": 194,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 55,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 3,
+          "Cookie Policy": 0,
+          "# ": 26,
+          "## ": 26
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.706,
+        "length_stats": {
+          "min": 53,
+          "median": 935,
+          "p95": 23611,
+          "max": 95457
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/ali_ghodsi__twitter.json",
+        "author": "ali_ghodsi",
+        "platform": "twitter",
+        "post_count": 75,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 19,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 1,
+          "Cookie Policy": 0,
+          "# ": 9,
+          "## ": 9
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.627,
+        "length_stats": {
+          "min": 47,
+          "median": 437,
+          "p95": 496,
+          "max": 898
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/aravind_srinivas__linkedin.json",
+        "author": "aravind_srinivas",
+        "platform": "linkedin",
+        "post_count": 168,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 17,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 2,
+          "Cookie Policy": 0,
+          "# ": 9,
+          "## ": 6
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.774,
+        "length_stats": {
+          "min": 104,
+          "median": 814,
+          "p95": 44645,
+          "max": 168359
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/aravind_srinivas__twitter.json",
+        "author": "aravind_srinivas",
+        "platform": "twitter",
+        "post_count": 72,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 9,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 5,
+          "## ": 4
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.653,
+        "length_stats": {
+          "min": 44,
+          "median": 424,
+          "p95": 615,
+          "max": 1152
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/brian_chesky__linkedin.json",
+        "author": "brian_chesky",
+        "platform": "linkedin",
+        "post_count": 170,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 20,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 11,
+          "## ": 9
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.882,
+        "length_stats": {
+          "min": 208,
+          "median": 1646,
+          "p95": 33799,
+          "max": 113725
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/brian_chesky__twitter.json",
+        "author": "brian_chesky",
+        "platform": "twitter",
+        "post_count": 95,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 9,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 5,
+          "## ": 4
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.789,
+        "length_stats": {
+          "min": 33,
+          "median": 450,
+          "p95": 2003,
+          "max": 2003
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/dario_amodei__linkedin.json",
+        "author": "dario_amodei",
+        "platform": "linkedin",
+        "post_count": 204,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 11,
+        "boilerplate_per_marker": {
+          "Source: http": 1,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 3,
+          "Cookie Policy": 0,
+          "# ": 4,
+          "## ": 3
+        },
+        "top_source_urls": [
+          [
+            "https://lnkd.in/em9xsyXS)#science#business#news#health",
+            1
+          ]
+        ],
+        "first_person_rate": 0.814,
+        "length_stats": {
+          "min": 177,
+          "median": 1737,
+          "p95": 39189,
+          "max": 121574
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/dario_amodei__twitter.json",
+        "author": "dario_amodei",
+        "platform": "twitter",
+        "post_count": 94,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 5,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 3,
+          "## ": 2
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.734,
+        "length_stats": {
+          "min": 86,
+          "median": 448,
+          "p95": 1970,
+          "max": 2003
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/elon_musk__linkedin.json",
+        "author": "elon_musk",
+        "platform": "linkedin",
+        "post_count": 217,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 17,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 2,
+          "Cookie Policy": 0,
+          "# ": 9,
+          "## ": 6
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.825,
+        "length_stats": {
+          "min": 124,
+          "median": 1998,
+          "p95": 73569,
+          "max": 473483
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/elon_musk__twitter.json",
+        "author": "elon_musk",
+        "platform": "twitter",
+        "post_count": 74,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 9,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 6,
+          "## ": 3
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.581,
+        "length_stats": {
+          "min": 30,
+          "median": 410,
+          "p95": 491,
+          "max": 685
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/guillermo_rauch__linkedin.json",
+        "author": "guillermo_rauch",
+        "platform": "linkedin",
+        "post_count": 170,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 61,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 31,
+          "## ": 30
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.747,
+        "length_stats": {
+          "min": 100,
+          "median": 1303,
+          "p95": 55014,
+          "max": 97788
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/guillermo_rauch__twitter.json",
+        "author": "guillermo_rauch",
+        "platform": "twitter",
+        "post_count": 78,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 48,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 24,
+          "## ": 24
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.654,
+        "length_stats": {
+          "min": 60,
+          "median": 478,
+          "p95": 1523,
+          "max": 2923
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/matei_zaharia__linkedin.json",
+        "author": "matei_zaharia",
+        "platform": "linkedin",
+        "post_count": 111,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 43,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 1,
+          "Cookie Policy": 0,
+          "# ": 22,
+          "## ": 20
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.523,
+        "length_stats": {
+          "min": 218,
+          "median": 496,
+          "p95": 2959,
+          "max": 3003
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/matei_zaharia__twitter.json",
+        "author": "matei_zaharia",
+        "platform": "twitter",
+        "post_count": 89,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 23,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 1,
+          "Cookie Policy": 0,
+          "# ": 11,
+          "## ": 11
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.506,
+        "length_stats": {
+          "min": 138,
+          "median": 494,
+          "p95": 2460,
+          "max": 2503
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/patrick_collison__linkedin.json",
+        "author": "patrick_collison",
+        "platform": "linkedin",
+        "post_count": 172,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 6,
+        "boilerplate_per_marker": {
+          "Source: http": 1,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 4,
+          "## ": 1
+        },
+        "top_source_urls": [
+          [
+            "https://lnkd.in/gMp44Qi5",
+            1
+          ]
+        ],
+        "first_person_rate": 0.75,
+        "length_stats": {
+          "min": 113,
+          "median": 1028,
+          "p95": 48456,
+          "max": 112588
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/patrick_collison__twitter.json",
+        "author": "patrick_collison",
+        "platform": "twitter",
+        "post_count": 74,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 3,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 3,
+          "## ": 0
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.608,
+        "length_stats": {
+          "min": 73,
+          "median": 428,
+          "p95": 533,
+          "max": 6094
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/sam_altman__linkedin.json",
+        "author": "sam_altman",
+        "platform": "linkedin",
+        "post_count": 173,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 6,
+        "boilerplate_per_marker": {
+          "Source: http": 1,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 2,
+          "Cookie Policy": 0,
+          "# ": 3,
+          "## ": 0
+        },
+        "top_source_urls": [
+          [
+            "https://lnkd.in/ddtkVcCS",
+            1
+          ]
+        ],
+        "first_person_rate": 0.884,
+        "length_stats": {
+          "min": 184,
+          "median": 681,
+          "p95": 13738,
+          "max": 50257
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/sam_altman__twitter.json",
+        "author": "sam_altman",
+        "platform": "twitter",
+        "post_count": 100,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 0,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 0,
+          "## ": 0
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.83,
+        "length_stats": {
+          "min": 41,
+          "median": 452,
+          "p95": 2003,
+          "max": 2003
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/satya_nadella__linkedin.json",
+        "author": "satya_nadella",
+        "platform": "linkedin",
+        "post_count": 180,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 17,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 1,
+          "Cookie Policy": 0,
+          "# ": 9,
+          "## ": 7
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.883,
+        "length_stats": {
+          "min": 157,
+          "median": 1094,
+          "p95": 45575,
+          "max": 87928
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/satya_nadella__twitter.json",
+        "author": "satya_nadella",
+        "platform": "twitter",
+        "post_count": 80,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 12,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 6,
+          "## ": 6
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.8,
+        "length_stats": {
+          "min": 42,
+          "median": 416,
+          "p95": 615,
+          "max": 1514
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/tobi_lutke__linkedin.json",
+        "author": "tobi_lutke",
+        "platform": "linkedin",
+        "post_count": 156,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 23,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 2,
+          "Cookie Policy": 0,
+          "# ": 14,
+          "## ": 7
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.827,
+        "length_stats": {
+          "min": 124,
+          "median": 887,
+          "p95": 42306,
+          "max": 113277
+        }
+      },
+      {
+        "file": "packages/api/data/profiles/tobi_lutke__twitter.json",
+        "author": "tobi_lutke",
+        "platform": "twitter",
+        "post_count": 92,
+        "duplicate_count": 0,
+        "boilerplate_marker_hits": 16,
+        "boilerplate_per_marker": {
+          "Source: http": 0,
+          "Agree & Join LinkedIn": 0,
+          "Sign in to LinkedIn": 0,
+          "Show me more content": 0,
+          "Subscribe to": 0,
+          "Cookie Policy": 0,
+          "# ": 11,
+          "## ": 5
+        },
+        "top_source_urls": [],
+        "first_person_rate": 0.707,
+        "length_stats": {
+          "min": 32,
+          "median": 452,
+          "p95": 2003,
+          "max": 2003
+        }
+      }
+    ]
+  }
+}

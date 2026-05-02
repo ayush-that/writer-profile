@@ -1,12 +1,45 @@
 from __future__ import annotations
 
 import logging
+import re
 from dataclasses import dataclass, field
 
 from writer_api.services.chroma_store import ChromaStore, QueryResult
 from writer_api.services.exa_retriever import ExaRetriever, RetrievedContent
 
 logger = logging.getLogger(__name__)
+
+_WS = re.compile(r"\s+")
+
+
+def _trigrams(text: str) -> set[str]:
+    s = _WS.sub(" ", text.lower()).strip()
+    if len(s) < 3:
+        return {s}
+    return {s[i : i + 3] for i in range(len(s) - 2)}
+
+
+def _jaccard(a: set[str], b: set[str]) -> float:
+    if not a or not b:
+        return 0.0
+    inter = len(a & b)
+    union = len(a | b)
+    return inter / union if union else 0.0
+
+
+def _diversify(results: list[QueryResult], k: int, threshold: float = 0.7) -> list[QueryResult]:
+    ranked = sorted(results, key=lambda r: -r.score)
+    kept: list[QueryResult] = []
+    kept_grams: list[set[str]] = []
+    for r in ranked:
+        grams = _trigrams(r.text)
+        if any(_jaccard(grams, g) > threshold for g in kept_grams):
+            continue
+        kept.append(r)
+        kept_grams.append(grams)
+        if len(kept) >= k:
+            break
+    return kept
 
 
 @dataclass
@@ -56,11 +89,12 @@ class HybridRetriever:
         chroma = self._get_chroma()
         if chroma is not None:
             try:
-                own_posts = chroma.query(
+                raw = chroma.query(
                     text=topic,
-                    k=k_own,
+                    k=max(k_own * 2, k_own + 3),
                     where={"author": author},
                 )
+                own_posts = _diversify(raw, k_own)
             except Exception as exc:
                 logger.warning("Chroma query failed for %s: %s", author, exc)
 

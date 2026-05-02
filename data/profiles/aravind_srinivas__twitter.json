@@ -11,7 +11,7 @@
       "your",
       "default",
       "orchestration",
-      "we\u2019re",
+      "we’re",
       "more",
       "@perplexity_ai:"
     ],
@@ -34,25 +34,21 @@
     "conviction_style": "confident"
   },
   "example_posts": [
-    "RT @comet: Today we\u2019re rolling out a new native Comet experience for iPad.\n\nComet now works naturally with iPadOS features like multiple wi\u2026",
+    "RT @comet: Today we’re rolling out a new native Comet experience for iPad.\n\nComet now works naturally with iPadOS features like multiple wi…",
     "A Google Earth + Flight Simulator, fully cooked by Perplexity Computer with Codex/CC as subagents inside it. GTA vibes. https://t.co/TioIvaVpoL",
-    "RT @morganlinton: Whoa \ud83e\udd2f https://t.co/bRasKIJojs",
+    "RT @morganlinton: Whoa 🤯 https://t.co/bRasKIJojs",
     "You would consume less computer credits (and be able to run more tasks as a result) if you switched to GPT-5.5 as your default orchestrator. This was the number one complaint about Computer (being credits/token hungry). GPT 5.5 is more token-efficient in subagent orchestration.",
-    "We\u2019re rolling out GPT 5.5 as the default orchestrator model for Perplexity Computer. We will be monitoring the user sentiment compared to Opus 4.7 as the default as the rollout expands. Let us know your feedback! https://t.co/lVyXaCEY6T",
-    "RT @perplexity_ai: GPT-5.5 is now available on Perplexity for Max subscribers.\n\nGPT-5.5 is also rolling out as the default orchestration mo\u2026",
-    "RT @perplexity_ai: Kimi K2.6, the new state-of-the-art open-weight model from Moonshot, is now available for Pro and Max subscribers. https\u2026",
-    "We\u2019ve post trained a model on top of Qwen that achieves Pareto optimality on accuracy-cost curves. \n\nUnlike our previous post trained models, this model has been trained to be good at search and tool calls simultaneously, allowing us to unify the tool call router and summarization together in one model. \n\nThe resulting model performs better than GPT and Sonnet in terms of cost efficiency to serve daily Perplexity queries in production. The production model runs on our own inference platform.\n\nWe\u2019re already serving a significant chunk of our daily traffic with this model and intend to have it serve all of default traffic pretty soon. \n\nMore research to follow soon on models we\u2019re training and deploying for Comet and Computer.",
-    "RT @perplexity_ai: We've published new research on how we post-train models for accurate search-augmented answers.\n\nOur SFT + RL pipeline i\u2026",
+    "We’re rolling out GPT 5.5 as the default orchestrator model for Perplexity Computer. We will be monitoring the user sentiment compared to Opus 4.7 as the default as the rollout expands. Let us know your feedback! https://t.co/lVyXaCEY6T",
+    "RT @perplexity_ai: GPT-5.5 is now available on Perplexity for Max subscribers.\n\nGPT-5.5 is also rolling out as the default orchestration mo…",
+    "RT @perplexity_ai: Kimi K2.6, the new state-of-the-art open-weight model from Moonshot, is now available for Pro and Max subscribers. https…",
+    "We’ve post trained a model on top of Qwen that achieves Pareto optimality on accuracy-cost curves. \n\nUnlike our previous post trained models, this model has been trained to be good at search and tool calls simultaneously, allowing us to unify the tool call router and summarization together in one model. \n\nThe resulting model performs better than GPT and Sonnet in terms of cost efficiency to serve daily Perplexity queries in production. The production model runs on our own inference platform.\n\nWe’re already serving a significant chunk of our daily traffic with this model and intend to have it serve all of default traffic pretty soon. \n\nMore research to follow soon on models we’re training and deploying for Comet and Computer.",
+    "RT @perplexity_ai: We've published new research on how we post-train models for accurate search-augmented answers.\n\nOur SFT + RL pipeline i…",
     "As agentic workloads expand, the best orchestration hybridizes centralized servers and CPUs for the ultimate continuity. Especially when you want your AI to use your local apps and messages. https://t.co/yHuxewVqBv",
-    "\u2318 \u2318",
-    "\uf8ff",
-    "Accurate",
     "Ferrari for the mind https://t.co/RfTa1xsQXl",
     "With a Mac Mini and Personal Computer, you get to have the ambient software-hardware integration running in your home, but accessible on any interface (phone) to invoke. A lot of people wanted AI-native hardware. But what actually matters is a great orchestra conductor. That orchestrates all devices, apps, models. Continually evolves as you keep using it with better understanding of you and your workflows. And something that you can talk to any interface you like on *existing* hardware interfaces (phones, watches, glasses, etc). It feels a lot clearer now. \n\nThere's still a lot of work to be done on the continual learning / evolution part. As well as moving some subagents (eg: voice dictation, private data like messages/photos/home sensors) to running locally, orchestration loop running locally, etc. \n\nBut the vision is clear. We will have hybrid local-server compute. We want orchestration. Not new form factors. And the Personal Computer from Perplexity aims to deliver on this vision.\n\nLook forward to an exciting next few months shipping more and more updates! For now, download the Perplexity Mac App and set up your Personal Computer!",
-    "RT @perplexity_ai: Claude Opus 4.7 is now the default orchestration model powering Computer.\n\nIt's also available for Max subscribers on Pe\u2026",
+    "RT @perplexity_ai: Claude Opus 4.7 is now the default orchestration model powering Computer.\n\nIt's also available for Max subscribers on Pe…",
     "The computer is for you https://t.co/xYIJfN5FAS",
-    "RT @perplexity_ai: Today we're releasing Personal Computer.\n\nPersonal Computer integrates with the Perplexity Mac App for secure orchestrat\u2026",
-    "https://t.co/DBx1o6QbwF",
-    "Perplexity started as a small business tool for ourselves. We had 4 people and no revenue with AI at our fingertips.\n\nThe pivot to Computer is actually a full circle. Founders are using it to grow companies that matter to the economy and their communities.\u00a0\n\nIt\u2019s rewarding to see it now powering small businesses and startups in big ways.\n\nPerplexity is still a startup. We just 5X\u2019ed revenue from $100M to $500M with only 34% growth in team size. 2x revenue growth in 2026 with same small team.  And we\u2019re just warming up.\n\nEveryone here works at a small business, and everything we build is for people who build."
+    "RT @perplexity_ai: Today we're releasing Personal Computer.\n\nPersonal Computer integrates with the Perplexity Mac App for secure orchestrat…",
+    "Perplexity started as a small business tool for ourselves. We had 4 people and no revenue with AI at our fingertips.\n\nThe pivot to Computer is actually a full circle. Founders are using it to grow companies that matter to the economy and their communities. \n\nIt’s rewarding to see it now powering small businesses and startups in big ways.\n\nPerplexity is still a startup. We just 5X’ed revenue from $100M to $500M with only 34% growth in team size. 2x revenue growth in 2026 with same small team.  And we’re just warming up.\n\nEveryone here works at a small business, and everything we build is for people who build."
   ]
 }
