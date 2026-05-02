@@ -38,3 +38,5 @@ packages/web/.open-next/
 
 # Local Claude settings
 .claude/
+data/profiles.bak/
+packages/api/data/profiles.bak/
